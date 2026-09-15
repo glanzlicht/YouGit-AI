@@ -127,8 +127,8 @@
   --yg-bg:#0d1117;
   --yg-muted:#8b949e;
   --yg-code:#161b22;
-  --yg-link:var(--e-global-color-primary,#58a6ff);
-  --yg-link-hover:var(--e-global-color-accent,#79c0ff);
+  --yg-link:#58a6ff;
+  --yg-link-hover:#79c0ff;
   color:#c9d1d9!important;
 }
 .yougitai-repositories-index .yougitai-project-card{
@@ -151,9 +151,9 @@
 }
 .yougitai-repositories-index .yougitai-project-link,
 .yougitai-repositories-index .yougitai-project-link:visited{
-  color:var(--e-global-color-primary,#58a6ff)!important;
+  color:var(--yg-link,#58a6ff)!important;
 }
 .yougitai-repositories-index .yougitai-project-link:hover,
 .yougitai-repositories-index .yougitai-project-link:focus-visible{
-  color:var(--e-global-color-accent,#79c0ff)!important;
+  color:var(--yg-link-hover,#79c0ff)!important;
 }
