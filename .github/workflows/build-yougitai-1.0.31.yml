@@ -1,0 +1,23 @@
+name: Build YougitAI 1.0.31 ZIP
+
+on:
+  push:
+    branches:
+      - chatgpt/color-centralization-1.0.31
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build installable plugin ZIP
+        run: |
+          zip -r yougitai-secure-showcase-1.0.31.zip yougitai-secure-showcase -x "*.git*" ".github/*"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yougitai-secure-showcase-1.0.31
+          path: yougitai-secure-showcase-1.0.31.zip
+          if-no-files-found: error
