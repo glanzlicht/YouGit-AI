@@ -1,0 +1,23 @@
+name: Build YougitAI plugin ZIP
+
+on:
+  push:
+    branches:
+      - chatgpt/theme-inherit-1.0.27
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build installable plugin ZIP
+        run: |
+          zip -r yougitai-secure-showcase-1.0.27.zip yougitai-secure-showcase -x "*.git*" ".github/*"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yougitai-secure-showcase-1.0.27
+          path: yougitai-secure-showcase-1.0.27.zip
+          if-no-files-found: error
