@@ -98,3 +98,62 @@
 .yougitai-protected-file-view p{margin:0 0 10px;line-height:1.6;color:inherit}
 .yougitai-protected-file-note{color:var(--yg-muted)!important}
 @media(max-width:760px){.yougitai-protected-file-view{padding:32px 20px;display:block}.yougitai-protected-file-icon{margin-bottom:16px}}
+
+
+/* v1.0.28 — Elementor site canvas + dark YouGitAI components
+ *
+ * Standalone repository routes intentionally do not paint the page canvas.
+ * Elementor's active Kit class is added to <body> by Renderer.php, so Site
+ * Settings control the real page background and site typography.
+ */
+.yougitai-standalone-wrap,
+.yougitai-repositories-index{
+  background:transparent!important;
+}
+.yougitai-repositories-index{
+  color:var(--e-global-color-text,inherit)!important;
+}
+.yougitai-repositories-index .yougitai-index-header h1{
+  color:var(--e-global-color-text,inherit)!important;
+}
+.yougitai-repositories-index .yougitai-index-header p{
+  color:var(--e-global-color-text,inherit)!important;
+  opacity:.78;
+}
+
+/* Repository cards remain a deliberately dark application surface. */
+.yougitai-repositories-index .yougitai-portfolio-grid{
+  --yg-border:#30363d;
+  --yg-bg:#0d1117;
+  --yg-muted:#8b949e;
+  --yg-code:#161b22;
+  --yg-link:var(--e-global-color-primary,#58a6ff);
+  --yg-link-hover:var(--e-global-color-accent,#79c0ff);
+  color:#c9d1d9!important;
+}
+.yougitai-repositories-index .yougitai-project-card{
+  background:var(--yg-bg)!important;
+  border-color:var(--yg-border)!important;
+  color:#c9d1d9!important;
+}
+.yougitai-repositories-index .yougitai-project-card h3{
+  color:#f0f6fc!important;
+}
+.yougitai-repositories-index .yougitai-project-card p,
+.yougitai-repositories-index .yougitai-project-meta{
+  color:#8b949e!important;
+}
+.yougitai-repositories-index .yougitai-badge,
+.yougitai-repositories-index .yougitai-chips span{
+  color:#c9d1d9!important;
+  border-color:#30363d!important;
+  background:#161b22!important;
+}
+.yougitai-repositories-index .yougitai-project-link,
+.yougitai-repositories-index .yougitai-project-link:visited{
+  color:var(--e-global-color-primary,#58a6ff)!important;
+}
+.yougitai-repositories-index .yougitai-project-link:hover,
+.yougitai-repositories-index .yougitai-project-link:focus-visible{
+  color:var(--e-global-color-accent,#79c0ff)!important;
+}
