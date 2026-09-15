@@ -69,7 +69,7 @@ final class Renderer {
             $custom_description = trim( (string) get_option( 'yougitai_ss_index_description_' . $language_key, '' ) );
             $index_title = $custom_title !== '' ? $custom_title : $default_title;
             $index_description = $custom_description !== '' ? $custom_description : $default_description;
-            echo '<main class="yougitai-standalone-wrap yougitai-repositories-index"><header class="yougitai-index-header"><h1>' . esc_html( $index_title ) . '</h1><p>' . esc_html( $index_description ) . '</p></header>' . $this->render_grid( 'auto', 3 ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<main class="yougitai-standalone-wrap yougitai-repositories-index"><header class="yougitai-index-header"><h1>' . esc_html( $index_title ) . '</h1><p>' . esc_html( $index_description ) . '</p></header>' . $this->render_grid( 'inherit', 3 ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             get_footer();
             exit;
         }
@@ -103,13 +103,13 @@ final class Renderer {
         wp_enqueue_style( 'yougitai-ss-frontend' );
         wp_enqueue_script( 'yougitai-ss-frontend' );
         get_header();
-        echo '<main class="yougitai-standalone-wrap">' . $this->render( [ 'id' => (int) $repository['id'], 'theme' => 'auto' ] ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '<main class="yougitai-standalone-wrap">' . $this->render( [ 'id' => (int) $repository['id'], 'theme' => 'inherit' ] ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         get_footer();
         exit;
     }
 
     public function shortcode( array $atts = [] ): string {
-        $atts = shortcode_atts( [ 'id' => 0, 'slug' => '', 'theme' => 'auto' ], $atts, 'yougitai_showcase' );
+        $atts = shortcode_atts( [ 'id' => 0, 'slug' => '', 'theme' => 'inherit' ], $atts, 'yougitai_showcase' );
         return $this->render( [
             'id' => absint( $atts['id'] ),
             'slug' => sanitize_title( $atts['slug'] ),
@@ -118,11 +118,11 @@ final class Renderer {
     }
 
     public function grid_shortcode( array $atts = [] ): string {
-        $atts = shortcode_atts( [ 'theme' => 'auto', 'columns' => 3 ], $atts, 'yougitai_showcase_grid' );
+        $atts = shortcode_atts( [ 'theme' => 'inherit', 'columns' => 3 ], $atts, 'yougitai_showcase_grid' );
         return $this->render_grid( $this->sanitize_theme( (string) $atts['theme'] ), min( 4, max( 1, absint( $atts['columns'] ) ) ) );
     }
 
-    public function render_grid( string $theme = 'auto', int $columns = 3 ): string {
+    public function render_grid( string $theme = 'inherit', int $columns = 3 ): string {
         $this->register_assets(); wp_enqueue_style( 'yougitai-ss-frontend' ); wp_enqueue_script( 'yougitai-ss-frontend' );
         $repositories = array_values( array_filter( $this->repositories->all(), static fn( array $repo ): bool => $repo['status'] === 'published' && ( $repo['access_mode'] ?? 'public' ) === 'public' && ! empty( $repo['active_snapshot_id'] ) ) );
         if ( ! $repositories ) return '<div class="yougitai-notice">' . esc_html__( 'No published showcases are available.', 'yougitai-secure-showcase' ) . '</div>';
@@ -166,7 +166,7 @@ final class Renderer {
         if ( $selected ) {
             $selected = $this->decorate_public_file( $selected );
         }
-        $theme = $this->sanitize_theme( (string) ( $args['theme'] ?? 'auto' ) );
+        $theme = $this->sanitize_theme( (string) ( $args['theme'] ?? 'inherit' ) );
         $stats = $this->statistics( $files );
         $profile = $this->repositories->public_showcase_profile( (int) $repository['id'], (int) $repository['active_snapshot_id'] );
         $readme = $this->repositories->public_readme( (int) $repository['id'], (int) $repository['active_snapshot_id'] );
@@ -242,7 +242,7 @@ final class Renderer {
     }
 
     private function sanitize_theme( string $theme ): string {
-        return in_array( $theme, [ 'auto', 'light', 'dark' ], true ) ? $theme : 'auto';
+        return in_array( $theme, [ 'inherit', 'auto', 'light', 'dark' ], true ) ? $theme : 'inherit';
     }
 
     private function statistics( array $files ): array {
