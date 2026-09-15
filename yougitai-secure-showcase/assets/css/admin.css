@@ -1,0 +1,130 @@
+.yougitai-admin{max-width:1240px}.yougitai-card{background:#fff;border:1px solid #dcdcde;border-radius:10px;padding:20px;margin:20px 0;box-sizing:border-box}.yougitai-table td{vertical-align:middle}.yougitai-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.yougitai-actions form{margin:0}.yougitai-actions .submit{margin:0;padding:0}.yougitai-info{border-left:4px solid #2271b1}.yougitai-form-grid,.yougitai-rule-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;align-items:end}.yougitai-form-grid label,.yougitai-rule-form label,.yougitai-field{display:flex;flex-direction:column;gap:6px}.yougitai-form-grid input,.yougitai-form-grid select,.yougitai-rule-form input,.yougitai-rule-form select,.yougitai-field input,.yougitai-field select{width:100%;max-width:none}.yougitai-repo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}.yougitai-repo-grid .yougitai-card{margin:0}.yougitai-repo-card{display:flex;flex-direction:column;gap:18px}.yougitai-repo-card h3{margin:0 0 6px}.yougitai-meta-row,.yougitai-page-title{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.yougitai-page-title h1,.yougitai-page-title h2{margin-bottom:6px}.yougitai-status{display:inline-flex;align-items:center;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:600;background:#f0f0f1}.yougitai-status-published,.yougitai-status-public{background:#edfaef;color:#116329}.yougitai-status-draft{background:#f0f0f1;color:#50575e}.yougitai-status-redacted{background:#fff8e5;color:#8a4b00}.yougitai-status-hidden{background:#fbeaea;color:#8a2424}.yougitai-dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.yougitai-dashboard-grid .yougitai-card{margin-bottom:0}.yougitai-critical{color:#b32d2e}.yougitai-finding{display:flex;justify-content:space-between;gap:20px;padding:14px 16px;margin:10px 0;border:1px solid #dcdcde;border-left-width:4px;border-radius:6px}.yougitai-finding-main{min-width:0}.yougitai-finding-main code{display:inline-block;max-width:100%;overflow-wrap:anywhere;margin:5px 0}.yougitai-severity-critical{border-left-color:#b32d2e}.yougitai-severity-high{border-left-color:#d63638}.yougitai-severity-medium{border-left-color:#dba617}.yougitai-severity-low{border-left-color:#2271b1}.yougitai-file-list{max-height:420px;overflow:auto;border:1px solid #dcdcde;border-radius:6px}.yougitai-file-list>div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 12px;border-bottom:1px solid #f0f0f1}.yougitai-file-list>div:last-child{border-bottom:0}.yougitai-file-list code{overflow-wrap:anywhere}.yougitai-rule-form{margin-top:18px;padding-top:18px;border-top:1px solid #dcdcde}.yougitai-warning{background:#fff8e5;border-left:4px solid #dba617;padding:12px 14px;margin:14px 0}.yougitai-checkbox{display:flex;align-items:center;gap:7px;margin:14px 0}.yougitai-field{max-width:680px;margin:14px 0}@media(max-width:782px){.yougitai-dashboard-grid{grid-template-columns:1fr}.yougitai-finding{display:block}.yougitai-finding .yougitai-actions{margin-top:12px}.yougitai-file-list>div{align-items:flex-start;flex-direction:column}}
+
+.yougitai-inline-form { display: inline-block; margin: 0 8px 8px 0; }
+.yougitai-break { overflow-wrap: anywhere; word-break: break-word; }
+.yougitai-code-editor { max-height: 560px; overflow: auto; border: 1px solid #dcdcde; background: #0d1117; color: #e6edf3; border-radius: 6px; margin: 12px 0 16px; font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.yougitai-code-line { display: grid; grid-template-columns: 58px minmax(0, 1fr); cursor: pointer; min-height: 1.55em; }
+.yougitai-code-line:hover { background: rgba(255,255,255,.06); }
+.yougitai-code-line.is-selected { background: rgba(88,166,255,.20); }
+.yougitai-code-line > span { padding: 0 12px; text-align: right; color: #7d8590; user-select: none; border-right: 1px solid #30363d; }
+.yougitai-code-line > code { padding: 0 12px; color: inherit; background: transparent; white-space: pre; overflow: visible; }
+.yougitai-ai-providers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}.yougitai-subcard{border:1px solid #dcdcde;border-radius:6px;padding:16px;background:#fff}.yougitai-subcard h3{margin-top:0}.yougitai-field select{min-width:260px;max-width:100%}
+.yougitai-info-box{background:#f0f6fc;border:1px solid #c5d9ed;border-left:4px solid #2271b1;border-radius:6px;padding:16px 18px;margin:16px 0}.yougitai-info-box h3{margin-top:0}.yougitai-setup-steps{margin:10px 0 16px 22px}.yougitai-setup-steps li{margin:7px 0}.yougitai-direct-panel[hidden],[data-yougitai-provider-panel][hidden]{display:none!important}
+.yougitai-status-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.yougitai-status-item{display:flex;justify-content:space-between;gap:18px;padding:12px 14px;border:1px solid #dcdcde;border-radius:6px;background:#fff}.yougitai-status-item span{color:#646970;text-align:right}.yougitai-status-item.is-ok strong{color:#18794e}.yougitai-status-item.is-warning strong{color:#996800}@media(max-width:782px){.yougitai-status-grid{grid-template-columns:1fr}}
+
+.yougitai-card-heading-row{display:flex;gap:16px;justify-content:space-between;align-items:flex-start}.yougitai-card-heading-row h2{margin-top:0}.yougitai-picker-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.yougitai-repository-picker{display:grid;gap:8px;max-height:520px;overflow:auto;border:1px solid #dcdcde;border-radius:6px;padding:8px;background:#fff}.yougitai-repository-choice{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border:1px solid #dcdcde;border-radius:5px;background:#fff}.yougitai-repository-choice:hover{border-color:#8c8f94}.yougitai-repository-choice.is-imported{opacity:.65;background:#f6f7f7}.yougitai-repository-choice-main{display:flex;flex-direction:column;gap:3px;min-width:0}.yougitai-repository-choice-main strong,.yougitai-repository-choice-main small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.yougitai-repository-choice-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.yougitai-badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:999px;background:#f0f0f1;font-size:11px;font-weight:600}.yougitai-badge.is-success{background:#edfaef;color:#116329}.yougitai-picker-footer{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-top:14px}.yougitai-picker-footer label{display:flex;flex-direction:column;gap:5px}.yougitai-manual-import summary{cursor:pointer}.yougitai-manual-import[open] summary{margin-bottom:12px}@media(max-width:782px){.yougitai-card-heading-row,.yougitai-picker-footer{flex-direction:column;align-items:stretch}.yougitai-repository-choice{grid-template-columns:auto minmax(0,1fr)}.yougitai-repository-choice-meta{grid-column:2;justify-content:flex-start}}
+
+
+/* v1.0.4 admin UX polish */
+.yougitai-admin .button,
+.yougitai-admin .button-secondary,
+.yougitai-admin input[type="submit"].button,
+.yougitai-admin input[type="submit"].button-secondary{
+    min-height:36px;
+    padding:4px 14px;
+    border-radius:6px;
+    font-weight:600;
+    line-height:1.4;
+    box-shadow:none;
+    color:#1d2327 !important;
+    background:#fff !important;
+    border-color:#8c8f94 !important;
+}
+.yougitai-admin .button:hover,
+.yougitai-admin .button-secondary:hover,
+.yougitai-admin input[type="submit"].button:hover,
+.yougitai-admin input[type="submit"].button-secondary:hover{
+    color:#135e96 !important;
+    background:#f6f7f7 !important;
+    border-color:#2271b1 !important;
+}
+.yougitai-admin .button-primary,
+.yougitai-admin input[type="submit"].button-primary{
+    color:#fff !important;
+    background:#6d28d9 !important;
+    border-color:#5b21b6 !important;
+    text-shadow:none !important;
+}
+.yougitai-admin .button-primary:hover,
+.yougitai-admin .button-primary:focus,
+.yougitai-admin input[type="submit"].button-primary:hover,
+.yougitai-admin input[type="submit"].button-primary:focus{
+    color:#fff !important;
+    background:#5b21b6 !important;
+    border-color:#4c1d95 !important;
+}
+.yougitai-admin .button:disabled,
+.yougitai-admin .button.disabled,
+.yougitai-admin input[type="submit"].button:disabled{
+    color:#7c838a !important;
+    background:#f0f0f1 !important;
+    border-color:#c3c4c7 !important;
+    opacity:1;
+    cursor:not-allowed;
+}
+.yougitai-admin .button-small{min-height:30px;padding:2px 10px;font-size:12px}
+.yougitai-section-nav{position:sticky;top:32px;z-index:8;display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 20px;padding:10px;background:rgba(255,255,255,.96);border:1px solid #dcdcde;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.yougitai-section-nav a{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:6px;text-decoration:none;font-weight:600;color:#1d2327;background:#f6f7f7;border:1px solid #dcdcde}
+.yougitai-section-nav a:hover,.yougitai-section-nav a:focus{color:#135e96;background:#fff;border-color:#2271b1;box-shadow:0 0 0 1px #2271b1}
+.yougitai-quick-protection{border-color:#c4b5fd;background:linear-gradient(135deg,#faf5ff 0%,#fff 55%)}
+.yougitai-quick-protection h2{margin-top:0}
+.yougitai-quick-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.yougitai-quick-step{padding:14px;border:1px solid #ddd6fe;border-radius:8px;background:#fff}
+.yougitai-quick-step strong{display:block;margin-bottom:4px;color:#4c1d95}
+.yougitai-card[id]{scroll-margin-top:92px}
+.yougitai-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:10px}
+.yougitai-card-header h2,.yougitai-card-header h3{margin:0}
+.yougitai-muted{color:#646970}
+.yougitai-empty-state{padding:22px;border:1px dashed #c3c4c7;border-radius:8px;background:#f6f7f7;text-align:center}
+.yougitai-empty-state p{margin:6px auto 14px;max-width:680px}
+.yougitai-files-layout{display:grid;grid-template-columns:minmax(280px,360px) minmax(0,1fr);gap:20px;align-items:start}
+.yougitai-files-layout .yougitai-file-list{max-height:620px}
+.yougitai-file-list>div.is-current{background:#f0f6fc;box-shadow:inset 3px 0 #2271b1}
+@media(max-width:960px){.yougitai-quick-steps{grid-template-columns:1fr}.yougitai-files-layout{grid-template-columns:1fr}.yougitai-section-nav{position:static}}
+.yougitai-workflow-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}.yougitai-workflow-item{display:flex;flex-direction:column;gap:4px;padding:15px 16px;border:1px solid #dcdcde;border-radius:10px;background:#fff}.yougitai-workflow-item>span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#646970}.yougitai-workflow-item>strong{font-size:20px;line-height:1.2;color:#1d2327}.yougitai-workflow-item>small{color:#646970;line-height:1.45}.yougitai-workflow-item.is-live{border-color:#86c995;background:#f6fff8}.yougitai-workflow-item.is-live>strong{color:#116329}
+.yougitai-safety-note{margin-top:16px;padding:13px 14px;border:1px solid #b8d7ee;border-left:4px solid #2271b1;border-radius:7px;background:#f0f6fc}.yougitai-safety-note strong{display:block;margin-bottom:4px;color:#0a4b78}.yougitai-safety-note p{margin:0;color:#3c434a;line-height:1.5}
+.yougitai-admin .yougitai-danger-soft{color:#8a2424 !important;border-color:#d63638 !important;background:#fff !important}.yougitai-admin .yougitai-danger-soft:hover,.yougitai-admin .yougitai-danger-soft:focus{color:#fff !important;border-color:#b32d2e !important;background:#b32d2e !important}
+.yougitai-file-list>div{transition:background .15s ease,border-color .15s ease}.yougitai-file-list>div.is-current{background:#f0f6fc!important;box-shadow:inset 3px 0 #2271b1}.yougitai-card .yougitai-actions form{margin:0}.yougitai-card .yougitai-actions .button{margin:0}
+@media(max-width:960px){.yougitai-workflow-status{grid-template-columns:1fr}}
+
+/* v1.0.5 display mode + repository workflow polish */
+.yougitai-workflow-status{grid-template-columns:repeat(4,minmax(0,1fr))}
+.yougitai-workflow-item.is-original{border-color:#e5a50a;background:#fff8e5}.yougitai-workflow-item.is-original>strong{color:#8a4b00}
+.yougitai-display-mode-card{border-width:2px}.yougitai-display-mode-card.is-secure{border-color:#86c995}.yougitai-display-mode-card.is-original{border-color:#dba617;background:#fffaf0}
+.yougitai-display-mode-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+.yougitai-mode-option{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid #c3c4c7;border-radius:9px;background:#fff;cursor:pointer}
+.yougitai-mode-option:hover{border-color:#2271b1}.yougitai-mode-option input{margin-top:3px}.yougitai-mode-option span{display:flex;flex-direction:column;gap:5px}.yougitai-mode-option strong{font-size:14px}.yougitai-mode-option small{color:#646970;line-height:1.45}
+.yougitai-mode-original{border-color:#dba617}.yougitai-original-confirm{grid-column:1/-1;padding:12px 14px;border:1px solid #e5a50a;border-radius:8px;background:#fff8e5}.yougitai-original-confirm label{display:flex;gap:9px;align-items:flex-start;font-weight:600;color:#6b4700}.yougitai-original-confirm[hidden]{display:none!important}
+.yougitai-display-mode-form>.yougitai-actions{grid-column:1/-1}
+.yougitai-warning p{margin-bottom:0}
+@media(max-width:960px){.yougitai-workflow-status{grid-template-columns:1fr 1fr}.yougitai-display-mode-form{grid-template-columns:1fr}}
+@media(max-width:600px){.yougitai-workflow-status{grid-template-columns:1fr}}
+
+/* v1.0.6 review workflow clarity */
+.yougitai-review-hero{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin:24px 0 14px;padding:22px 24px;border:1px solid #d8c9fb;border-radius:12px;background:linear-gradient(135deg,#faf7ff,#fff)}
+.yougitai-review-hero h2{margin:2px 0 8px;font-size:24px}.yougitai-review-hero p{max-width:760px;margin:0;color:#50575e;line-height:1.55}.yougitai-eyebrow{margin:0!important;font-size:12px!important;font-weight:700;color:#6d28d9!important;text-transform:uppercase;letter-spacing:.06em}
+.yougitai-review-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 20px}.yougitai-summary-stat{display:flex;flex-direction:column;gap:5px;padding:16px 18px;border:1px solid #dcdcde;border-radius:10px;background:#fff}.yougitai-summary-stat strong{font-size:24px;line-height:1}.yougitai-summary-stat span{color:#646970}.yougitai-summary-stat.is-protected{border-color:#86c995;background:#f6fff8}.yougitai-summary-stat.is-protected strong,.yougitai-summary-stat.is-ok strong{color:#116329}.yougitai-summary-stat.has-warning{border-color:#e5a50a;background:#fffaf0}.yougitai-summary-stat.has-warning strong{color:#8a4b00}.yougitai-summary-stat.has-danger{border-color:#d63638;background:#fff6f6}.yougitai-summary-stat.has-danger strong{color:#b32d2e}
+.yougitai-ai-review-card{border:2px solid #c4b5fd;background:linear-gradient(135deg,#faf5ff,#fff 60%)}.yougitai-ai-review-card h3{font-size:18px}.yougitai-safety-inline{margin:8px 0 0;padding:10px 12px;border-radius:7px;background:#f0f6fc;color:#0a4b78;font-weight:600}
+.yougitai-review-help{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 18px}.yougitai-review-help>div{display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid #dcdcde;border-radius:8px;background:#f6f7f7}.yougitai-review-help strong{color:#1d2327}.yougitai-review-help span{color:#646970;line-height:1.45}
+.yougitai-bulk-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 14px;padding:10px 12px;border:1px solid #dcdcde;border-radius:8px;background:#f6f7f7}.yougitai-bulk-toolbar label{display:flex;align-items:center;gap:7px;font-weight:600}.yougitai-bulk-toolbar select{min-width:230px}
+.yougitai-finding-group{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px;margin:10px 0;border:1px solid #dcdcde;border-left-width:4px;border-radius:8px;background:#fff}.yougitai-finding-group-select{align-self:start;padding-top:2px}.yougitai-finding-title-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.yougitai-finding-title-row strong{font-size:14px}.yougitai-finding-main p{margin:5px 0;color:#646970}.yougitai-finding-reasons{margin:7px 0 0 18px}.yougitai-finding-reasons li{margin:3px 0}.yougitai-group-actions{justify-content:flex-end}
+.yougitai-file-list-checkable>div{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center}.yougitai-file-list-checkable>div>a{min-width:0;overflow-wrap:anywhere}
+@media(max-width:960px){.yougitai-review-hero{flex-direction:column}.yougitai-review-summary{grid-template-columns:1fr 1fr}.yougitai-review-help{grid-template-columns:1fr}.yougitai-finding-group{grid-template-columns:auto minmax(0,1fr)}.yougitai-group-actions{grid-column:2;justify-content:flex-start}.yougitai-file-list-checkable>div{grid-template-columns:auto minmax(0,1fr)}.yougitai-file-list-checkable .yougitai-status{grid-column:2;justify-self:start}}
+@media(max-width:600px){.yougitai-review-summary{grid-template-columns:1fr}}
+
+/* v1.0.7 DIRECT setup wizard */
+.yougitai-direct-intro{margin-bottom:0}.yougitai-direct-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.yougitai-direct-steps>div{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;align-items:center;padding:14px;border:1px solid #c5d9ed;border-radius:9px;background:#fff}.yougitai-direct-steps>div>span{grid-row:1/3;display:flex;width:32px;height:32px;align-items:center;justify-content:center;border-radius:999px;background:#6d28d9;color:#fff;font-weight:700}.yougitai-direct-steps small{color:#646970;line-height:1.4}.yougitai-direct-wizard{border:2px solid #c4b5fd;background:linear-gradient(180deg,#fff 0%,#fdfbff 100%)}.yougitai-wizard-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:22px 0;border-top:1px solid #e5e7eb}.yougitai-wizard-step:first-of-type{border-top:0}.yougitai-wizard-step.is-locked{opacity:.58}.yougitai-wizard-number{display:flex;width:42px;height:42px;align-items:center;justify-content:center;border-radius:999px;background:#6d28d9;color:#fff;font-size:18px;font-weight:700}.yougitai-wizard-step.is-locked .yougitai-wizard-number{background:#8c8f94}.yougitai-wizard-content h3{margin:3px 0 7px;font-size:18px}.yougitai-direct-form-grid{display:grid;grid-template-columns:1fr 220px;gap:14px;margin:16px 0}.yougitai-direct-form-grid label{display:flex;flex-direction:column;gap:6px}.yougitai-direct-repo-list{display:grid;gap:8px;margin:14px 0}.yougitai-direct-repo-choice{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid #dcdcde;border-radius:8px;background:#fff}.yougitai-direct-repo-choice:hover{border-color:#8c8f94}.yougitai-direct-repo-choice span{display:flex;flex-direction:column;gap:2px}.yougitai-direct-repo-choice small{color:#646970}.yougitai-danger-details{margin:14px 0;padding:10px 12px;border:1px solid #e5a50a;border-radius:8px;background:#fffaf0}.yougitai-danger-details summary{cursor:pointer;font-weight:600;color:#6b4700}.yougitai-danger-choice{margin-bottom:0}.yougitai-scope-summary{margin:14px 0;padding:14px 16px;border-radius:8px;background:#f0f6fc}.yougitai-scope-summary ul{margin:8px 0 0 20px}.yougitai-scope-summary li{margin:5px 0}.yougitai-token-warning{display:flex;flex-direction:column;gap:5px;margin:12px 0 16px;padding:13px 15px;border-left:4px solid #d63638;border-radius:7px;background:#fff6f6;color:#6b2020}.yougitai-copy-field{margin:14px 0}.yougitai-copy-field>label{display:block;margin-bottom:6px;font-weight:600}.yougitai-copy-field>div:not(.yougitai-copy-textarea){display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;max-width:900px}.yougitai-copy-field input,.yougitai-copy-field textarea{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.yougitai-copy-textarea{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start;max-width:900px}.yougitai-chatgpt-steps{margin:12px 0 18px 20px}.yougitai-chatgpt-steps li{margin:8px 0;line-height:1.5}.yougitai-existing-connections{margin-top:18px}.yougitai-existing-connections summary{cursor:pointer;font-weight:600;padding:10px 0}.yougitai-copy-success{outline:2px solid #00a32a!important;outline-offset:1px}.yougitai-copy-toast{display:inline-block;margin-left:8px;color:#116329;font-weight:600}
+@media(max-width:782px){.yougitai-direct-steps{grid-template-columns:1fr}.yougitai-direct-form-grid{grid-template-columns:1fr}.yougitai-wizard-step{grid-template-columns:40px minmax(0,1fr);gap:10px}.yougitai-wizard-number{width:36px;height:36px}.yougitai-copy-field>div:not(.yougitai-copy-textarea),.yougitai-copy-textarea{grid-template-columns:1fr}.yougitai-copy-field .button{justify-self:start}}
+.yougitai-publication-form{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:16px;align-items:end}.yougitai-publication-form label{display:grid;gap:6px}.yougitai-publication-form select,.yougitai-publication-form input[type=password]{width:100%}@media(max-width:900px){.yougitai-publication-form{grid-template-columns:1fr}}
+
+.yougitai-rule-filters { display:flex; flex-wrap:wrap; gap:10px; align-items:end; margin:14px 0 10px; padding:12px; border:1px solid #dcdcde; border-radius:6px; background:#f6f7f7; }
+.yougitai-rule-filters label { display:flex; flex-direction:column; gap:4px; min-width:170px; }
+.yougitai-rule-filters select { min-width:170px; }
+.yougitai-rule-filters [data-yougitai-rule-filter-count] { margin-left:auto; align-self:center; }
+.yougitai-bulk-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:10px 0; }
+
+/* v1.0.23 guided workflow */
+.yougitai-guided-workflow{border-left:4px solid #2271b1}.yougitai-stepper{display:grid;gap:12px;margin:18px 0}.yougitai-step{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:14px;border:1px solid #dcdcde;border-radius:10px;background:#fff}.yougitai-step-number{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#f0f0f1;font-weight:700}.yougitai-step.is-done .yougitai-step-number{background:#dff3e4;color:#116329}.yougitai-step.is-current{border-color:#72aee6;box-shadow:0 0 0 1px #72aee6}.yougitai-step.is-current .yougitai-step-number{background:#2271b1;color:#fff}.yougitai-step p{margin:.35em 0 .7em}.yougitai-guided-workflow .yougitai-info-box{margin-top:12px}
+
+/* v1.0.25 overview text settings */
+.yougitai-settings-language-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:14px}.yougitai-settings-language-grid textarea{width:100%;min-height:84px}@media(max-width:900px){.yougitai-settings-language-grid{grid-template-columns:1fr}}
