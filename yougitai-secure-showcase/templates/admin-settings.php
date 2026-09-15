@@ -118,6 +118,36 @@
         </section>
 
         <section class="yougitai-card">
+            <h2><?php esc_html_e( 'Showcase colors', 'yougitai-secure-showcase' ); ?></h2>
+            <p class="description"><?php esc_html_e( 'These colors control the dark YougitAI interface only. The page background itself continues to come from your active WordPress/Elementor site design.', 'yougitai-secure-showcase' ); ?></p>
+            <div class="yougitai-color-grid">
+                <?php
+                $yougitai_color_fields = [
+                    'color_surface' => __( 'Main UI surface', 'yougitai-secure-showcase' ),
+                    'color_panel' => __( 'Cards and panels', 'yougitai-secure-showcase' ),
+                    'color_code' => __( 'Code / browser surface', 'yougitai-secure-showcase' ),
+                    'color_border' => __( 'Borders', 'yougitai-secure-showcase' ),
+                    'color_text' => __( 'Primary text', 'yougitai-secure-showcase' ),
+                    'color_muted' => __( 'Secondary text', 'yougitai-secure-showcase' ),
+                    'color_accent' => __( 'Accent / links', 'yougitai-secure-showcase' ),
+                    'color_accent_hover' => __( 'Accent hover', 'yougitai-secure-showcase' ),
+                    'color_selected' => __( 'Active selection', 'yougitai-secure-showcase' ),
+                ];
+                ?>
+                <?php foreach ( $yougitai_color_fields as $field => $label ) : ?>
+                    <label class="yougitai-color-field">
+                        <span><?php echo esc_html( $label ); ?></span>
+                        <span class="yougitai-color-control">
+                            <input type="color" name="<?php echo esc_attr( $field ); ?>" value="<?php echo esc_attr( $settings[ $field ] ); ?>">
+                            <code><?php echo esc_html( $settings[ $field ] ); ?></code>
+                        </span>
+                    </label>
+                <?php endforeach; ?>
+            </div>
+            <p class="description"><?php esc_html_e( 'Defaults follow the original dark GitHub-like YougitAI palette. Changing Elementor global colors will no longer recolor the application UI.', 'yougitai-secure-showcase' ); ?></p>
+        </section>
+
+        <section class="yougitai-card">
             <h2><?php esc_html_e( 'Data retention', 'yougitai-secure-showcase' ); ?></h2>
             <label class="yougitai-checkbox"><input type="checkbox" name="delete_data_on_uninstall" value="1" <?php checked( $settings['delete_data_on_uninstall'] ); ?>> <span><?php esc_html_e( 'Delete all YougitAI repository data, snapshots, rules, findings, logs, tokens, and settings when the plugin is uninstalled', 'yougitai-secure-showcase' ); ?></span></label>
             <p class="description"><?php esc_html_e( 'Leave this disabled if you want data preserved when temporarily removing the plugin.', 'yougitai-secure-showcase' ); ?></p>
