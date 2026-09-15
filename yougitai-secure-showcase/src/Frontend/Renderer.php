@@ -19,6 +19,26 @@ final class Renderer {
         add_action( 'template_redirect', [ $this, 'template_redirect' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ], 5 );
         add_action( 'wp_enqueue_scripts', [ $this, 'maybe_enqueue_content_assets' ], 20 );
+        add_filter( 'body_class', [ $this, 'body_class' ] );
+    }
+
+    public function body_class( array $classes ): array {
+        if ( ! get_query_var( 'yougitai_showcase' ) && ! get_query_var( 'yougitai_showcase_index' ) ) {
+            return $classes;
+        }
+
+        if ( class_exists( '\\Elementor\\Plugin' ) ) {
+            try {
+                $kit_id = (int) \Elementor\Plugin::$instance->kits_manager->get_active_id();
+                if ( $kit_id > 0 ) {
+                    $classes[] = 'elementor-kit-' . $kit_id;
+                }
+            } catch ( \Throwable $e ) {
+                // Elementor integration is optional; fall back to the active theme.
+            }
+        }
+
+        return array_values( array_unique( $classes ) );
     }
 
     public function register_assets(): void {
@@ -69,7 +89,7 @@ final class Renderer {
             $custom_description = trim( (string) get_option( 'yougitai_ss_index_description_' . $language_key, '' ) );
             $index_title = $custom_title !== '' ? $custom_title : $default_title;
             $index_description = $custom_description !== '' ? $custom_description : $default_description;
-            echo '<main class="yougitai-standalone-wrap yougitai-repositories-index"><header class="yougitai-index-header"><h1>' . esc_html( $index_title ) . '</h1><p>' . esc_html( $index_description ) . '</p></header>' . $this->render_grid( 'auto', 3 ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<main class="yougitai-standalone-wrap yougitai-repositories-index"><header class="yougitai-index-header"><h1>' . esc_html( $index_title ) . '</h1><p>' . esc_html( $index_description ) . '</p></header>' . $this->render_grid( 'dark', 3 ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             get_footer();
             exit;
         }
@@ -103,7 +123,7 @@ final class Renderer {
         wp_enqueue_style( 'yougitai-ss-frontend' );
         wp_enqueue_script( 'yougitai-ss-frontend' );
         get_header();
-        echo '<main class="yougitai-standalone-wrap">' . $this->render( [ 'id' => (int) $repository['id'], 'theme' => 'auto' ] ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '<main class="yougitai-standalone-wrap">' . $this->render( [ 'id' => (int) $repository['id'], 'theme' => 'dark' ] ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         get_footer();
         exit;
     }
