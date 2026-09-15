@@ -176,6 +176,11 @@ final class Admin {
             'color_accent' => (string) get_option( 'yougitai_ss_color_accent', '#58a6ff' ),
             'color_accent_hover' => (string) get_option( 'yougitai_ss_color_accent_hover', '#79c0ff' ),
             'color_selected' => (string) get_option( 'yougitai_ss_color_selected', '#1f2d3d' ),
+            'color_warning_bg' => (string) get_option( 'yougitai_ss_color_warning_bg', '#3b2f0b' ),
+            'color_warning_border' => (string) get_option( 'yougitai_ss_color_warning_border', '#9e6a03' ),
+            'color_warning_text' => (string) get_option( 'yougitai_ss_color_warning_text', '#e3b341' ),
+            'color_blackout' => (string) get_option( 'yougitai_ss_color_blackout', '#020409' ),
+            'color_blackout_edge' => (string) get_option( 'yougitai_ss_color_blackout_edge', '#30363d' ),
         ];
         include YOUGITAI_SS_DIR . 'templates/admin-settings.php';
     }
@@ -683,6 +688,11 @@ final class Admin {
             'color_accent' => '#58a6ff',
             'color_accent_hover' => '#79c0ff',
             'color_selected' => '#1f2d3d',
+            'color_warning_bg' => '#3b2f0b',
+            'color_warning_border' => '#9e6a03',
+            'color_warning_text' => '#e3b341',
+            'color_blackout' => '#020409',
+            'color_blackout_edge' => '#30363d',
         ];
         foreach ( $color_defaults as $field => $default_color ) {
             $raw_color = isset( $_POST[ $field ] ) ? sanitize_text_field( wp_unslash( $_POST[ $field ] ) ) : $default_color;
