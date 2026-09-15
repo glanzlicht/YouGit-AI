@@ -157,3 +157,36 @@
 .yougitai-repositories-index .yougitai-project-link:focus-visible{
   color:var(--yg-link-hover,#79c0ff)!important;
 }
+
+
+/* v1.0.30 — isolate YougitAI controls from theme/Elementor global button styles */
+.yougitai-showcase button,
+.yougitai-showcase button:visited{
+  font:inherit!important;
+  text-transform:none!important;
+  letter-spacing:normal!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+.yougitai-showcase .yougitai-folder-toggle{
+  background:transparent!important;
+  color:inherit!important;
+  border:0!important;
+}
+.yougitai-showcase .yougitai-folder-toggle:hover,
+.yougitai-showcase .yougitai-folder-toggle:focus-visible{
+  background:var(--yg-code)!important;
+  color:var(--yg-link)!important;
+  border:0!important;
+}
+.yougitai-showcase .yougitai-tree-actions button{
+  background:transparent!important;
+  color:var(--yg-muted)!important;
+  border:1px solid var(--yg-border)!important;
+}
+.yougitai-showcase .yougitai-tree-actions button:hover,
+.yougitai-showcase .yougitai-tree-actions button:focus-visible{
+  background:var(--yg-code)!important;
+  color:var(--yg-link)!important;
+  border-color:var(--yg-link)!important;
+}
