@@ -190,3 +190,154 @@
   color:var(--yg-link)!important;
   border-color:var(--yg-link)!important;
 }
+
+
+/* v1.0.31 — full frontend color centralization
+ * Every dark showcase UI color now resolves through backend-controlled variables.
+ * Elementor/theme may still style the page canvas around the showcase.
+ */
+.yougitai-showcase,
+.yougitai-portfolio-grid{
+  color:var(--yg-text);
+}
+.yougitai-showcase,
+.yougitai-showcase[data-theme="dark"],
+.yougitai-portfolio-grid,
+.yougitai-portfolio-grid[data-theme="dark"]{
+  --yg-index-text:var(--yg-text);
+  --yg-index-heading:var(--yg-text);
+  --yg-index-muted:var(--yg-muted);
+  --yg-index-link:var(--yg-link);
+  --yg-index-link-hover:var(--yg-link-hover);
+}
+.yougitai-showcase[data-theme="dark"],
+.yougitai-portfolio-grid[data-theme="dark"]{
+  background:var(--yg-bg);
+  border-color:var(--yg-border);
+  color:var(--yg-text);
+}
+.yougitai-showcase[data-theme="dark"] .yougitai-overview-side,
+.yougitai-showcase[data-theme="dark"] .yougitai-architecture-node,
+.yougitai-showcase[data-theme="dark"] .yougitai-protected-file-icon,
+.yougitai-showcase[data-theme="dark"] .yougitai-tree a:hover,
+.yougitai-showcase[data-theme="dark"] .yougitai-tree a:focus-visible{
+  background:var(--yg-panel)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-showcase[data-theme="dark"] .yougitai-tree a.is-active{
+  background:var(--yg-link-active-bg)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-showcase .yougitai-tabs,
+.yougitai-showcase .yougitai-code-view,
+.yougitai-showcase .yougitai-code-panel pre,
+.yougitai-showcase .yougitai-protected-file-view{
+  background:var(--yg-code);
+}
+.yougitai-showcase .yougitai-tabs,
+.yougitai-showcase .yougitai-code-head,
+.yougitai-showcase .yougitai-stats,
+.yougitai-showcase .yougitai-grid,
+.yougitai-showcase .yougitai-tree,
+.yougitai-showcase .yougitai-overview-side,
+.yougitai-showcase .yougitai-architecture-node,
+.yougitai-showcase .yougitai-protected-file-icon,
+.yougitai-showcase .yougitai-badge,
+.yougitai-showcase .yougitai-chips span,
+.yougitai-showcase .yougitai-protected-label,
+.yougitai-showcase .yougitai-tree-actions button{
+  border-color:var(--yg-border)!important;
+}
+.yougitai-showcase .yougitai-stats,
+.yougitai-showcase .yougitai-code-head span,
+.yougitai-showcase .yougitai-architecture-node small,
+.yougitai-showcase .yougitai-showcase-footer,
+.yougitai-showcase .yougitai-protected-file-note,
+.yougitai-showcase .yougitai-tree-actions button{
+  color:var(--yg-muted)!important;
+}
+.yougitai-showcase a,
+.yougitai-showcase a:visited,
+.yougitai-repositories-index .yougitai-project-link,
+.yougitai-repositories-index .yougitai-project-link:visited{
+  color:var(--yg-link)!important;
+}
+.yougitai-showcase a:hover,
+.yougitai-showcase a:focus-visible,
+.yougitai-repositories-index .yougitai-project-link:hover,
+.yougitai-repositories-index .yougitai-project-link:focus-visible{
+  color:var(--yg-link-hover)!important;
+}
+.yougitai-showcase .yougitai-security-note,
+.yougitai-showcase .yougitai-redaction-badge,
+.yougitai-showcase .yougitai-blackout-count{
+  background:var(--yg-warning-bg)!important;
+  border-color:var(--yg-warning-border)!important;
+  color:var(--yg-warning-text)!important;
+}
+.yougitai-showcase .yougitai-code-line.has-redaction{
+  background:color-mix(in srgb,var(--yg-warning-border) 12%,transparent)!important;
+}
+.yougitai-showcase .yougitai-code-line.has-redaction .yougitai-line-no{
+  color:var(--yg-warning-border)!important;
+  border-right-color:var(--yg-warning-border)!important;
+}
+.yougitai-showcase .yougitai-blackout{
+  background:linear-gradient(180deg,var(--yg-blackout-edge),var(--yg-blackout) 24%,var(--yg-blackout) 78%,var(--yg-blackout-edge))!important;
+}
+.yougitai-access-gate{
+  border-color:var(--yg-border)!important;
+  background:var(--yg-panel)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-access-gate input[type=password]{
+  border-color:var(--yg-border)!important;
+}
+.yougitai-button{
+  background:var(--yg-link)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-button:hover,
+.yougitai-button:focus-visible{
+  background:var(--yg-link-hover)!important;
+}
+.yougitai-language-bars progress{
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;
+  height:8px;
+  border:0;
+  border-radius:999px;
+  overflow:hidden;
+  background:var(--yg-code)!important;
+}
+.yougitai-language-bars progress::-webkit-progress-bar{
+  background:var(--yg-code)!important;
+}
+.yougitai-language-bars progress::-webkit-progress-value{
+  background:var(--yg-link)!important;
+}
+.yougitai-language-bars progress::-moz-progress-bar{
+  background:var(--yg-link)!important;
+}
+.yougitai-repositories-index .yougitai-portfolio-grid,
+.yougitai-repositories-index .yougitai-project-card{
+  color:var(--yg-text)!important;
+}
+.yougitai-repositories-index .yougitai-project-card{
+  background:var(--yg-panel)!important;
+  border-color:var(--yg-border)!important;
+}
+.yougitai-repositories-index .yougitai-project-card h3{
+  color:var(--yg-text)!important;
+}
+.yougitai-repositories-index .yougitai-project-card p,
+.yougitai-repositories-index .yougitai-project-meta{
+  color:var(--yg-muted)!important;
+}
+.yougitai-repositories-index .yougitai-badge,
+.yougitai-repositories-index .yougitai-chips span{
+  background:var(--yg-code)!important;
+  border-color:var(--yg-border)!important;
+  color:var(--yg-text)!important;
+}
