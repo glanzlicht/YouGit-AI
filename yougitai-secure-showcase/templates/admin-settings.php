@@ -132,6 +132,11 @@
                     'color_accent' => __( 'Accent / links', 'yougitai-secure-showcase' ),
                     'color_accent_hover' => __( 'Accent hover', 'yougitai-secure-showcase' ),
                     'color_selected' => __( 'Active selection', 'yougitai-secure-showcase' ),
+                    'color_warning_bg' => __( 'Warning / redaction background', 'yougitai-secure-showcase' ),
+                    'color_warning_border' => __( 'Warning / redaction border', 'yougitai-secure-showcase' ),
+                    'color_warning_text' => __( 'Warning / redaction text', 'yougitai-secure-showcase' ),
+                    'color_blackout' => __( 'Redaction blackout', 'yougitai-secure-showcase' ),
+                    'color_blackout_edge' => __( 'Redaction blackout edge', 'yougitai-secure-showcase' ),
                 ];
                 ?>
                 <?php foreach ( $yougitai_color_fields as $field => $label ) : ?>
