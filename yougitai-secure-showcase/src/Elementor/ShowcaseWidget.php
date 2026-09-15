@@ -37,11 +37,12 @@ final class ShowcaseWidget extends Widget_Base {
             'label' => __( 'Theme', 'yougitai-secure-showcase' ),
             'type' => Controls_Manager::SELECT,
             'options' => [
-                'auto' => __( 'Automatic', 'yougitai-secure-showcase' ),
+                'inherit' => __( 'Website / Elementor', 'yougitai-secure-showcase' ),
+                'auto' => __( 'Automatic (device)', 'yougitai-secure-showcase' ),
                 'light' => __( 'Light', 'yougitai-secure-showcase' ),
                 'dark' => __( 'Dark', 'yougitai-secure-showcase' ),
             ],
-            'default' => 'auto',
+            'default' => 'inherit',
         ] );
         $this->end_controls_section();
     }
@@ -51,7 +52,7 @@ final class ShowcaseWidget extends Widget_Base {
         $renderer = new Renderer( $this->repositories );
         echo $renderer->render( [
             'id' => absint( $settings['repository_id'] ?? 0 ),
-            'theme' => sanitize_key( (string) ( $settings['theme'] ?? 'auto' ) ),
+            'theme' => sanitize_key( (string) ( $settings['theme'] ?? 'inherit' ) ),
         ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 }
