@@ -98,3 +98,76 @@
 .yougitai-protected-file-view p{margin:0 0 10px;line-height:1.6;color:inherit}
 .yougitai-protected-file-note{color:var(--yg-muted)!important}
 @media(max-width:760px){.yougitai-protected-file-view{padding:32px 20px;display:block}.yougitai-protected-file-icon{margin-bottom:16px}}
+
+
+/* v1.0.27 — inherit active WordPress / Elementor site design
+ *
+ * "inherit" is now the default theme. The plugin does not decide whether the
+ * website is light or dark. Instead it consumes the site's own design tokens.
+ * Elementor Global Colors are used when available; generic CSS inheritance is
+ * the final fallback so changing Site Settings does not require a plugin edit.
+ */
+.yougitai-showcase[data-theme="inherit"],
+.yougitai-portfolio-grid[data-theme="inherit"]{
+  --yg-border:var(--e-global-color-secondary, color-mix(in srgb,currentColor 22%,transparent));
+  --yg-bg:var(--e-global-color-background, transparent);
+  --yg-muted:var(--e-global-color-text, currentColor);
+  --yg-code:var(--e-global-color-secondary, color-mix(in srgb,currentColor 7%,transparent));
+  --yg-link:var(--e-global-color-primary, currentColor);
+  --yg-link-hover:var(--e-global-color-accent,var(--yg-link));
+  --yg-link-active-bg:color-mix(in srgb,var(--yg-link) 12%,transparent);
+  --yg-focus:var(--yg-link);
+  color:var(--e-global-color-text,inherit);
+  background:transparent;
+}
+.yougitai-repositories-index{
+  color:var(--e-global-color-text,inherit)!important;
+}
+.yougitai-repositories-index .yougitai-index-header h1,
+.yougitai-repositories-index .yougitai-project-card h3{
+  color:var(--e-global-color-text,inherit)!important;
+}
+.yougitai-repositories-index .yougitai-index-header p,
+.yougitai-repositories-index .yougitai-project-card p,
+.yougitai-repositories-index .yougitai-project-meta{
+  color:var(--e-global-color-text,inherit)!important;
+  opacity:.78;
+}
+.yougitai-portfolio-grid[data-theme="inherit"] .yougitai-project-card,
+.yougitai-showcase[data-theme="inherit"]{
+  background:var(--yg-bg);
+  border-color:var(--yg-border);
+}
+.yougitai-showcase[data-theme="inherit"] .yougitai-tabs,
+.yougitai-showcase[data-theme="inherit"] .yougitai-overview-side,
+.yougitai-showcase[data-theme="inherit"] .yougitai-architecture-node,
+.yougitai-showcase[data-theme="inherit"] .yougitai-protected-file-icon{
+  background:var(--yg-bg);
+}
+.yougitai-showcase[data-theme="inherit"] .yougitai-tree a:hover,
+.yougitai-showcase[data-theme="inherit"] .yougitai-folder-toggle:hover,
+.yougitai-showcase[data-theme="inherit"] .yougitai-folder-toggle:focus-visible{
+  background:var(--yg-code);
+}
+.yougitai-showcase[data-theme="inherit"] .yougitai-tree a.is-active{
+  background:var(--yg-link-active-bg);
+}
+.yougitai-showcase[data-theme="inherit"] .yougitai-security-note{
+  background:color-mix(in srgb,var(--e-global-color-accent,#d4a72c) 12%,transparent);
+  border-bottom-color:color-mix(in srgb,var(--e-global-color-accent,#d4a72c) 60%,transparent);
+  color:inherit;
+}
+.yougitai-showcase[data-theme="inherit"] .yougitai-redaction-badge,
+.yougitai-showcase[data-theme="inherit"] .yougitai-blackout-count{
+  background:color-mix(in srgb,var(--e-global-color-accent,#d4a72c) 14%,transparent);
+  color:inherit;
+}
+.yougitai-repositories-index .yougitai-project-link,
+.yougitai-repositories-index .yougitai-project-link:visited{
+  color:var(--e-global-color-primary,currentColor)!important;
+}
+.yougitai-repositories-index .yougitai-project-link:hover,
+.yougitai-repositories-index .yougitai-project-link:focus-visible,
+.yougitai-repositories-index .yougitai-project-link:active{
+  color:var(--e-global-color-accent,var(--e-global-color-primary,currentColor))!important;
+}
