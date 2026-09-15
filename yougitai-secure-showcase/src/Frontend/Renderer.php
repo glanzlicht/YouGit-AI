@@ -43,6 +43,23 @@ final class Renderer {
 
     public function register_assets(): void {
         wp_register_style( 'yougitai-ss-frontend', YOUGITAI_SS_URL . 'assets/css/frontend.css', [], YOUGITAI_SS_VERSION );
+
+        $colors = [
+            'surface' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_surface', '#0d1117' ) ) ?: '#0d1117',
+            'panel' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_panel', '#161b22' ) ) ?: '#161b22',
+            'code' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_code', '#0d1117' ) ) ?: '#0d1117',
+            'border' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_border', '#30363d' ) ) ?: '#30363d',
+            'text' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_text', '#c9d1d9' ) ) ?: '#c9d1d9',
+            'muted' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_muted', '#8b949e' ) ) ?: '#8b949e',
+            'accent' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_accent', '#58a6ff' ) ) ?: '#58a6ff',
+            'accent_hover' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_accent_hover', '#79c0ff' ) ) ?: '#79c0ff',
+            'selected' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_selected', '#1f2d3d' ) ) ?: '#1f2d3d',
+        ];
+        $custom_css = sprintf(
+            '.yougitai-showcase[data-theme="dark"],.yougitai-portfolio-grid[data-theme="dark"]{--yg-bg:%1$s;--yg-panel:%2$s;--yg-code:%3$s;--yg-border:%4$s;--yg-text:%5$s;--yg-muted:%6$s;--yg-link:%7$s;--yg-link-hover:%8$s;--yg-link-active-bg:%9$s;--yg-focus:%7$s}.yougitai-showcase[data-theme="dark"]{color:%5$s}.yougitai-repositories-index .yougitai-portfolio-grid[data-theme="dark"]{color:%5$s!important}.yougitai-repositories-index .yougitai-project-card{background:%2$s!important;border-color:%4$s!important;color:%5$s!important}.yougitai-repositories-index .yougitai-project-card h3{color:%5$s!important}.yougitai-repositories-index .yougitai-project-card p,.yougitai-repositories-index .yougitai-project-meta{color:%6$s!important}.yougitai-repositories-index .yougitai-badge,.yougitai-repositories-index .yougitai-chips span{background:%3$s!important;border-color:%4$s!important;color:%5$s!important}.yougitai-repositories-index .yougitai-project-link,.yougitai-repositories-index .yougitai-project-link:visited{color:%7$s!important}.yougitai-repositories-index .yougitai-project-link:hover,.yougitai-repositories-index .yougitai-project-link:focus-visible{color:%8$s!important}.yougitai-showcase[data-theme="dark"] .yougitai-tree a.is-active{background:%9$s!important;color:%5$s!important}.yougitai-showcase[data-theme="dark"] .yougitai-tree a:hover,.yougitai-showcase[data-theme="dark"] .yougitai-tree a:focus-visible{background:%3$s!important;color:%5$s!important}',
+            $colors['surface'], $colors['panel'], $colors['code'], $colors['border'], $colors['text'], $colors['muted'], $colors['accent'], $colors['accent_hover'], $colors['selected']
+        );
+        wp_add_inline_style( 'yougitai-ss-frontend', $custom_css );
         wp_register_script( 'yougitai-ss-frontend', YOUGITAI_SS_URL . 'assets/js/frontend.js', [], YOUGITAI_SS_VERSION, true );
     }
 
