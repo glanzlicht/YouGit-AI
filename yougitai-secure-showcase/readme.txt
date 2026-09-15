@@ -59,3 +59,7 @@ Repository data is preserved on uninstall by default. Administrators can explici
 = 1.0.29 =
 * Added configurable showcase colors in the plugin settings.
 * Kept Elementor responsible only for the page canvas while YougitAI retains its own UI palette.
+
+
+= 1.0.30 =
+* Isolated repository browser buttons from global Elementor/theme button styles.
