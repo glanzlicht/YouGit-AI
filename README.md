@@ -76,7 +76,7 @@ Typical public routes:
 
 The plugin is designed around a strict separation between original repository material and public showcase snapshots. Repository contents are treated as untrusted input, publication requires explicit human approval, and protected content is not returned through the public showcase API.
 
-See [`SECURITY.md`](SECURITY.md).
+See [`SECURITY.md`](yougitai-secure-showcase/SECURITY.md).
 
 ## Installation
 
