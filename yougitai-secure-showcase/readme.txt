@@ -54,3 +54,8 @@ For private repositories, use either an encrypted fine-grained token or configur
 == Data retention ==
 
 Repository data is preserved on uninstall by default. Administrators can explicitly enable secure deletion of plugin tables, stored credentials and settings from the settings screen before uninstalling.
+
+
+= 1.0.29 =
+* Added configurable showcase colors in the plugin settings.
+* Kept Elementor responsible only for the page canvas while YougitAI retains its own UI palette.
