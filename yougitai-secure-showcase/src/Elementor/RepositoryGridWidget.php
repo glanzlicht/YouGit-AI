@@ -18,7 +18,7 @@ final class RepositoryGridWidget extends Widget_Base {
     protected function register_controls(): void {
         $this->start_controls_section( 'content', [ 'label' => __( 'Content', 'yougitai-secure-showcase' ) ] );
         $this->add_control( 'columns', [ 'label' => __( 'Columns', 'yougitai-secure-showcase' ), 'type' => Controls_Manager::SELECT, 'options' => [ '1'=>'1','2'=>'2','3'=>'3','4'=>'4' ], 'default' => '3' ] );
-        $this->add_control( 'theme', [ 'label' => __( 'Theme', 'yougitai-secure-showcase' ), 'type' => Controls_Manager::SELECT, 'options' => [ 'auto'=>__( 'Automatic','yougitai-secure-showcase'),'light'=>__( 'Light','yougitai-secure-showcase'),'dark'=>__( 'Dark','yougitai-secure-showcase') ], 'default'=>'auto' ] );
+        $this->add_control( 'theme', [ 'label' => __( 'Theme', 'yougitai-secure-showcase' ), 'type' => Controls_Manager::SELECT, 'options' => [ 'auto'=>__( 'Automatic','yougitai-secure-showcase'),'light'=>__( 'Light','yougitai-secure-showcase'),'dark'=>__( 'Dark','yougitai-secure-showcase') ], 'default'=>'dark' ] );
         $this->end_controls_section();
     }
     protected function render(): void {
