@@ -19,10 +19,61 @@ final class Renderer {
         add_action( 'template_redirect', [ $this, 'template_redirect' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ], 5 );
         add_action( 'wp_enqueue_scripts', [ $this, 'maybe_enqueue_content_assets' ], 20 );
+        add_filter( 'body_class', [ $this, 'body_class' ] );
+    }
+
+    public function body_class( array $classes ): array {
+        if ( ! get_query_var( 'yougitai_showcase' ) && ! get_query_var( 'yougitai_showcase_index' ) ) {
+            return $classes;
+        }
+
+        if ( class_exists( '\\Elementor\\Plugin' ) ) {
+            try {
+                $kit_id = (int) \Elementor\Plugin::$instance->kits_manager->get_active_id();
+                if ( $kit_id > 0 ) {
+                    $classes[] = 'elementor-kit-' . $kit_id;
+                }
+            } catch ( \Throwable $e ) {
+                // Elementor integration is optional; fall back to the active theme.
+            }
+        }
+
+        return array_values( array_unique( $classes ) );
     }
 
     public function register_assets(): void {
         wp_register_style( 'yougitai-ss-frontend', YOUGITAI_SS_URL . 'assets/css/frontend.css', [], YOUGITAI_SS_VERSION );
+
+        $colors = [
+            'surface' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_surface', '#0d1117' ) ) ?: '#0d1117',
+            'panel' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_panel', '#161b22' ) ) ?: '#161b22',
+            'code' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_code', '#0d1117' ) ) ?: '#0d1117',
+            'border' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_border', '#30363d' ) ) ?: '#30363d',
+            'text' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_text', '#c9d1d9' ) ) ?: '#c9d1d9',
+            'muted' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_muted', '#8b949e' ) ) ?: '#8b949e',
+            'accent' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_accent', '#58a6ff' ) ) ?: '#58a6ff',
+            'accent_hover' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_accent_hover', '#79c0ff' ) ) ?: '#79c0ff',
+            'nav_hover' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_nav_hover', '#79c0ff' ) ) ?: '#79c0ff',
+            'nav_underline' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_nav_underline', '#79c0ff' ) ) ?: '#79c0ff',
+            'tree_hover_bg' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_tree_hover_bg', '#161b22' ) ) ?: '#161b22',
+            'tree_hover_text' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_tree_hover_text', '#f0f6fc' ) ) ?: '#f0f6fc',
+            'tree_active_bg' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_tree_active_bg', '#1f2328' ) ) ?: '#1f2328',
+            'tree_active_marker' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_tree_active_marker', '#8b949e' ) ) ?: '#8b949e',
+            'focus' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_focus', '#f0f6fc' ) ) ?: '#f0f6fc',
+            'progress' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_progress', '#3fb950' ) ) ?: '#3fb950',
+            'progress_track' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_progress_track', '#21262d' ) ) ?: '#21262d',
+            'selected' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_selected', '#1f2d3d' ) ) ?: '#1f2d3d',
+            'warning_bg' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_warning_bg', '#3b2f0b' ) ) ?: '#3b2f0b',
+            'warning_border' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_warning_border', '#9e6a03' ) ) ?: '#9e6a03',
+            'warning_text' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_warning_text', '#e3b341' ) ) ?: '#e3b341',
+            'blackout' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_blackout', '#020409' ) ) ?: '#020409',
+            'blackout_edge' => sanitize_hex_color( (string) get_option( 'yougitai_ss_color_blackout_edge', '#30363d' ) ) ?: '#30363d',
+        ];
+        $custom_css = sprintf(
+            '.yougitai-showcase,.yougitai-showcase[data-theme],.yougitai-portfolio-grid,.yougitai-portfolio-grid[data-theme]{--yg-bg:%1$s!important;--yg-panel:%2$s!important;--yg-code:%3$s!important;--yg-border:%4$s!important;--yg-text:%5$s!important;--yg-muted:%6$s!important;--yg-link:%7$s!important;--yg-link-hover:%8$s!important;--yg-nav-hover:%9$s!important;--yg-nav-underline:%10$s!important;--yg-tree-hover-bg:%11$s!important;--yg-tree-hover-text:%12$s!important;--yg-tree-active-bg:%13$s!important;--yg-tree-active-marker:%14$s!important;--yg-focus:%15$s!important;--yg-progress:%16$s!important;--yg-progress-track:%17$s!important;--yg-link-active-bg:%13$s!important;--yg-warning-bg:%18$s!important;--yg-warning-border:%19$s!important;--yg-warning-text:%20$s!important;--yg-blackout:%21$s!important;--yg-blackout-edge:%22$s!important}.yougitai-showcase .yougitai-blackout{background:linear-gradient(180deg,%22$s,%21$s 24%%,%21$s 78%%,%22$s)!important}.yougitai-showcase .yougitai-tabs a,.yougitai-showcase .yougitai-tabs a:visited{color:%6$s!important}.yougitai-showcase .yougitai-tabs a:hover,.yougitai-showcase .yougitai-tabs a:focus-visible,.yougitai-showcase .yougitai-tabs a:active{color:%9$s!important;border-bottom-color:%10$s!important}.yougitai-showcase .yougitai-tree a:hover,.yougitai-showcase .yougitai-tree a:focus-visible,.yougitai-showcase .yougitai-folder-toggle:hover,.yougitai-showcase .yougitai-folder-toggle:focus-visible,.yougitai-showcase .yougitai-tree-actions button:hover,.yougitai-showcase .yougitai-tree-actions button:focus-visible{background:%11$s!important;color:%12$s!important;border-color:%14$s!important}.yougitai-showcase .yougitai-tree a.is-active{background:%13$s!important;color:%5$s!important;box-shadow:inset 3px 0 0 %14$s!important}.yougitai-showcase a:focus-visible,.yougitai-showcase button:focus-visible,.yougitai-blackout:focus-visible{outline-color:%15$s!important}',
+            $colors['surface'], $colors['panel'], $colors['code'], $colors['border'], $colors['text'], $colors['muted'], $colors['accent'], $colors['accent_hover'], $colors['nav_hover'], $colors['nav_underline'], $colors['tree_hover_bg'], $colors['tree_hover_text'], $colors['tree_active_bg'], $colors['tree_active_marker'], $colors['focus'], $colors['progress'], $colors['progress_track'], $colors['warning_bg'], $colors['warning_border'], $colors['warning_text'], $colors['blackout'], $colors['blackout_edge']
+        );
+        wp_add_inline_style( 'yougitai-ss-frontend', $custom_css );
         wp_register_script( 'yougitai-ss-frontend', YOUGITAI_SS_URL . 'assets/js/frontend.js', [], YOUGITAI_SS_VERSION, true );
     }
 
@@ -69,7 +120,7 @@ final class Renderer {
             $custom_description = trim( (string) get_option( 'yougitai_ss_index_description_' . $language_key, '' ) );
             $index_title = $custom_title !== '' ? $custom_title : $default_title;
             $index_description = $custom_description !== '' ? $custom_description : $default_description;
-            echo '<main class="yougitai-standalone-wrap yougitai-repositories-index"><header class="yougitai-index-header"><h1>' . esc_html( $index_title ) . '</h1><p>' . esc_html( $index_description ) . '</p></header>' . $this->render_grid( 'auto', 3 ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo '<main class="yougitai-standalone-wrap yougitai-repositories-index"><header class="yougitai-index-header"><h1>' . esc_html( $index_title ) . '</h1><p>' . esc_html( $index_description ) . '</p></header>' . $this->render_grid( 'dark', 3 ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             get_footer();
             exit;
         }
@@ -103,7 +154,7 @@ final class Renderer {
         wp_enqueue_style( 'yougitai-ss-frontend' );
         wp_enqueue_script( 'yougitai-ss-frontend' );
         get_header();
-        echo '<main class="yougitai-standalone-wrap">' . $this->render( [ 'id' => (int) $repository['id'], 'theme' => 'auto' ] ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '<main class="yougitai-standalone-wrap">' . $this->render( [ 'id' => (int) $repository['id'], 'theme' => 'dark' ] ) . '</main>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         get_footer();
         exit;
     }

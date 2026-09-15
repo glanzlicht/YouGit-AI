@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.0.35
+- Fixed redaction marker colors being overridden by higher-specificity dark/auto theme CSS. Saved backend blackout and edge colors now win reliably.
+- Added an explicit localized tooltip for every redaction marker on mouse hover and keyboard focus, while retaining native title and screen-reader labels.
+- Tooltip text follows the active WordPress locale (German/English translations included).
+
+## 1.0.34
+- Added independent repository-browser hover background/text, active background/marker, and keyboard focus colors.
+- Removed the remaining blue hover dependency from repository-browser controls.
+- Added a visible redaction legend in the repository browser so partially redacted files are easier to find.
+- Kept redaction-marker fill and edge colors configurable in Settings.
+- Redaction markers retain localized mouseover/focus explanations.
+
+## 1.0.33
+- Added dedicated configurable colors for navigation/tab hover and underline states so Overview / Code / Architecture / Tech stack no longer depend on hardcoded blue hover values.
+- Redaction marker (blackout / “marker pen”) fill and edge colors remain configurable in the backend and are now labelled more clearly.
+- Partially redacted files now show explicit tree badges such as “3 redactions” / “3 Schwärzungen” instead of only a number.
+- Redaction markers now provide a localized mouseover hint explaining that the area was redacted to protect sensitive or proprietary implementation details.
+- Redaction markers are keyboard-focusable for the same explanatory accessibility text.
+
+## 1.0.32
+- Added independent, configurable Skill / progress bar fill and track colors. Progress bars no longer inherit the blue link/accent color.
+- New default progress fill is green (`#3fb950`) with a dark track (`#21262d`).
+- Fixed the WordPress readme Stable tag mismatch (1.0.31 package still reported 1.0.26).
+- Extended uninstall cleanup to remove repository-overview and showcase-color options when explicit full data deletion is enabled.
+- Preserved all 1.0.31 frontend color centralization and Elementor/theme isolation behavior.
+
 ## 1.0.26
 - Refresh GitHub repository metadata before every real GitHub snapshot import/sync.
 - GitHub About/description changes now update the local repository description and therefore the public repository overview after the next GitHub sync.
@@ -84,6 +110,13 @@
 
 # Changelog
 
+## 1.0.34
+- Added independent repository-browser hover background/text, active background/marker, and keyboard focus colors.
+- Removed the remaining blue hover dependency from repository-browser controls.
+- Added a visible redaction legend in the repository browser so partially redacted files are easier to find.
+- Kept redaction-marker fill and edge colors configurable in Settings.
+- Redaction markers retain localized mouseover/focus explanations.
+
 ## 1.0.14
 - Replaced the flat public file list with a collapsible repository tree.
 - Added visible marker-style blackout overlays for protected passages in public code.
@@ -112,6 +145,13 @@
 - Fixed ChatGPT OAuth discovery for path-based MCP endpoints by serving RFC 9728 protected-resource metadata at both the root and resource-specific well-known URI and advertising the resource-specific URL in 401 challenges.
 
 # Changelog
+
+## 1.0.34
+- Added independent repository-browser hover background/text, active background/marker, and keyboard focus colors.
+- Removed the remaining blue hover dependency from repository-browser controls.
+- Added a visible redaction legend in the repository browser so partially redacted files are easier to find.
+- Kept redaction-marker fill and edge colors configurable in Settings.
+- Redaction markers retain localized mouseover/focus explanations.
 
 ## 1.0.12
 - Added MCP 2026 Client ID Metadata Document (CIMD) support for ChatGPT OAuth clients.

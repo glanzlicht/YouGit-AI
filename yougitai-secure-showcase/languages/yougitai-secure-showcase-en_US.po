@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: YougitAI Secure Showcase 1.0.9\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-09-14 18:50+0000\n"
-"PO-Revision-Date: 2026-09-14 18:50+0000\n"
+"PO-Revision-Date: 2026-09-15 00:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en_US\n"
 "Language-Team: en_US <LL@li.org>\n"
@@ -24,13 +24,11 @@ msgstr "%1$d GitHub repositories imported. %2$d already existed and were skipped
 
 #: src/Repository/ShowcaseAnalyzer.php:49
 msgid ""
-"%1$s is a verified code showcase with %2$s public files across %3$s top-level modules. The "
-"primary detected language is %4$s; sensitive implementation details are removed before "
-"publication."
+"%1$s is a verified code showcase with %2$s public files across %3$s top-level modules. The primary detected language "
+"is %4$s; sensitive implementation details are removed before publication."
 msgstr ""
-"%1$s is a verified code showcase with %2$s public files across %3$s top-level modules. The "
-"primary detected language is %4$s; sensitive implementation details are removed before "
-"publication."
+"%1$s is a verified code showcase with %2$s public files across %3$s top-level modules. The primary detected language "
+"is %4$s; sensitive implementation details are removed before publication."
 
 #, python-format
 msgid "%d files will be hidden on the next import."
@@ -61,12 +59,8 @@ msgid "%s files"
 msgstr "%s files"
 
 #, python-format
-msgid ""
-"%s is configured. You can create a fresh draft with AI-assisted protection using the current "
-"repository profile."
-msgstr ""
-"%s is configured. You can create a fresh draft with AI-assisted protection using the current "
-"repository profile."
+msgid "%s is configured. You can create a fresh draft with AI-assisted protection using the current repository profile."
+msgstr "%s is configured. You can create a fresh draft with AI-assisted protection using the current repository profile."
 
 #: src/Frontend/Renderer.php:73
 #, python-format
@@ -115,11 +109,11 @@ msgstr "A connected AI client reviewed a source file."
 
 #: templates/admin-settings.php:19
 msgid ""
-"A fine-grained GitHub token enables private repositories and raises API limits. Grant only read "
-"access to repository contents and metadata."
+"A fine-grained GitHub token enables private repositories and raises API limits. Grant only read access to repository "
+"contents and metadata."
 msgstr ""
-"A fine-grained GitHub token enables private repositories and raises API limits. Grant only read "
-"access to repository contents and metadata."
+"A fine-grained GitHub token enables private repositories and raises API limits. Grant only read access to repository "
+"contents and metadata."
 
 #: src/Repository/RedactionEngine.php:132
 msgid "A line protection rule changed upstream and the file was hidden fail-closed."
@@ -129,27 +123,19 @@ msgstr "A line protection rule changed upstream and the file was hidden fail-clo
 msgid "A line protection rule no longer matches and the file was hidden fail-closed."
 msgstr "A line protection rule no longer matches and the file was hidden fail-closed."
 
-msgid ""
-"A new GitHub sync cannot overwrite the currently published showcase until you explicitly publish "
-"the reviewed draft."
-msgstr ""
-"A new GitHub sync cannot overwrite the currently published showcase until you explicitly publish "
-"the reviewed draft."
+msgid "A new GitHub sync cannot overwrite the currently published showcase until you explicitly publish the reviewed draft."
+msgstr "A new GitHub sync cannot overwrite the currently published showcase until you explicitly publish the reviewed draft."
 
 #: templates/admin-repository.php:58
 msgid ""
-"A new draft snapshot is built from GitHub. Original source is processed in memory only and is "
-"never stored as public data."
+"A new draft snapshot is built from GitHub. Original source is processed in memory only and is never stored as public "
+"data."
 msgstr ""
-"A new draft snapshot is built from GitHub. Original source is processed in memory only and is "
-"never stored as public data."
+"A new draft snapshot is built from GitHub. Original source is processed in memory only and is never stored as public "
+"data."
 
-msgid ""
-"A new secure draft was created with AI-assisted review enabled. Review its findings before "
-"publishing."
-msgstr ""
-"A new secure draft was created with AI-assisted review enabled. Review its findings before "
-"publishing."
+msgid "A new secure draft was created with AI-assisted review enabled. Review its findings before publishing."
+msgstr "A new secure draft was created with AI-assisted review enabled. Review its findings before publishing."
 
 #: src/Repository/RepositoryService.php:321
 msgid "A protection proposal needs a valid target."
@@ -180,11 +166,11 @@ msgid "AI analysis failed."
 msgstr "AI analysis failed."
 
 msgid ""
-"AI is optional and is not currently configured. The deterministic scanner and all manual "
-"protection tools still work without AI."
+"AI is optional and is not currently configured. The deterministic scanner and all manual protection tools still work "
+"without AI."
 msgstr ""
-"AI is optional and is not currently configured. The deterministic scanner and all manual "
-"protection tools still work without AI."
+"AI is optional and is not currently configured. The deterministic scanner and all manual protection tools still work "
+"without AI."
 
 msgid "AI protection"
 msgstr "AI protection"
@@ -214,8 +200,7 @@ msgstr "Action"
 msgid "Actions"
 msgstr "Actions"
 
-#: templates/admin-repository.php:116 templates/admin-repository.php:243
-#: templates/admin-settings.php:177
+#: templates/admin-repository.php:116 templates/admin-repository.php:243 templates/admin-settings.php:177
 msgid "Active"
 msgstr "Active"
 
@@ -252,19 +237,15 @@ msgid "Advanced: allow every repository"
 msgstr "Advanced: allow every repository"
 
 msgid ""
-"After ChatGPT redirects you back to this site, select only the repositories that the connection "
-"may review and click “Allow access”. You can revoke the connection here at any time."
+"After ChatGPT redirects you back to this site, select only the repositories that the connection may review and click "
+"“Allow access”. You can revoke the connection here at any time."
 msgstr ""
-"After ChatGPT redirects you back to this site, select only the repositories that the connection "
-"may review and click “Allow access”. You can revoke the connection here at any time."
+"After ChatGPT redirects you back to this site, select only the repositories that the connection may review and click "
+"“Allow access”. You can revoke the connection here at any time."
 
 #: templates/admin-settings.php:96
-msgid ""
-"All AI API keys are encrypted at rest using WordPress installation secrets and are never exposed "
-"to visitors."
-msgstr ""
-"All AI API keys are encrypted at rest using WordPress installation secrets and are never exposed "
-"to visitors."
+msgid "All AI API keys are encrypted at rest using WordPress installation secrets and are never exposed to visitors."
+msgstr "All AI API keys are encrypted at rest using WordPress installation secrets and are never exposed to visitors."
 
 #: templates/admin-settings.php:162
 msgid "All repositories"
@@ -376,21 +357,21 @@ msgid "Automatic repository sync failed."
 msgstr "Automatic repository sync failed."
 
 msgid ""
-"Availability depends on your ChatGPT plan and workspace policy. In that case, use one of the API "
-"provider modes for now."
+"Availability depends on your ChatGPT plan and workspace policy. In that case, use one of the API provider modes for "
+"now."
 msgstr ""
-"Availability depends on your ChatGPT plan and workspace policy. In that case, use one of the API "
-"provider modes for now."
+"Availability depends on your ChatGPT plan and workspace policy. In that case, use one of the API provider modes for "
+"now."
 
 #: templates/admin-settings.php:65
 msgid ""
-"Availability of custom MCP apps and write actions depends on the ChatGPT plan and workspace "
-"policy. If your ChatGPT setup does not offer Bearer-token authentication for custom apps, use an "
-"API provider for now; OAuth support can be added without changing the repository security model."
+"Availability of custom MCP apps and write actions depends on the ChatGPT plan and workspace policy. If your ChatGPT "
+"setup does not offer Bearer-token authentication for custom apps, use an API provider for now; OAuth support can be "
+"added without changing the repository security model."
 msgstr ""
-"Availability of custom MCP apps and write actions depends on the ChatGPT plan and workspace "
-"policy. If your ChatGPT setup does not offer Bearer-token authentication for custom apps, use an "
-"API provider for now; OAuth support can be added without changing the repository security model."
+"Availability of custom MCP apps and write actions depends on the ChatGPT plan and workspace policy. If your ChatGPT "
+"setup does not offer Bearer-token authentication for custom apps, use an API provider for now; OAuth support can be "
+"added without changing the repository security model."
 
 #: src/Support/SystemStatus.php:19
 msgid "Available"
@@ -400,8 +381,7 @@ msgstr "Available"
 msgid "Background queue"
 msgstr "Background queue"
 
-#: templates/admin-repositories.php:22 templates/admin-repositories.php:43
-#: templates/admin-repository.php:20
+#: templates/admin-repositories.php:22 templates/admin-repositories.php:43 templates/admin-repository.php:20
 msgid "Balanced"
 msgstr "Balanced"
 
@@ -425,11 +405,11 @@ msgid "Cannot publish or restore a public snapshot"
 msgstr "Cannot publish or restore a public snapshot"
 
 msgid ""
-"Changing this setting never changes the currently published snapshot. Import a new snapshot and "
-"publish it explicitly before visitors see the new mode."
+"Changing this setting never changes the currently published snapshot. Import a new snapshot and publish it explicitly"
+" before visitors see the new mode."
 msgstr ""
-"Changing this setting never changes the currently published snapshot. Import a new snapshot and "
-"publish it explicitly before visitors see the new mode."
+"Changing this setting never changes the currently published snapshot. Import a new snapshot and publish it explicitly"
+" before visitors see the new mode."
 
 #: templates/admin-settings.php:41
 msgid "ChatGPT (DIRECT)"
@@ -440,18 +420,14 @@ msgid "ChatGPT (DIRECT) connection"
 msgstr "ChatGPT (DIRECT) connection"
 
 msgid ""
-"ChatGPT (DIRECT) is selected. The review is controlled from an authorized ChatGPT conversation, "
-"so WordPress does not need an AI API key."
+"ChatGPT (DIRECT) is selected. The review is controlled from an authorized ChatGPT conversation, so WordPress does not"
+" need an AI API key."
 msgstr ""
-"ChatGPT (DIRECT) is selected. The review is controlled from an authorized ChatGPT conversation, "
-"so WordPress does not need an AI API key."
+"ChatGPT (DIRECT) is selected. The review is controlled from an authorized ChatGPT conversation, so WordPress does not"
+" need an AI API key."
 
-msgid ""
-"ChatGPT (DIRECT) runs from a connected ChatGPT conversation. Open Settings for the DIRECT "
-"connection instructions."
-msgstr ""
-"ChatGPT (DIRECT) runs from a connected ChatGPT conversation. Open Settings for the DIRECT "
-"connection instructions."
+msgid "ChatGPT (DIRECT) runs from a connected ChatGPT conversation. Open Settings for the DIRECT connection instructions."
+msgstr "ChatGPT (DIRECT) runs from a connected ChatGPT conversation. Open Settings for the DIRECT connection instructions."
 
 msgid "ChatGPT (DIRECT) — connect without an AI API key"
 msgstr "ChatGPT (DIRECT) — connect without an AI API key"
@@ -468,22 +444,16 @@ msgstr "ChatGPT / OpenAI API"
 msgid "ChatGPT connection"
 msgstr "ChatGPT connection"
 
-msgid ""
-"ChatGPT currently presents OAuth for this custom app flow, so OAuth above is the recommended "
-"setup."
-msgstr ""
-"ChatGPT currently presents OAuth for this custom app flow, so OAuth above is the recommended "
-"setup."
+msgid "ChatGPT currently presents OAuth for this custom app flow, so OAuth above is the recommended setup."
+msgstr "ChatGPT currently presents OAuth for this custom app flow, so OAuth above is the recommended setup."
 
 #: templates/admin-settings.php:62
 msgid ""
-"ChatGPT direct access is intentionally limited: it can inspect repositories, review masked "
-"source, read findings, create disabled redaction proposals, and build draft snapshots. It cannot "
-"publish a showcase."
+"ChatGPT direct access is intentionally limited: it can inspect repositories, review masked source, read findings, "
+"create disabled redaction proposals, and build draft snapshots. It cannot publish a showcase."
 msgstr ""
-"ChatGPT direct access is intentionally limited: it can inspect repositories, review masked "
-"source, read findings, create disabled redaction proposals, and build draft snapshots. It cannot "
-"publish a showcase."
+"ChatGPT direct access is intentionally limited: it can inspect repositories, review masked source, read findings, "
+"create disabled redaction proposals, and build draft snapshots. It cannot publish a showcase."
 
 #: templates/admin-settings.php:50
 msgid "ChatGPT direct connection — no AI API key required"
@@ -492,26 +462,22 @@ msgstr "ChatGPT direct connection — no AI API key required"
 msgid "ChatGPT discovers the authorization endpoints automatically."
 msgstr "ChatGPT discovers the authorization endpoints automatically."
 
-msgid ""
-"ChatGPT may review source and propose protections, but it cannot publish or restore a public "
-"snapshot."
-msgstr ""
-"ChatGPT may review source and propose protections, but it cannot publish or restore a public "
-"snapshot."
+msgid "ChatGPT may review source and propose protections, but it cannot publish or restore a public snapshot."
+msgstr "ChatGPT may review source and propose protections, but it cannot publish or restore a public snapshot."
 
 msgid ""
-"ChatGPT performs the analysis in your ChatGPT session. WordPress only exposes the repositories "
-"and review tools you explicitly authorize. Nothing is published through the direct connection."
+"ChatGPT performs the analysis in your ChatGPT session. WordPress only exposes the repositories and review tools you "
+"explicitly authorize. Nothing is published through the direct connection."
 msgstr ""
-"ChatGPT performs the analysis in your ChatGPT session. WordPress only exposes the repositories "
-"and review tools you explicitly authorize. Nothing is published through the direct connection."
+"ChatGPT performs the analysis in your ChatGPT session. WordPress only exposes the repositories and review tools you "
+"explicitly authorize. Nothing is published through the direct connection."
 
 msgid ""
-"Choose Bearer token authentication and paste the temporary token from step 2 into the "
-"authentication field — not into a chat message."
+"Choose Bearer token authentication and paste the temporary token from step 2 into the authentication field — not into"
+" a chat message."
 msgstr ""
-"Choose Bearer token authentication and paste the temporary token from step 2 into the "
-"authentication field — not into a chat message."
+"Choose Bearer token authentication and paste the temporary token from step 2 into the authentication field — not into"
+" a chat message."
 
 msgid "Choose OAuth in ChatGPT"
 msgstr "Choose OAuth in ChatGPT"
@@ -528,12 +494,8 @@ msgstr "Choose repository access"
 msgid "Choose what ChatGPT may access"
 msgstr "Choose what ChatGPT may access"
 
-msgid ""
-"Choose whether new snapshots are protected or intentionally mirror the repository source without "
-"redaction."
-msgstr ""
-"Choose whether new snapshots are protected or intentionally mirror the repository source without "
-"redaction."
+msgid "Choose whether new snapshots are protected or intentionally mirror the repository source without redaction."
+msgstr "Choose whether new snapshots are protected or intentionally mirror the repository source without redaction."
 
 #: generated
 msgid "Claude / Anthropic"
@@ -548,12 +510,8 @@ msgid "Clear selection"
 msgstr "Clear selection"
 
 #: templates/admin-settings.php:1
-msgid ""
-"Click “Connect with GitHub OAuth” and approve access in GitHub. You can then import private "
-"repository URLs normally."
-msgstr ""
-"Click “Connect with GitHub OAuth” and approve access in GitHub. You can then import private "
-"repository URLs normally."
+msgid "Click “Connect with GitHub OAuth” and approve access in GitHub. You can then import private repository URLs normally."
+msgstr "Click “Connect with GitHub OAuth” and approve access in GitHub. You can then import private repository URLs normally."
 
 #: templates/showcase.php:13
 msgid "Code"
@@ -577,11 +535,11 @@ msgid "Configure and enable an AI provider in Settings before starting AI protec
 msgstr "Configure and enable an AI provider in Settings before starting AI protection."
 
 msgid ""
-"Confirm that you understand the full repository source will be stored in the public snapshot and "
-"can be viewed by visitors."
+"Confirm that you understand the full repository source will be stored in the public snapshot and can be viewed by "
+"visitors."
 msgstr ""
-"Confirm that you understand the full repository source will be stored in the public snapshot and "
-"can be viewed by visitors."
+"Confirm that you understand the full repository source will be stored in the public snapshot and can be viewed by "
+"visitors."
 
 msgid "Connect ChatGPT to YougitAI"
 msgstr "Connect ChatGPT to YougitAI"
@@ -595,11 +553,11 @@ msgstr "Connect GitHub first to load your repositories."
 
 #: templates/admin-repositories.php:1
 msgid ""
-"Connect GitHub in Settings first. After authorization, YougitAI will show your accessible public "
-"and private repositories here with checkboxes."
+"Connect GitHub in Settings first. After authorization, YougitAI will show your accessible public and private "
+"repositories here with checkboxes."
 msgstr ""
-"Connect GitHub in Settings first. After authorization, YougitAI will show your accessible public "
-"and private repositories here with checkboxes."
+"Connect GitHub in Settings first. After authorization, YougitAI will show your accessible public and private "
+"repositories here with checkboxes."
 
 #: templates/admin-repositories.php:1
 msgid "Connect GitHub to choose repositories"
@@ -607,28 +565,26 @@ msgstr "Connect GitHub to choose repositories"
 
 #: generated
 msgid ""
-"Connect an AI client directly to this WordPress installation without storing an AI model API key "
-"here. The connection can review repositories and create protection proposals, but it cannot "
-"publish a showcase."
+"Connect an AI client directly to this WordPress installation without storing an AI model API key here. The connection"
+" can review repositories and create protection proposals, but it cannot publish a showcase."
 msgstr ""
-"Connect an AI client directly to this WordPress installation without storing an AI model API key "
-"here. The connection can review repositories and create protection proposals, but it cannot "
-"publish a showcase."
+"Connect an AI client directly to this WordPress installation without storing an AI model API key here. The connection"
+" can review repositories and create protection proposals, but it cannot publish a showcase."
 
 msgid "Connect it in ChatGPT"
 msgstr "Connect it in ChatGPT"
 
 #: templates/admin-settings.php:64
 msgid ""
-"Connect to YougitAI, inspect the available repositories and review the selected project for "
-"secrets, proprietary business logic, AI prompts, security logic, private endpoints, and "
-"reconstructable core IP. Start with metadata and the repository tree, request source only where "
-"necessary, then create conservative redaction proposals. Do not publish anything."
+"Connect to YougitAI, inspect the available repositories and review the selected project for secrets, proprietary "
+"business logic, AI prompts, security logic, private endpoints, and reconstructable core IP. Start with metadata and "
+"the repository tree, request source only where necessary, then create conservative redaction proposals. Do not "
+"publish anything."
 msgstr ""
-"Connect to YougitAI, inspect the available repositories and review the selected project for "
-"secrets, proprietary business logic, AI prompts, security logic, private endpoints, and "
-"reconstructable core IP. Start with metadata and the repository tree, request source only where "
-"necessary, then create conservative redaction proposals. Do not publish anything."
+"Connect to YougitAI, inspect the available repositories and review the selected project for secrets, proprietary "
+"business logic, AI prompts, security logic, private endpoints, and reconstructable core IP. Start with metadata and "
+"the repository tree, request source only where necessary, then create conservative redaction proposals. Do not "
+"publish anything."
 
 #: templates/admin-settings.php:32
 msgid "Connect with GitHub OAuth"
@@ -679,25 +635,25 @@ msgid "Content"
 msgstr "Content"
 
 msgid ""
-"Continue in the “ChatGPT (DIRECT) connection” wizard below. It shows exactly where the endpoint "
-"and token belong after you create the connection."
+"Continue in the “ChatGPT (DIRECT) connection” wizard below. It shows exactly where the endpoint and token belong "
+"after you create the connection."
 msgstr ""
-"Continue in the “ChatGPT (DIRECT) connection” wizard below. It shows exactly where the endpoint "
-"and token belong after you create the connection."
+"Continue in the “ChatGPT (DIRECT) connection” wizard below. It shows exactly where the endpoint and token belong "
+"after you create the connection."
 
 msgid ""
-"Continue in the “ChatGPT (DIRECT) connection” wizard below. The normal OAuth flow does not "
-"require copying any access token."
+"Continue in the “ChatGPT (DIRECT) connection” wizard below. The normal OAuth flow does not require copying any access"
+" token."
 msgstr ""
-"Continue in the “ChatGPT (DIRECT) connection” wizard below. The normal OAuth flow does not "
-"require copying any access token."
+"Continue in the “ChatGPT (DIRECT) connection” wizard below. The normal OAuth flow does not require copying any access"
+" token."
 
 msgid ""
-"Control whether the verified showcase is public, password-protected, private, or taken offline as"
-" a draft. Changing this does not delete snapshots."
+"Control whether the verified showcase is public, password-protected, private, or taken offline as a draft. Changing "
+"this does not delete snapshots."
 msgstr ""
-"Control whether the verified showcase is public, password-protected, private, or taken offline as"
-" a draft. Changing this does not delete snapshots."
+"Control whether the verified showcase is public, password-protected, private, or taken offline as a draft. Changing "
+"this does not delete snapshots."
 
 msgid "Copied"
 msgstr "Copied"
@@ -712,12 +668,8 @@ msgid "Copy starter prompt"
 msgstr "Copy starter prompt"
 
 #: templates/admin-settings.php:1
-msgid ""
-"Copy the Homepage URL and Authorization callback URL shown below into the matching GitHub fields "
-"exactly."
-msgstr ""
-"Copy the Homepage URL and Authorization callback URL shown below into the matching GitHub fields "
-"exactly."
+msgid "Copy the Homepage URL and Authorization callback URL shown below into the matching GitHub fields exactly."
+msgstr "Copy the Homepage URL and Authorization callback URL shown below into the matching GitHub fields exactly."
 
 msgid "Copy the MCP server URL"
 msgstr "Copy the MCP server URL"
@@ -765,19 +717,15 @@ msgstr "Create a protected draft snapshot from the current GitHub state."
 
 #: templates/admin-settings.php:120
 msgid ""
-"Create a temporary access token for a ChatGPT or compatible MCP session. Tokens are stored only "
-"as hashes and can be revoked at any time."
+"Create a temporary access token for a ChatGPT or compatible MCP session. Tokens are stored only as hashes and can be "
+"revoked at any time."
 msgstr ""
-"Create a temporary access token for a ChatGPT or compatible MCP session. Tokens are stored only "
-"as hashes and can be revoked at any time."
+"Create a temporary access token for a ChatGPT or compatible MCP session. Tokens are stored only as hashes and can be "
+"revoked at any time."
 
 #: templates/admin-settings.php:55
-msgid ""
-"Create a temporary connection token in the Direct connection section below and copy it "
-"immediately."
-msgstr ""
-"Create a temporary connection token in the Direct connection section below and copy it "
-"immediately."
+msgid "Create a temporary connection token in the Direct connection section below and copy it immediately."
+msgstr "Create a temporary connection token in the Direct connection section below and copy it immediately."
 
 msgid "Create a temporary token"
 msgstr "Create a temporary token"
@@ -835,11 +783,11 @@ msgstr "Default permissions"
 
 #: templates/admin-settings.php:102
 msgid ""
-"Delete all YougitAI repository data, snapshots, rules, findings, logs, tokens, and settings when "
-"the plugin is uninstalled"
+"Delete all YougitAI repository data, snapshots, rules, findings, logs, tokens, and settings when the plugin is "
+"uninstalled"
 msgstr ""
-"Delete all YougitAI repository data, snapshots, rules, findings, logs, tokens, and settings when "
-"the plugin is uninstalled"
+"Delete all YougitAI repository data, snapshots, rules, findings, logs, tokens, and settings when the plugin is "
+"uninstalled"
 
 msgid "Deny"
 msgstr "Deny"
@@ -867,8 +815,7 @@ msgstr "Do not create or paste a YougitAI bearer token."
 msgid "Do not paste this token into a ChatGPT conversation."
 msgstr "Do not paste this token into a ChatGPT conversation."
 
-#: templates/admin-repositories.php:44 templates/admin-repository.php:4
-#: templates/admin-repository.php:49
+#: templates/admin-repositories.php:44 templates/admin-repository.php:4 templates/admin-repository.php:49
 msgid "Draft"
 msgstr "Draft"
 
@@ -876,11 +823,11 @@ msgid "Draft / offline"
 msgstr "Draft / offline"
 
 msgid ""
-"Draft/offline removes the showcase from public access immediately but keeps the verified snapshot"
-" so you can publish it again later."
+"Draft/offline removes the showcase from public access immediately but keeps the verified snapshot so you can publish "
+"it again later."
 msgstr ""
-"Draft/offline removes the showcase from public access immediately but keeps the verified snapshot"
-" so you can publish it again later."
+"Draft/offline removes the showcase from public access immediately but keeps the verified snapshot so you can publish "
+"it again later."
 
 #: templates/admin-repositories.php:58
 msgid "Elementor / Elementor Pro"
@@ -933,36 +880,28 @@ msgid "Event"
 msgstr "Event"
 
 msgid ""
-"Every sync creates a new draft and reapplies all active protection rules. Your currently "
-"published showcase stays unchanged until you review and publish a new snapshot. If a "
-"fingerprinted line or symbol can no longer be matched safely, YougitAI hides the file fail-closed"
-" instead of exposing new source code."
+"Every sync creates a new draft and reapplies all active protection rules. Your currently published showcase stays "
+"unchanged until you review and publish a new snapshot. If a fingerprinted line or symbol can no longer be matched "
+"safely, YougitAI hides the file fail-closed instead of exposing new source code."
 msgstr ""
-"Every sync creates a new draft and reapplies all active protection rules. Your currently "
-"published showcase stays unchanged until you review and publish a new snapshot. If a "
-"fingerprinted line or symbol can no longer be matched safely, YougitAI hides the file fail-closed"
-" instead of exposing new source code."
+"Every sync creates a new draft and reapplies all active protection rules. Your currently published showcase stays "
+"unchanged until you review and publish a new snapshot. If a fingerprinted line or symbol can no longer be matched "
+"safely, YougitAI hides the file fail-closed instead of exposing new source code."
 
 msgid ""
-"Every sync creates a new draft containing the unredacted text source because Original source mode"
-" is active. Your currently published showcase remains unchanged until you explicitly publish that"
-" draft."
+"Every sync creates a new draft containing the unredacted text source because Original source mode is active. Your "
+"currently published showcase remains unchanged until you explicitly publish that draft."
 msgstr ""
-"Every sync creates a new draft containing the unredacted text source because Original source mode"
-" is active. Your currently published showcase remains unchanged until you explicitly publish that"
-" draft."
+"Every sync creates a new draft containing the unredacted text source because Original source mode is active. Your "
+"currently published showcase remains unchanged until you explicitly publish that draft."
 
 #: templates/admin-repository.php:243 templates/admin-repository.php:250
 msgid "Exact string"
 msgstr "Exact string"
 
 #: templates/admin-settings.php:14
-msgid ""
-"Example: /repositories/my-project/. Elementor and shortcodes continue to work independently of "
-"this URL."
-msgstr ""
-"Example: /repositories/my-project/. Elementor and shortcodes continue to work independently of "
-"this URL."
+msgid "Example: /repositories/my-project/. Elementor and shortcodes continue to work independently of this URL."
+msgstr "Example: /repositories/my-project/. Elementor and shortcodes continue to work independently of this URL."
 
 #, python-format
 msgid "Existing connections (%d)"
@@ -991,19 +930,15 @@ msgstr "External AI review"
 
 #: src/Api/ConnectedAIRoutes.php:103
 msgid ""
-"Fetch one source file just in time for security review. Detected secrets are masked before the "
-"content leaves WordPress."
+"Fetch one source file just in time for security review. Detected secrets are masked before the content leaves "
+"WordPress."
 msgstr ""
-"Fetch one source file just in time for security review. Detected secrets are masked before the "
-"content leaves WordPress."
+"Fetch one source file just in time for security review. Detected secrets are masked before the content leaves "
+"WordPress."
 
 #: src/Api/ConnectedAIRoutes.php:104
-msgid ""
-"Fetch up to ten source files in one review call. Secrets are masked before content leaves "
-"WordPress."
-msgstr ""
-"Fetch up to ten source files in one review call. Secrets are masked before content leaves "
-"WordPress."
+msgid "Fetch up to ten source files in one review call. Secrets are masked before content leaves WordPress."
+msgstr "Fetch up to ten source files in one review call. Secrets are masked before content leaves WordPress."
 
 #: templates/admin-repository.php:242
 msgid "File"
@@ -1049,48 +984,44 @@ msgid "Findings"
 msgstr "Findings"
 
 msgid ""
-"Findings are grouped by file. A scanner finding marked “already protected” means the suspicious "
-"value has already been removed from this draft."
+"Findings are grouped by file. A scanner finding marked “already protected” means the suspicious value has already "
+"been removed from this draft."
 msgstr ""
-"Findings are grouped by file. A scanner finding marked “already protected” means the suspicious "
-"value has already been removed from this draft."
+"Findings are grouped by file. A scanner finding marked “already protected” means the suspicious value has already "
+"been removed from this draft."
 
 #: templates/admin-settings.php:20
 msgid "Fine-grained access token"
 msgstr "Fine-grained access token"
 
-msgid ""
-"Follow these three steps. You never need to paste the temporary token into a normal ChatGPT "
-"message."
-msgstr ""
-"Follow these three steps. You never need to paste the temporary token into a normal ChatGPT "
-"message."
+msgid "Follow these three steps. You never need to paste the temporary token into a normal ChatGPT message."
+msgstr "Follow these three steps. You never need to paste the temporary token into a normal ChatGPT message."
 
 #: templates/admin-settings.php:25
 msgid ""
-"For a smoother private-repository connection, register a GitHub OAuth App and connect WordPress "
-"without copying a personal access token."
+"For a smoother private-repository connection, register a GitHub OAuth App and connect WordPress without copying a "
+"personal access token."
 msgstr ""
-"For a smoother private-repository connection, register a GitHub OAuth App and connect WordPress "
-"without copying a personal access token."
+"For a smoother private-repository connection, register a GitHub OAuth App and connect WordPress without copying a "
+"personal access token."
 
 #: templates/admin-settings.php:138
 msgid "For least privilege, select only the repositories this ChatGPT session is allowed to inspect."
 msgstr "For least privilege, select only the repositories this ChatGPT session is allowed to inspect."
 
 msgid ""
-"For least privilege, select only the repositories this ChatGPT session is allowed to inspect. "
-"Publishing is never granted."
+"For least privilege, select only the repositories this ChatGPT session is allowed to inspect. Publishing is never "
+"granted."
 msgstr ""
-"For least privilege, select only the repositories this ChatGPT session is allowed to inspect. "
-"Publishing is never granted."
+"For least privilege, select only the repositories this ChatGPT session is allowed to inspect. Publishing is never "
+"granted."
 
 msgid ""
-"For repositories that may be shown completely. New snapshots bypass redaction rules, secret "
-"scanning and AI protection."
+"For repositories that may be shown completely. New snapshots bypass redaction rules, secret scanning and AI "
+"protection."
 msgstr ""
-"For repositories that may be shown completely. New snapshots bypass redaction rules, secret "
-"scanning and AI protection."
+"For repositories that may be shown completely. New snapshots bypass redaction rules, secret scanning and AI "
+"protection."
 
 #: generated
 msgid "Gemini / Google"
@@ -1110,11 +1041,11 @@ msgstr "Generate webhook secret"
 
 #: src/Api/ConnectedAIRoutes.php:101
 msgid ""
-"Get repository review context including protection profile, snapshots, rules, and unresolved "
-"finding counts without source code."
+"Get repository review context including protection profile, snapshots, rules, and unresolved finding counts without "
+"source code."
 msgstr ""
-"Get repository review context including protection profile, snapshots, rules, and unresolved "
-"finding counts without source code."
+"Get repository review context including protection profile, snapshots, rules, and unresolved finding counts without "
+"source code."
 
 #: templates/admin-settings.php:24 templates/admin-settings.php:34
 msgid "GitHub OAuth"
@@ -1240,11 +1171,11 @@ msgstr "High"
 
 #: templates/showcase.php:72
 msgid ""
-"High-level modules detected from the verified public snapshot. Protected implementation details "
-"are intentionally omitted."
+"High-level modules detected from the verified public snapshot. Protected implementation details are intentionally "
+"omitted."
 msgstr ""
-"High-level modules detected from the verified public snapshot. Protected implementation details "
-"are intentionally omitted."
+"High-level modules detected from the verified public snapshot. Protected implementation details are intentionally "
+"omitted."
 
 #: templates/admin-repository.php:73 templates/admin-repository.php:95
 msgid "Hourly"
@@ -1259,11 +1190,11 @@ msgid "How to connect private GitHub repositories"
 msgstr "How to connect private GitHub repositories"
 
 msgid ""
-"I understand that enabling Original source mode can make the complete text source of this "
-"repository public after I publish a new snapshot."
+"I understand that enabling Original source mode can make the complete text source of this repository public after I "
+"publish a new snapshot."
 msgstr ""
-"I understand that enabling Original source mode can make the complete text source of this "
-"repository public after I publish a new snapshot."
+"I understand that enabling Original source mode can make the complete text source of this repository public after I "
+"publish a new snapshot."
 
 msgid "If ChatGPT does not show custom MCP apps or Bearer-token authentication"
 msgstr "If ChatGPT does not show custom MCP apps or Bearer-token authentication"
@@ -1307,21 +1238,19 @@ msgstr "Important:"
 
 #: templates/admin-settings.php:56
 msgid ""
-"In ChatGPT, open Settings → Apps and enable Developer Mode or create a custom app, depending on "
-"your ChatGPT plan and workspace permissions."
+"In ChatGPT, open Settings → Apps and enable Developer Mode or create a custom app, depending on your ChatGPT plan and"
+" workspace permissions."
 msgstr ""
-"In ChatGPT, open Settings → Apps and enable Developer Mode or create a custom app, depending on "
-"your ChatGPT plan and workspace permissions."
+"In ChatGPT, open Settings → Apps and enable Developer Mode or create a custom app, depending on your ChatGPT plan and"
+" workspace permissions."
 
 #: templates/admin-settings.php:51
 msgid ""
-"In this mode, ChatGPT performs the reasoning inside your ChatGPT session and connects securely to"
-" this WordPress site through the YougitAI MCP endpoint. No OpenAI, Anthropic, or Gemini model API"
-" key is stored in WordPress."
+"In this mode, ChatGPT performs the reasoning inside your ChatGPT session and connects securely to this WordPress site"
+" through the YougitAI MCP endpoint. No OpenAI, Anthropic, or Gemini model API key is stored in WordPress."
 msgstr ""
-"In this mode, ChatGPT performs the reasoning inside your ChatGPT session and connects securely to"
-" this WordPress site through the YougitAI MCP endpoint. No OpenAI, Anthropic, or Gemini model API"
-" key is stored in WordPress."
+"In this mode, ChatGPT performs the reasoning inside your ChatGPT session and connects securely to this WordPress site"
+" through the YougitAI MCP endpoint. No OpenAI, Anthropic, or Gemini model API key is stored in WordPress."
 
 #: src/Api/ConnectedAIRoutes.php:59
 msgid "Invalid JSON request."
@@ -1345,8 +1274,7 @@ msgstr "Invalid repository path."
 msgid "Invalid webhook signature."
 msgstr "Invalid webhook signature."
 
-#: templates/admin-repositories.php:23 templates/admin-repositories.php:43
-#: templates/admin-repository.php:21
+#: templates/admin-repositories.php:23 templates/admin-repositories.php:43 templates/admin-repository.php:21
 msgid "Investor"
 msgstr "Investor"
 
@@ -1373,11 +1301,11 @@ msgstr "Leave this disabled if you want data preserved when temporarily removing
 
 #: templates/admin-settings.php:59
 msgid ""
-"Let ChatGPT scan the available tools, enable the YougitAI app for the chat, and then tell the "
-"chat which repository to review and what should be protected."
+"Let ChatGPT scan the available tools, enable the YougitAI app for the chat, and then tell the chat which repository "
+"to review and what should be protected."
 msgstr ""
-"Let ChatGPT scan the available tools, enable the YougitAI app for the chat, and then tell the "
-"chat which repository to review and what should be protected."
+"Let ChatGPT scan the available tools, enable the YougitAI app for the chat, and then tell the chat which repository "
+"to review and what should be protected."
 
 #: src/Elementor/RepositoryGridWidget.php:21 src/Elementor/ShowcaseWidget.php:41
 msgid "Light"
@@ -1425,8 +1353,8 @@ msgstr "MCP method not supported."
 msgid "Manage protection rules"
 msgstr "Manage protection rules"
 
-#: templates/admin-repository.php:33 templates/admin-repository.php:73
-#: templates/admin-repository.php:95 templates/admin-repository.php:243
+#: templates/admin-repository.php:33 templates/admin-repository.php:73 templates/admin-repository.php:95
+#: templates/admin-repository.php:243
 msgid "Manual"
 msgstr "Manual"
 
@@ -1446,8 +1374,7 @@ msgstr "Mark reviewed"
 msgid "Mark selected as reviewed"
 msgstr "Mark selected as reviewed"
 
-#: templates/admin-repositories.php:24 templates/admin-repositories.php:43
-#: templates/admin-repository.php:22
+#: templates/admin-repositories.php:24 templates/admin-repositories.php:43 templates/admin-repository.php:22
 msgid "Maximum IP protection"
 msgstr "Maximum IP protection"
 
@@ -1478,12 +1405,8 @@ msgstr "Modules"
 msgid "Needs review"
 msgstr "Needs review"
 
-msgid ""
-"New snapshots are intentionally imported without redaction. Protection rules remain stored but "
-"are bypassed."
-msgstr ""
-"New snapshots are intentionally imported without redaction. Protection rules remain stored but "
-"are bypassed."
+msgid "New snapshots are intentionally imported without redaction. Protection rules remain stored but are bypassed."
+msgstr "New snapshots are intentionally imported without redaction. Protection rules remain stored but are bypassed."
 
 msgid "New snapshots are processed through protection and review."
 msgstr "New snapshots are processed through protection and review."
@@ -1492,11 +1415,11 @@ msgid "New snapshots contain unredacted text source."
 msgstr "New snapshots contain unredacted text source."
 
 msgid ""
-"No API key and no token copying is required. ChatGPT opens WordPress, you sign in as an "
-"administrator, choose the repositories, and approve access."
+"No API key and no token copying is required. ChatGPT opens WordPress, you sign in as an administrator, choose the "
+"repositories, and approve access."
 msgstr ""
-"No API key and no token copying is required. ChatGPT opens WordPress, you sign in as an "
-"administrator, choose the repositories, and approve access."
+"No API key and no token copying is required. ChatGPT opens WordPress, you sign in as an administrator, choose the "
+"repositories, and approve access."
 
 msgid "No YougitAI repositories are available yet."
 msgstr "No YougitAI repositories are available yet."
@@ -1595,19 +1518,19 @@ msgstr "Only repositories selected here will be visible to this ChatGPT connecti
 
 #: templates/admin-settings.php:72
 msgid ""
-"Only the active API provider is used for new automatic AI reviews. Keys for the other providers "
-"remain encrypted and can be switched back on later."
+"Only the active API provider is used for new automatic AI reviews. Keys for the other providers remain encrypted and "
+"can be switched back on later."
 msgstr ""
-"Only the active API provider is used for new automatic AI reviews. Keys for the other providers "
-"remain encrypted and can be switched back on later."
+"Only the active API provider is used for new automatic AI reviews. Keys for the other providers remain encrypted and "
+"can be switched back on later."
 
 #: generated
 msgid ""
-"Only the active provider is used for new AI reviews. Keys for the other providers remain "
-"encrypted and can be switched back on later."
+"Only the active provider is used for new AI reviews. Keys for the other providers remain encrypted and can be "
+"switched back on later."
 msgstr ""
-"Only the active provider is used for new AI reviews. Keys for the other providers remain "
-"encrypted and can be switched back on later."
+"Only the active provider is used for new AI reviews. Keys for the other providers remain encrypted and can be "
+"switched back on later."
 
 #: templates/admin-repository.php:13
 msgid "Open"
@@ -1627,12 +1550,8 @@ msgstr "Open Apps → Create, choose Server URL, and paste the YougitAI server U
 msgid "Open ChatGPT DIRECT setup"
 msgstr "Open ChatGPT DIRECT setup"
 
-msgid ""
-"Open ChatGPT Settings → Apps → Advanced settings and enable Developer Mode if your plan/workspace"
-" offers it."
-msgstr ""
-"Open ChatGPT Settings → Apps → Advanced settings and enable Developer Mode if your plan/workspace"
-" offers it."
+msgid "Open ChatGPT Settings → Apps → Advanced settings and enable Developer Mode if your plan/workspace offers it."
+msgstr "Open ChatGPT Settings → Apps → Advanced settings and enable Developer Mode if your plan/workspace offers it."
 
 #: templates/admin-repositories.php:1
 msgid "Open GitHub connection settings"
@@ -1662,11 +1581,11 @@ msgstr "OpenAI API key"
 
 #: templates/admin-repositories.php:4
 msgid ""
-"Original repository data and public showcase snapshots are strictly separated. Public visitors "
-"only receive approved snapshot data."
+"Original repository data and public showcase snapshots are strictly separated. Public visitors only receive approved "
+"snapshot data."
 msgstr ""
-"Original repository data and public showcase snapshots are strictly separated. Public visitors "
-"only receive approved snapshot data."
+"Original repository data and public showcase snapshots are strictly separated. Public visitors only receive approved "
+"snapshot data."
 
 msgid "Original source"
 msgstr "Original source"
@@ -1681,18 +1600,14 @@ msgid "Original source mode is active."
 msgstr "Original source mode is active."
 
 msgid ""
-"Original source mode is active. Existing rules are kept but are not applied to new snapshots "
-"until secure mode is enabled again."
+"Original source mode is active. Existing rules are kept but are not applied to new snapshots until secure mode is "
+"enabled again."
 msgstr ""
-"Original source mode is active. Existing rules are kept but are not applied to new snapshots "
-"until secure mode is enabled again."
+"Original source mode is active. Existing rules are kept but are not applied to new snapshots until secure mode is "
+"enabled again."
 
-msgid ""
-"Original source mode: no redaction rules, secret scanning, or AI protection were applied to this "
-"file."
-msgstr ""
-"Original source mode: no redaction rules, secret scanning, or AI protection were applied to this "
-"file."
+msgid "Original source mode: no redaction rules, secret scanning, or AI protection were applied to this file."
+msgstr "Original source mode: no redaction rules, secret scanning, or AI protection were applied to this file."
 
 #: src/Frontend/Renderer.php:110 src/Repository/ShowcaseAnalyzer.php:16
 msgid "Other"
@@ -1748,8 +1663,7 @@ msgstr "Please enter a valid GitHub repository URL."
 msgid "Please enter a valid line range."
 msgstr "Please enter a valid line range."
 
-#: templates/admin-repositories.php:21 templates/admin-repositories.php:43
-#: templates/admin-repository.php:19
+#: templates/admin-repositories.php:21 templates/admin-repositories.php:43 templates/admin-repository.php:19
 msgid "Portfolio"
 msgstr "Portfolio"
 
@@ -1860,11 +1774,11 @@ msgid "Protection rules"
 msgstr "Protection rules"
 
 msgid ""
-"Protection rules are retained but currently bypassed because Original source mode is active. "
-"Switch back to Secure showcase mode to apply them on the next import."
+"Protection rules are retained but currently bypassed because Original source mode is active. Switch back to Secure "
+"showcase mode to apply them on the next import."
 msgstr ""
-"Protection rules are retained but currently bypassed because Original source mode is active. "
-"Switch back to Secure showcase mode to apply them on the next import."
+"Protection rules are retained but currently bypassed because Original source mode is active. Switch back to Secure "
+"showcase mode to apply them on the next import."
 
 msgid "Protection summary"
 msgstr "Protection summary"
@@ -1886,8 +1800,7 @@ msgstr "Publication state"
 msgid "Publish a verified snapshot before changing the public access mode."
 msgstr "Publish a verified snapshot before changing the public access mode."
 
-#: templates/admin-repositories.php:44 templates/admin-repository.php:5
-#: templates/admin-repository.php:49
+#: templates/admin-repositories.php:44 templates/admin-repository.php:5 templates/admin-repository.php:49
 msgid "Published"
 msgstr "Published"
 
@@ -1991,13 +1904,12 @@ msgstr "Remove stored OAuth client secret"
 msgid "Remove stored OpenAI API key"
 msgstr "Remove stored OpenAI API key"
 
-#: templates/admin-repository.php:216 templates/admin-repository.php:230
-#: templates/admin-repository.php:254
+#: templates/admin-repository.php:216 templates/admin-repository.php:230 templates/admin-repository.php:254
 msgid "Replacement"
 msgstr "Replacement"
 
-#: src/Admin/Admin.php:50 src/Admin/Admin.php:51 templates/admin-repositories.php:31
-#: templates/admin-repository.php:43 templates/admin-settings.php:152
+#: src/Admin/Admin.php:50 src/Admin/Admin.php:51 templates/admin-repositories.php:31 templates/admin-repository.php:43
+#: templates/admin-settings.php:152
 msgid "Repositories"
 msgstr "Repositories"
 
@@ -2022,9 +1934,8 @@ msgid "Repository created."
 msgstr "Repository created."
 
 #: src/Admin/Admin.php:83 src/Api/ConnectedAIRoutes.php:213 src/Api/ConnectedAIRoutes.php:247
-#: src/Api/ConnectedAIRoutes.php:260 src/Repository/RepositoryService.php:106
-#: src/Repository/RepositoryService.php:312 src/Repository/RepositoryService.php:372
-#: src/Repository/RepositoryService.php:520
+#: src/Api/ConnectedAIRoutes.php:260 src/Repository/RepositoryService.php:106 src/Repository/RepositoryService.php:312
+#: src/Repository/RepositoryService.php:372 src/Repository/RepositoryService.php:520
 msgid "Repository not found."
 msgstr "Repository not found."
 
@@ -2111,11 +2022,11 @@ msgstr "Rule type"
 
 #: templates/admin-repository.php:240
 msgid ""
-"Rules are applied when a new snapshot is imported. Path rules can hide complete files; string and"
-" regular-expression rules redact matching content."
+"Rules are applied when a new snapshot is imported. Path rules can hide complete files; string and regular-expression "
+"rules redact matching content."
 msgstr ""
-"Rules are applied when a new snapshot is imported. Path rules can hide complete files; string and"
-" regular-expression rules redact matching content."
+"Rules are applied when a new snapshot is imported. Path rules can hide complete files; string and regular-expression "
+"rules redact matching content."
 
 msgid "Rules are retained but bypassed while Original source mode is active."
 msgstr "Rules are retained but bypassed while Original source mode is active."
@@ -2152,12 +2063,8 @@ msgstr "Scanner"
 msgid "Secret is stored — enter a new secret to replace it"
 msgstr "Secret is stored — enter a new secret to replace it"
 
-msgid ""
-"Secret scanner, manual rules and optional AI protection are applied. Syncs remain drafts until "
-"you publish them."
-msgstr ""
-"Secret scanner, manual rules and optional AI protection are applied. Syncs remain drafts until "
-"you publish them."
+msgid "Secret scanner, manual rules and optional AI protection are applied. Syncs remain drafts until you publish them."
+msgstr "Secret scanner, manual rules and optional AI protection are applied. Syncs remain drafts until you publish them."
 
 #: src/Elementor/RepositoryGridWidget.php:12
 msgid "Secure Repository Grid"
@@ -2215,12 +2122,8 @@ msgid "Security-relevant repository actions are recorded here for review and tro
 msgstr "Security-relevant repository actions are recorded here for review and troubleshooting."
 
 #: templates/showcase.php:64
-msgid ""
-"Select a file to inspect the approved public snapshot. The original repository is never served to"
-" visitors."
-msgstr ""
-"Select a file to inspect the approved public snapshot. The original repository is never served to"
-" visitors."
+msgid "Select a file to inspect the approved public snapshot. The original repository is never served to visitors."
+msgstr "Select a file to inspect the approved public snapshot. The original repository is never served to visitors."
 
 #: templates/admin-repositories.php:1
 msgid "Select all"
@@ -2252,20 +2155,16 @@ msgstr "Select at least one repository that ChatGPT may review."
 msgid "Select file"
 msgstr "Select file"
 
-msgid ""
-"Select one file to open the visual editor, or select several files and hide them together on the "
-"next import."
-msgstr ""
-"Select one file to open the visual editor, or select several files and hide them together on the "
-"next import."
+msgid "Select one file to open the visual editor, or select several files and hide them together on the next import."
+msgstr "Select one file to open the visual editor, or select several files and hide them together on the next import."
 
 #: templates/admin-repositories.php:1
 msgid ""
-"Select one or more repositories below. Private repositories stay private on GitHub; YougitAI only"
-" creates sanitized showcase snapshots."
+"Select one or more repositories below. Private repositories stay private on GitHub; YougitAI only creates sanitized "
+"showcase snapshots."
 msgstr ""
-"Select one or more repositories below. Private repositories stay private on GitHub; YougitAI only"
-" creates sanitized showcase snapshots."
+"Select one or more repositories below. Private repositories stay private on GitHub; YougitAI only creates sanitized "
+"showcase snapshots."
 
 msgid "Select only the projects this ChatGPT session may inspect."
 msgstr "Select only the projects this ChatGPT session may inspect."
@@ -2332,8 +2231,8 @@ msgstr "Snapshot files"
 msgid "Snapshot imported: %1$d files processed, %2$d findings detected."
 msgstr "Snapshot imported: %1$d files processed, %2$d findings detected."
 
-#: src/Api/ConnectedAIRoutes.php:333 src/Repository/RepositoryService.php:230
-#: src/Repository/RepositoryService.php:251 src/Repository/RepositoryService.php:480
+#: src/Api/ConnectedAIRoutes.php:333 src/Repository/RepositoryService.php:230 src/Repository/RepositoryService.php:251
+#: src/Repository/RepositoryService.php:480
 msgid "Snapshot not found."
 msgstr "Snapshot not found."
 
@@ -2378,17 +2277,16 @@ msgid "Start line"
 msgstr "Start line"
 
 msgid ""
-"Start the tool scan. ChatGPT discovers the YougitAI OAuth endpoints automatically and opens the "
-"WordPress authorization screen."
+"Start the tool scan. ChatGPT discovers the YougitAI OAuth endpoints automatically and opens the WordPress "
+"authorization screen."
 msgstr ""
-"Start the tool scan. ChatGPT discovers the YougitAI OAuth endpoints automatically and opens the "
-"WordPress authorization screen."
+"Start the tool scan. ChatGPT discovers the YougitAI OAuth endpoints automatically and opens the WordPress "
+"authorization screen."
 
 msgid "Starter prompt for the new chat"
 msgstr "Starter prompt for the new chat"
 
-#: templates/admin-repository.php:107 templates/admin-repository.php:242
-#: templates/admin-settings.php:152
+#: templates/admin-repository.php:107 templates/admin-repository.php:242 templates/admin-settings.php:152
 msgid "Status"
 msgstr "Status"
 
@@ -2414,11 +2312,11 @@ msgstr "Symbol protection rule requires review"
 
 #: templates/admin-repository.php:222
 msgid ""
-"Symbol rules follow a named class, function, or method across line-number changes. If the symbol "
-"is ambiguous, missing, or its signature changes unexpectedly, the file is hidden fail-closed."
+"Symbol rules follow a named class, function, or method across line-number changes. If the symbol is ambiguous, "
+"missing, or its signature changes unexpectedly, the file is hidden fail-closed."
 msgstr ""
-"Symbol rules follow a named class, function, or method across line-number changes. If the symbol "
-"is ambiguous, missing, or its signature changes unexpectedly, the file is hidden fail-closed."
+"Symbol rules follow a named class, function, or method across line-number changes. If the symbol is ambiguous, "
+"missing, or its signature changes unexpectedly, the file is hidden fail-closed."
 
 msgid "Sync creates a draft; it never replaces the live showcase automatically."
 msgstr "Sync creates a draft; it never replaces the live showcase automatically."
@@ -2469,12 +2367,8 @@ msgid "The WordPress administrator denied access."
 msgstr "The WordPress administrator denied access."
 
 #: templates/admin-settings.php:1
-msgid ""
-"The callback URL must match exactly. Do not add or remove a slash and do not replace HTTPS with "
-"HTTP."
-msgstr ""
-"The callback URL must match exactly. Do not add or remove a slash and do not replace HTTPS with "
-"HTTP."
+msgid "The callback URL must match exactly. Do not add or remove a slash and do not replace HTTPS with HTTP."
+msgstr "The callback URL must match exactly. Do not add or remove a slash and do not replace HTTPS with HTTP."
 
 #: src/Repository/RepositoryService.php:386
 msgid "The line protection rule is invalid."
@@ -2488,11 +2382,11 @@ msgstr "The password was not accepted."
 
 #: templates/admin-repositories.php:59
 msgid ""
-"The plugin works standalone in WordPress and adds a native Elementor widget when Elementor is "
-"active. Elementor Pro is supported but never required."
+"The plugin works standalone in WordPress and adds a native Elementor widget when Elementor is active. Elementor Pro "
+"is supported but never required."
 msgstr ""
-"The plugin works standalone in WordPress and adds a native Elementor widget when Elementor is "
-"active. Elementor Pro is supported but never required."
+"The plugin works standalone in WordPress and adds a native Elementor widget when Elementor is active. Elementor Pro "
+"is supported but never required."
 
 #: src/Repository/RepositoryService.php:390
 msgid "The regular expression is invalid."
@@ -2508,11 +2402,11 @@ msgstr "The secure sync could not be queued."
 
 #: templates/admin-repository.php:219
 msgid ""
-"The selected range is fingerprinted. If those lines change upstream, the next import hides the "
-"entire file fail-closed and creates a critical review finding."
+"The selected range is fingerprinted. If those lines change upstream, the next import hides the entire file fail-"
+"closed and creates a critical review finding."
 msgstr ""
-"The selected range is fingerprinted. If those lines change upstream, the next import hides the "
-"entire file fail-closed and creates a critical review finding."
+"The selected range is fingerprinted. If those lines change upstream, the next import hides the entire file fail-"
+"closed and creates a critical review finding."
 
 msgid "The showcase visibility could not be updated."
 msgstr "The showcase visibility could not be updated."
@@ -2530,12 +2424,8 @@ msgid "The symbol could not be located uniquely in this file."
 msgstr "The symbol could not be located uniquely in this file."
 
 #: templates/admin-settings.php:22
-msgid ""
-"The token is encrypted at rest using WordPress installation secrets. It is never exposed to the "
-"public frontend."
-msgstr ""
-"The token is encrypted at rest using WordPress installation secrets. It is never exposed to the "
-"public frontend."
+msgid "The token is encrypted at rest using WordPress installation secrets. It is never exposed to the public frontend."
+msgstr "The token is encrypted at rest using WordPress installation secrets. It is never exposed to the public frontend."
 
 msgid "The token is shown once and expires automatically."
 msgstr "The token is shown once and expires automatically."
@@ -2550,21 +2440,15 @@ msgstr "Theme"
 
 #: templates/admin-settings.php:149
 msgid ""
-"There is deliberately no publish permission. Sensitive credential files are blocked, detected "
-"secrets are masked before source leaves WordPress, and every connected-AI source read is written "
-"to the audit log."
+"There is deliberately no publish permission. Sensitive credential files are blocked, detected secrets are masked "
+"before source leaves WordPress, and every connected-AI source read is written to the audit log."
 msgstr ""
-"There is deliberately no publish permission. Sensitive credential files are blocked, detected "
-"secrets are masked before source leaves WordPress, and every connected-AI source read is written "
-"to the audit log."
+"There is deliberately no publish permission. Sensitive credential files are blocked, detected secrets are masked "
+"before source leaves WordPress, and every connected-AI source read is written to the audit log."
 
 #: src/Api/ConnectedAIRoutes.php:277
-msgid ""
-"This connected-AI session has reached its source review limit. Create a new scoped connection to "
-"continue."
-msgstr ""
-"This connected-AI session has reached its source review limit. Create a new scoped connection to "
-"continue."
+msgid "This connected-AI session has reached its source review limit. Create a new scoped connection to continue."
+msgstr "This connected-AI session has reached its source review limit. Create a new scoped connection to continue."
 
 #: src/Api/ConnectedAIRoutes.php:162
 msgid "This connection is not allowed to access that repository."
@@ -2597,11 +2481,11 @@ msgid "This is what visitors currently see."
 msgstr "This is what visitors currently see."
 
 msgid ""
-"This page shows only the sanitized draft stored by YougitAI. Scanner removals are already "
-"applied. Nothing here changes the currently live showcase until you explicitly publish."
+"This page shows only the sanitized draft stored by YougitAI. Scanner removals are already applied. Nothing here "
+"changes the currently live showcase until you explicitly publish."
 msgstr ""
-"This page shows only the sanitized draft stored by YougitAI. Scanner removals are already "
-"applied. Nothing here changes the currently live showcase until you explicitly publish."
+"This page shows only the sanitized draft stored by YougitAI. Scanner removals are already applied. Nothing here "
+"changes the currently live showcase until you explicitly publish."
 
 #: src/Api/ConnectedAIRoutes.php:264
 msgid "This path is blocked from connected AI review."
@@ -2668,12 +2552,8 @@ msgid "Use this endpoint with a compatible AI/MCP client together with a tempora
 msgstr "Use this endpoint with a compatible AI/MCP client together with a temporary connection token."
 
 #: templates/admin-settings.php:30
-msgid ""
-"Use this exact callback URL in the GitHub OAuth App settings. Save this page before starting the "
-"OAuth connection."
-msgstr ""
-"Use this exact callback URL in the GitHub OAuth App settings. Save this page before starting the "
-"OAuth connection."
+msgid "Use this exact callback URL in the GitHub OAuth App settings. Save this page before starting the OAuth connection."
+msgstr "Use this exact callback URL in the GitHub OAuth App settings. Save this page before starting the OAuth connection."
 
 #: templates/admin-repositories.php:1
 msgid "Use this only if a repository does not appear in the GitHub picker above."
@@ -2725,12 +2605,8 @@ msgid "Webhook is not configured."
 msgstr "Webhook is not configured."
 
 #: templates/admin-repository.php:98
-msgid ""
-"Webhook pushes only queue a new draft snapshot. Publishing always remains a separate reviewed "
-"action."
-msgstr ""
-"Webhook pushes only queue a new draft snapshot. Publishing always remains a separate reviewed "
-"action."
+msgid "Webhook pushes only queue a new draft snapshot. Publishing always remains a separate reviewed action."
+msgstr "Webhook pushes only queue a new draft snapshot. Publishing always remains a separate reviewed action."
 
 #: src/Api/GitHubWebhookRoutes.php:35
 msgid "Webhook secret could not be read."
@@ -2755,26 +2631,26 @@ msgstr "What should visitors see?"
 
 #: templates/admin-settings.php:58
 msgid ""
-"When ChatGPT asks for authentication, use the temporary Bearer connection token if that "
-"authentication option is available for your custom app."
+"When ChatGPT asks for authentication, use the temporary Bearer connection token if that authentication option is "
+"available for your custom app."
 msgstr ""
-"When ChatGPT asks for authentication, use the temporary Bearer connection token if that "
-"authentication option is available for your custom app."
+"When ChatGPT asks for authentication, use the temporary Bearer connection token if that authentication option is "
+"available for your custom app."
 
 #: templates/admin-settings.php:70
 msgid ""
-"When enabled, selected source files can be sent to the configured external AI provider for "
-"analysis before the source is discarded. External AI is disabled by default."
+"When enabled, selected source files can be sent to the configured external AI provider for analysis before the source"
+" is discarded. External AI is disabled by default."
 msgstr ""
-"When enabled, selected source files can be sent to the configured external AI provider for "
-"analysis before the source is discarded. External AI is disabled by default."
+"When enabled, selected source files can be sent to the configured external AI provider for analysis before the source"
+" is discarded. External AI is disabled by default."
 
 msgid ""
-"WordPress asks you which repositories ChatGPT may access. Only a logged-in WordPress "
-"administrator can approve the connection. YougitAI never grants publish or restore permission."
+"WordPress asks you which repositories ChatGPT may access. Only a logged-in WordPress administrator can approve the "
+"connection. YougitAI never grants publish or restore permission."
 msgstr ""
-"WordPress asks you which repositories ChatGPT may access. Only a logged-in WordPress "
-"administrator can approve the connection. YougitAI never grants publish or restore permission."
+"WordPress asks you which repositories ChatGPT may access. Only a logged-in WordPress administrator can approve the "
+"connection. YougitAI never grants publish or restore permission."
 
 #: src/Support/SystemStatus.php:17
 msgid "Working"
@@ -2814,13 +2690,11 @@ msgstr "YougitAI supports public OAuth clients with PKCE only."
 
 #: templates/admin-settings.php:1
 msgid ""
-"Your repositories stay private on GitHub. OAuth only authorizes this WordPress installation to "
-"read repositories you are allowed to access. The public showcase still contains only reviewed and"
-" approved snapshot data."
+"Your repositories stay private on GitHub. OAuth only authorizes this WordPress installation to read repositories you "
+"are allowed to access. The public showcase still contains only reviewed and approved snapshot data."
 msgstr ""
-"Your repositories stay private on GitHub. OAuth only authorizes this WordPress installation to "
-"read repositories you are allowed to access. The public showcase still contains only reviewed and"
-" approved snapshot data."
+"Your repositories stay private on GitHub. OAuth only authorizes this WordPress installation to read repositories you "
+"are allowed to access. The public showcase still contains only reviewed and approved snapshot data."
 
 #: templates/admin-repository.php:114
 msgid "critical"
@@ -2846,12 +2720,8 @@ msgstr "open critical notes"
 msgid "open review notes"
 msgstr "open review notes"
 
-msgid ""
-"“Protect with AI” creates a new draft. It never rewrites or publishes the current live showcase "
-"automatically."
-msgstr ""
-"“Protect with AI” creates a new draft. It never rewrites or publishes the current live showcase "
-"automatically."
+msgid "“Protect with AI” creates a new draft. It never rewrites or publishes the current live showcase automatically."
+msgstr "“Protect with AI” creates a new draft. It never rewrites or publishes the current live showcase automatically."
 
 msgid "OAuth diagnostics"
 msgstr "OAuth diagnostics"
@@ -2875,11 +2745,11 @@ msgid "OAuth challenge header is missing externally."
 msgstr "OAuth challenge header is missing externally."
 
 msgid ""
-"The web server, reverse proxy, or security layer may be stripping WWW-Authenticate. ChatGPT "
-"cannot discover OAuth until this header reaches the public internet."
+"The web server, reverse proxy, or security layer may be stripping WWW-Authenticate. ChatGPT cannot discover OAuth "
+"until this header reaches the public internet."
 msgstr ""
-"The web server, reverse proxy, or security layer may be stripping WWW-Authenticate. ChatGPT "
-"cannot discover OAuth until this header reaches the public internet."
+"The web server, reverse proxy, or security layer may be stripping WWW-Authenticate. ChatGPT cannot discover OAuth "
+"until this header reaches the public internet."
 
 msgid "Protected passages"
 msgstr "Protected passages"
@@ -2910,18 +2780,14 @@ msgid "%s lines protected"
 msgstr "%s lines protected"
 
 msgid ""
-"Get the portfolio-safety classification policy used to balance skill visibility against IP "
-"exposure. Read this before reviewing source."
+"Get the portfolio-safety classification policy used to balance skill visibility against IP exposure. Read this before"
+" reviewing source."
 msgstr ""
-"Get the portfolio-safety classification policy used to balance skill visibility against IP "
-"exposure. Read this before reviewing source."
+"Get the portfolio-safety classification policy used to balance skill visibility against IP exposure. Read this before"
+" reviewing source."
 
-msgid ""
-"Read a paginated repository tree without file contents. Start here, then request only the files "
-"needed for review."
-msgstr ""
-"Read a paginated repository tree without file contents. Start here, then request only the files "
-"needed for review."
+msgid "Read a paginated repository tree without file contents. Start here, then request only the files needed for review."
+msgstr "Read a paginated repository tree without file contents. Start here, then request only the files needed for review."
 
 msgid "Select at least one protection proposal."
 msgstr "Select at least one protection proposal."
@@ -2945,18 +2811,18 @@ msgid "Select"
 msgstr "Select"
 
 msgid ""
-"Read one text file from the explicitly authorized repository for security review. This is read-"
-"only, repository-scoped, and detected secrets are masked before the content leaves WordPress."
+"Read one text file from the explicitly authorized repository for security review. This is read-only, repository-"
+"scoped, and detected secrets are masked before the content leaves WordPress."
 msgstr ""
-"Read one text file from the explicitly authorized repository for security review. This is read-"
-"only, repository-scoped, and detected secrets are masked before the content leaves WordPress."
+"Read one text file from the explicitly authorized repository for security review. This is read-only, repository-"
+"scoped, and detected secrets are masked before the content leaves WordPress."
 
 msgid ""
-"Read a bounded excerpt from one text file in the explicitly authorized repository. This is read-"
-"only and masks detected secrets before returning content."
+"Read a bounded excerpt from one text file in the explicitly authorized repository. This is read-only and masks "
+"detected secrets before returning content."
 msgstr ""
-"Read a bounded excerpt from one text file in the explicitly authorized repository. This is read-"
-"only and masks detected secrets before returning content."
+"Read a bounded excerpt from one text file in the explicitly authorized repository. This is read-only and masks "
+"detected secrets before returning content."
 
 #, python-format
 msgid "%d protection proposal approved. Import a new snapshot to apply it."
@@ -2965,30 +2831,20 @@ msgstr[0] "%d protection proposal approved. Import a new snapshot to apply it."
 msgstr[1] "%d protection proposals approved. Import a new snapshot to apply them."
 
 msgid ""
-"Repository-wide paginated tree access. Use this tool for complete scans: start with cursor 0, "
-"then repeat with next_cursor until has_more is false. Prefix may be empty or restrict the scan to"
-" a subdirectory."
+"Repository-wide paginated tree access. Use this tool for complete scans: start with cursor 0, then repeat with "
+"next_cursor until has_more is false. Prefix may be empty or restrict the scan to a subdirectory."
 msgstr ""
-"Repository-wide paginated tree access. Use this tool for complete scans: start with cursor 0, "
-"then repeat with next_cursor until has_more is false. Prefix may be empty or restrict the scan to"
-" a subdirectory."
+"Repository-wide paginated tree access. Use this tool for complete scans: start with cursor 0, then repeat with "
+"next_cursor until has_more is false. Prefix may be empty or restrict the scan to a subdirectory."
 
 msgid "Repository ID returned by list_repositories."
 msgstr "Repository ID returned by list_repositories."
 
-msgid ""
-"Zero-based pagination cursor. Omit or use 0 for the first page; then pass next_cursor from the "
-"previous response."
-msgstr ""
-"Zero-based pagination cursor. Omit or use 0 for the first page; then pass next_cursor from the "
-"previous response."
+msgid "Zero-based pagination cursor. Omit or use 0 for the first page; then pass next_cursor from the previous response."
+msgstr "Zero-based pagination cursor. Omit or use 0 for the first page; then pass next_cursor from the previous response."
 
-msgid ""
-"Optional path prefix such as backend/ or lib/. Omit or pass an empty string for the entire "
-"repository."
-msgstr ""
-"Optional path prefix such as backend/ or lib/. Omit or pass an empty string for the entire "
-"repository."
+msgid "Optional path prefix such as backend/ or lib/. Omit or pass an empty string for the entire repository."
+msgstr "Optional path prefix such as backend/ or lib/. Omit or pass an empty string for the entire repository."
 
 msgid "Maximum number of tree entries in this page."
 msgstr "Maximum number of tree entries in this page."
@@ -3015,13 +2871,11 @@ msgid "get_repository_tree exposes prefix"
 msgstr "get_repository_tree exposes prefix"
 
 msgid ""
-"Read a paginated repository tree without file contents. Start without cursor (or with cursor 0), "
-"then pass next_cursor from the previous response until has_more is false. Optionally restrict the"
-" scan with prefix."
+"Read a paginated repository tree without file contents. Start without cursor (or with cursor 0), then pass "
+"next_cursor from the previous response until has_more is false. Optionally restrict the scan with prefix."
 msgstr ""
-"Read a paginated repository tree without file contents. Start without cursor (or with cursor 0), "
-"then pass next_cursor from the previous response until has_more is false. Optionally restrict the"
-" scan with prefix."
+"Read a paginated repository tree without file contents. Start without cursor (or with cursor 0), then pass "
+"next_cursor from the previous response until has_more is false. Optionally restrict the scan with prefix."
 
 msgid "What do I do next?"
 msgstr "What do I do next?"
@@ -3052,11 +2906,11 @@ msgid "Apply approved protection"
 msgstr "Apply approved protection"
 
 msgid ""
-"This uses the existing safe draft and creates a new protected review draft. GitHub is not "
-"contacted and nothing is published."
+"This uses the existing safe draft and creates a new protected review draft. GitHub is not contacted and nothing is "
+"published."
 msgstr ""
-"This uses the existing safe draft and creates a new protected review draft. GitHub is not "
-"contacted and nothing is published."
+"This uses the existing safe draft and creates a new protected review draft. GitHub is not contacted and nothing is "
+"published."
 
 msgid "Apply protection now"
 msgstr "Apply protection now"
@@ -3071,11 +2925,11 @@ msgid "Check the result and publish only when ready"
 msgstr "Check the result and publish only when ready"
 
 msgid ""
-"Open the newest review draft, inspect the visible code and redactions, then explicitly publish "
-"it. Your current live showcase stays unchanged until then."
+"Open the newest review draft, inspect the visible code and redactions, then explicitly publish it. Your current live "
+"showcase stays unchanged until then."
 msgstr ""
-"Open the newest review draft, inspect the visible code and redactions, then explicitly publish "
-"it. Your current live showcase stays unchanged until then."
+"Open the newest review draft, inspect the visible code and redactions, then explicitly publish it. Your current live "
+"showcase stays unchanged until then."
 
 msgid "Open newest review draft"
 msgstr "Open newest review draft"
@@ -3084,11 +2938,11 @@ msgid "When do I use GitHub sync?"
 msgstr "When do I use GitHub sync?"
 
 msgid ""
-"Only when the source repository has changed and you want to bring those new GitHub changes into "
-"YougitAI. Approving or applying protection does not require another GitHub import."
+"Only when the source repository has changed and you want to bring those new GitHub changes into YougitAI. Approving "
+"or applying protection does not require another GitHub import."
 msgstr ""
-"Only when the source repository has changed and you want to bring those new GitHub changes into "
-"YougitAI. Approving or applying protection does not require another GitHub import."
+"Only when the source repository has changed and you want to bring those new GitHub changes into YougitAI. Approving "
+"or applying protection does not require another GitHub import."
 
 msgid "Existing safe draft"
 msgstr "Existing safe draft"
@@ -3105,12 +2959,8 @@ msgstr "Apply approved rules to the existing draft, inspect the result, then pub
 msgid "Update source from GitHub"
 msgstr "Update source from GitHub"
 
-msgid ""
-"Use this only when the repository on GitHub has changed. You do not need this after approving "
-"protection suggestions."
-msgstr ""
-"Use this only when the repository on GitHub has changed. You do not need this after approving "
-"protection suggestions."
+msgid "Use this only when the repository on GitHub has changed. You do not need this after approving protection suggestions."
+msgstr "Use this only when the repository on GitHub has changed. You do not need this after approving protection suggestions."
 
 msgid "Fetch current GitHub version"
 msgstr "Fetch current GitHub version"
@@ -3139,19 +2989,15 @@ msgstr "Already protected in the source draft."
 msgid "Active protection rules were applied to an existing safe draft without contacting GitHub."
 msgstr "Active protection rules were applied to an existing safe draft without contacting GitHub."
 
-msgid ""
-"Protection applied. A new review draft was created from the existing safe snapshot; GitHub was "
-"not contacted."
-msgstr ""
-"Protection applied. A new review draft was created from the existing safe snapshot; GitHub was "
-"not contacted."
+msgid "Protection applied. A new review draft was created from the existing safe snapshot; GitHub was not contacted."
+msgstr "Protection applied. A new review draft was created from the existing safe snapshot; GitHub was not contacted."
 
 msgid ""
-"Protection proposal approved. Use “Apply protection now” to create a new protected review draft "
-"without re-importing GitHub."
+"Protection proposal approved. Use “Apply protection now” to create a new protected review draft without re-importing "
+"GitHub."
 msgstr ""
-"Protection proposal approved. Use “Apply protection now” to create a new protected review draft "
-"without re-importing GitHub."
+"Protection proposal approved. Use “Apply protection now” to create a new protected review draft without re-importing "
+"GitHub."
 
 #, python-format
 msgid "%d protection proposal approved. Apply protection now to create a new review draft."
@@ -3168,52 +3014,40 @@ msgid "Selected projects with protected source code, architecture and technical 
 msgstr "Selected projects with protected source code, architecture and technical context."
 
 msgid ""
-"Protection rules are retained but currently bypassed because Original source mode is active. "
-"Switch back to Secure showcase mode before applying protection."
+"Protection rules are retained but currently bypassed because Original source mode is active. Switch back to Secure "
+"showcase mode before applying protection."
 msgstr ""
-"Protection rules are retained but currently bypassed because Original source mode is active. "
-"Switch back to Secure showcase mode before applying protection."
+"Protection rules are retained but currently bypassed because Original source mode is active. Switch back to Secure "
+"showcase mode before applying protection."
 
 msgid ""
-"Approved rules can be applied directly to the existing safe draft. Path rules can hide complete "
-"files; string and regular-expression rules redact matching content."
+"Approved rules can be applied directly to the existing safe draft. Path rules can hide complete files; string and "
+"regular-expression rules redact matching content."
 msgstr ""
-"Approved rules can be applied directly to the existing safe draft. Path rules can hide complete "
-"files; string and regular-expression rules redact matching content."
+"Approved rules can be applied directly to the existing safe draft. Path rules can hide complete files; string and "
+"regular-expression rules redact matching content."
 
-msgid ""
-"Approve the selected protection proposals? After approval, use “Apply protection now” to create a"
-" new review draft."
-msgstr ""
-"Approve the selected protection proposals? After approval, use “Apply protection now” to create a"
-" new review draft."
+msgid "Approve the selected protection proposals? After approval, use “Apply protection now” to create a new review draft."
+msgstr "Approve the selected protection proposals? After approval, use “Apply protection now” to create a new review draft."
 
-msgid ""
-"Approve all visible protection proposals? After approval, use “Apply protection now” to create a "
-"new review draft."
-msgstr ""
-"Approve all visible protection proposals? After approval, use “Apply protection now” to create a "
-"new review draft."
+msgid "Approve all visible protection proposals? After approval, use “Apply protection now” to create a new review draft."
+msgstr "Approve all visible protection proposals? After approval, use “Apply protection now” to create a new review draft."
 
 msgid "There are no active protection rules to apply."
 msgstr "There are no active protection rules to apply."
 
-msgid ""
-"The repository overview remains available under /repositories/. Individual showcases use "
-"/repositories/project-slug/."
-msgstr ""
-"The repository overview remains available under /repositories/. Individual showcases use "
-"/repositories/project-slug/."
+msgid "The repository overview remains available under /repositories/. Individual showcases use /repositories/project-slug/."
+msgstr "The repository overview remains available under /repositories/. Individual showcases use /repositories/project-slug/."
 
 msgid "Repository overview page text"
 msgstr "Repository overview page text"
 
 msgid ""
-"Customize only the heading and introduction shown on the repository overview. Leave a field empty"
-" to use the translated default."
+"Customize only the heading and introduction shown on the repository overview. Leave a field empty to use the "
+"translated default."
 msgstr ""
-"Customize only the heading and introduction shown on the repository overview. Leave a field empty"
-" to use the translated default."
+"Customize only the heading and introduction shown on the repository overview. Leave a field empty to use the "
+"translated default."
 
 msgid "German"
 msgstr "German"
@@ -3240,24 +3074,21 @@ msgid "Content protected"
 msgstr "Content protected"
 
 msgid ""
-"The contents of this file are not publicly displayed because they may contain sensitive "
-"implementation details, internal security logic, or proprietary business logic."
+"The contents of this file are not publicly displayed because they may contain sensitive implementation details, "
+"internal security logic, or proprietary business logic."
 msgstr ""
-"The contents of this file are not publicly displayed because they may contain sensitive "
-"implementation details, internal security logic, or proprietary business logic."
+"The contents of this file are not publicly displayed because they may contain sensitive implementation details, "
+"internal security logic, or proprietary business logic."
 
 msgid "The file remains visible so the project structure and architecture can still be understood."
 msgstr "The file remains visible so the project structure and architecture can still be understood."
 
 msgid ""
-"%1$s is a verified code showcase with %2$s visible project entries across %3$s top-level modules."
-" The primary detected language is %4$s; protected files remain visible in the structure while "
-"their contents stay private."
+"%1$s is a verified code showcase with %2$s visible project entries across %3$s top-level modules. The primary "
+"detected language is %4$s; protected files remain visible in the structure while their contents stay private."
 msgstr ""
-"%1$s is a verified code showcase with %2$s visible project entries across %3$s top-level modules."
-" The primary detected language is %4$s; protected files remain visible in the structure while "
-"their contents stay private."
-
+"%1$s is a verified code showcase with %2$s visible project entries across %3$s top-level modules. The primary "
+"detected language is %4$s; protected files remain visible in the structure while their contents stay private."
 
 #: src/Repository/RepositoryService.php
 msgid "GitHub repository metadata could not be refreshed."
@@ -3266,3 +3097,156 @@ msgstr "GitHub repository metadata could not be refreshed."
 #: src/Repository/RepositoryService.php
 msgid "GitHub repository metadata refreshed."
 msgstr "GitHub repository metadata refreshed."
+
+#: templates/admin-settings.php
+msgid "Showcase colors"
+msgstr "Showcase colors"
+
+#: templates/admin-settings.php
+msgid ""
+"These colors control the dark YougitAI interface only. The page background itself continues to come from your active "
+"WordPress/Elementor site design."
+msgstr ""
+"These colors control the dark YougitAI interface only. The page background itself continues to come from your active "
+"WordPress/Elementor site design."
+
+#: templates/admin-settings.php
+msgid "Main UI surface"
+msgstr "Main UI surface"
+
+#: templates/admin-settings.php
+msgid "Cards and panels"
+msgstr "Cards and panels"
+
+#: templates/admin-settings.php
+msgid "Code / browser surface"
+msgstr "Code / browser surface"
+
+#: templates/admin-settings.php
+msgid "Borders"
+msgstr "Borders"
+
+#: templates/admin-settings.php
+msgid "Primary text"
+msgstr "Primary text"
+
+#: templates/admin-settings.php
+msgid "Secondary text"
+msgstr "Secondary text"
+
+#: templates/admin-settings.php
+msgid "Accent / links"
+msgstr "Accent / links"
+
+#: templates/admin-settings.php
+msgid "Accent hover"
+msgstr "Accent hover"
+
+#: templates/admin-settings.php
+msgid "Skill / progress bar"
+msgstr "Skill / progress bar"
+
+#: templates/admin-settings.php
+msgid "Skill / progress track"
+msgstr "Skill / progress track"
+
+#: templates/admin-settings.php
+msgid "Active selection"
+msgstr "Active selection"
+
+#: templates/admin-settings.php
+msgid "Warning / redaction background"
+msgstr "Warning / redaction background"
+
+#: templates/admin-settings.php
+msgid "Warning / redaction border"
+msgstr "Warning / redaction border"
+
+#: templates/admin-settings.php
+msgid "Warning / redaction text"
+msgstr "Warning / redaction text"
+
+#: templates/admin-settings.php
+msgid "Redaction blackout"
+msgstr "Redaction blackout"
+
+#: templates/admin-settings.php
+msgid "Redaction blackout edge"
+msgstr "Redaction blackout edge"
+
+#: templates/admin-settings.php
+msgid ""
+"Defaults follow the dark YougitAI palette. Skill/progress bars have their own fill and track colors, independent from"
+" link/accent colors. Changing Elementor global colors will no longer recolor the application UI."
+msgstr ""
+"Defaults follow the dark YougitAI palette. Skill/progress bars have their own fill and track colors, independent from"
+" link/accent colors. Changing Elementor global colors will no longer recolor the application UI."
+
+msgid "Navigation / tab hover"
+msgstr "Navigation / tab hover"
+
+msgid "Navigation / tab underline"
+msgstr "Navigation / tab underline"
+
+msgid "Redaction marker / blackout"
+msgstr "Redaction marker / blackout"
+
+msgid "Redaction marker edge"
+msgstr "Redaction marker edge"
+
+msgid "This file contains protected redactions."
+msgstr "This file contains protected redactions."
+
+#, python-format
+msgid "%s redaction"
+msgid_plural "%s redactions"
+msgstr[0] "%s redaction"
+msgstr[1] "%s redactions"
+
+msgid "This area was redacted to protect sensitive or proprietary implementation details."
+msgstr "This area was redacted to protect sensitive or proprietary implementation details."
+
+msgid ""
+"Defaults follow the dark YougitAI palette. Navigation hover, skill/progress bars and redaction markers have their own"
+" colors, independent from the general link/accent colors. Changing Elementor global colors will no longer recolor the"
+" application UI."
+msgstr ""
+"Defaults follow the dark YougitAI palette. Navigation hover, skill/progress bars and redaction markers have their own"
+" colors, independent from the general link/accent colors. Changing Elementor global colors will no longer recolor the"
+" application UI."
+
+msgid "Repository browser hover background"
+msgstr "Repository browser hover background"
+
+msgid "Repository browser hover text"
+msgstr "Repository browser hover text"
+
+msgid "Repository browser active background"
+msgstr "Repository browser active background"
+
+msgid "Repository browser active marker"
+msgstr "Repository browser active marker"
+
+msgid "Keyboard focus ring"
+msgstr "Keyboard focus ring"
+
+msgid ""
+"All interactive colors can be configured independently: tabs, repository-browser hover/active states, focus ring, "
+"skill/progress bars and redaction markers. Elementor global colors do not control the YougitAI interface."
+msgstr ""
+"All interactive colors can be configured independently: tabs, repository-browser hover/active states, focus ring, "
+"skill/progress bars and redaction markers. Elementor global colors do not control the YougitAI interface."
+
+msgid "Redactions"
+msgstr "Redactions"
+
+msgid ""
+"A badge such as “3 redactions” marks a partially protected file. Open that file to see the redaction markers in the "
+"code."
+msgstr ""
+"A badge such as “3 redactions” marks a partially protected file. Open that file to see the redaction markers in the "
+"code."
+
+msgid "Fully protected files contain no public code."
+msgstr "Fully protected files contain no public code."
+

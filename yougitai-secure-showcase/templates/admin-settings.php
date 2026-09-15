@@ -118,6 +118,50 @@
         </section>
 
         <section class="yougitai-card">
+            <h2><?php esc_html_e( 'Showcase colors', 'yougitai-secure-showcase' ); ?></h2>
+            <p class="description"><?php esc_html_e( 'These colors control the dark YougitAI interface only. The page background itself continues to come from your active WordPress/Elementor site design.', 'yougitai-secure-showcase' ); ?></p>
+            <div class="yougitai-color-grid">
+                <?php
+                $yougitai_color_fields = [
+                    'color_surface' => __( 'Main UI surface', 'yougitai-secure-showcase' ),
+                    'color_panel' => __( 'Cards and panels', 'yougitai-secure-showcase' ),
+                    'color_code' => __( 'Code / browser surface', 'yougitai-secure-showcase' ),
+                    'color_border' => __( 'Borders', 'yougitai-secure-showcase' ),
+                    'color_text' => __( 'Primary text', 'yougitai-secure-showcase' ),
+                    'color_muted' => __( 'Secondary text', 'yougitai-secure-showcase' ),
+                    'color_accent' => __( 'Accent / links', 'yougitai-secure-showcase' ),
+                    'color_accent_hover' => __( 'Accent hover', 'yougitai-secure-showcase' ),
+                    'color_nav_hover' => __( 'Navigation / tab hover', 'yougitai-secure-showcase' ),
+                    'color_nav_underline' => __( 'Navigation / tab underline', 'yougitai-secure-showcase' ),
+                    'color_tree_hover_bg' => __( 'Repository browser hover background', 'yougitai-secure-showcase' ),
+                    'color_tree_hover_text' => __( 'Repository browser hover text', 'yougitai-secure-showcase' ),
+                    'color_tree_active_bg' => __( 'Repository browser active background', 'yougitai-secure-showcase' ),
+                    'color_tree_active_marker' => __( 'Repository browser active marker', 'yougitai-secure-showcase' ),
+                    'color_focus' => __( 'Keyboard focus ring', 'yougitai-secure-showcase' ),
+                    'color_progress' => __( 'Skill / progress bar', 'yougitai-secure-showcase' ),
+                    'color_progress_track' => __( 'Skill / progress track', 'yougitai-secure-showcase' ),
+                    'color_selected' => __( 'Active selection', 'yougitai-secure-showcase' ),
+                    'color_warning_bg' => __( 'Warning / redaction background', 'yougitai-secure-showcase' ),
+                    'color_warning_border' => __( 'Warning / redaction border', 'yougitai-secure-showcase' ),
+                    'color_warning_text' => __( 'Warning / redaction text', 'yougitai-secure-showcase' ),
+                    'color_blackout' => __( 'Redaction marker / blackout', 'yougitai-secure-showcase' ),
+                    'color_blackout_edge' => __( 'Redaction marker edge', 'yougitai-secure-showcase' ),
+                ];
+                ?>
+                <?php foreach ( $yougitai_color_fields as $field => $label ) : ?>
+                    <label class="yougitai-color-field">
+                        <span><?php echo esc_html( $label ); ?></span>
+                        <span class="yougitai-color-control">
+                            <input type="color" name="<?php echo esc_attr( $field ); ?>" value="<?php echo esc_attr( $settings[ $field ] ); ?>">
+                            <code><?php echo esc_html( $settings[ $field ] ); ?></code>
+                        </span>
+                    </label>
+                <?php endforeach; ?>
+            </div>
+            <p class="description"><?php esc_html_e( 'All interactive colors can be configured independently: tabs, repository-browser hover/active states, focus ring, skill/progress bars and redaction markers. Elementor global colors do not control the YougitAI interface.', 'yougitai-secure-showcase' ); ?></p>
+        </section>
+
+        <section class="yougitai-card">
             <h2><?php esc_html_e( 'Data retention', 'yougitai-secure-showcase' ); ?></h2>
             <label class="yougitai-checkbox"><input type="checkbox" name="delete_data_on_uninstall" value="1" <?php checked( $settings['delete_data_on_uninstall'] ); ?>> <span><?php esc_html_e( 'Delete all YougitAI repository data, snapshots, rules, findings, logs, tokens, and settings when the plugin is uninstalled', 'yougitai-secure-showcase' ); ?></span></label>
             <p class="description"><?php esc_html_e( 'Leave this disabled if you want data preserved when temporarily removing the plugin.', 'yougitai-secure-showcase' ); ?></p>

@@ -167,6 +167,29 @@ final class Admin {
             'has_github_oauth_secret' => $this->stored_secret_present( 'yougitai_ss_github_oauth_client_secret' ),
             'github_oauth_callback' => ( new GitHubOAuth() )->callback_url(),
             'delete_data_on_uninstall' => (bool) get_option( 'yougitai_ss_delete_data_on_uninstall', false ),
+            'color_surface' => (string) get_option( 'yougitai_ss_color_surface', '#0d1117' ),
+            'color_panel' => (string) get_option( 'yougitai_ss_color_panel', '#161b22' ),
+            'color_code' => (string) get_option( 'yougitai_ss_color_code', '#0d1117' ),
+            'color_border' => (string) get_option( 'yougitai_ss_color_border', '#30363d' ),
+            'color_text' => (string) get_option( 'yougitai_ss_color_text', '#c9d1d9' ),
+            'color_muted' => (string) get_option( 'yougitai_ss_color_muted', '#8b949e' ),
+            'color_accent' => (string) get_option( 'yougitai_ss_color_accent', '#58a6ff' ),
+            'color_accent_hover' => (string) get_option( 'yougitai_ss_color_accent_hover', '#79c0ff' ),
+            'color_nav_hover' => (string) get_option( 'yougitai_ss_color_nav_hover', '#79c0ff' ),
+            'color_nav_underline' => (string) get_option( 'yougitai_ss_color_nav_underline', '#79c0ff' ),
+            'color_tree_hover_bg' => (string) get_option( 'yougitai_ss_color_tree_hover_bg', '#161b22' ),
+            'color_tree_hover_text' => (string) get_option( 'yougitai_ss_color_tree_hover_text', '#f0f6fc' ),
+            'color_tree_active_bg' => (string) get_option( 'yougitai_ss_color_tree_active_bg', '#1f2328' ),
+            'color_tree_active_marker' => (string) get_option( 'yougitai_ss_color_tree_active_marker', '#8b949e' ),
+            'color_focus' => (string) get_option( 'yougitai_ss_color_focus', '#f0f6fc' ),
+            'color_progress' => (string) get_option( 'yougitai_ss_color_progress', '#3fb950' ),
+            'color_progress_track' => (string) get_option( 'yougitai_ss_color_progress_track', '#21262d' ),
+            'color_selected' => (string) get_option( 'yougitai_ss_color_selected', '#1f2d3d' ),
+            'color_warning_bg' => (string) get_option( 'yougitai_ss_color_warning_bg', '#3b2f0b' ),
+            'color_warning_border' => (string) get_option( 'yougitai_ss_color_warning_border', '#9e6a03' ),
+            'color_warning_text' => (string) get_option( 'yougitai_ss_color_warning_text', '#e3b341' ),
+            'color_blackout' => (string) get_option( 'yougitai_ss_color_blackout', '#020409' ),
+            'color_blackout_edge' => (string) get_option( 'yougitai_ss_color_blackout_edge', '#30363d' ),
         ];
         include YOUGITAI_SS_DIR . 'templates/admin-settings.php';
     }
@@ -663,6 +686,37 @@ final class Admin {
         update_option( 'yougitai_ss_index_title_en', isset( $_POST['index_title_en'] ) ? sanitize_text_field( wp_unslash( $_POST['index_title_en'] ) ) : '', false );
         update_option( 'yougitai_ss_index_description_en', isset( $_POST['index_description_en'] ) ? sanitize_textarea_field( wp_unslash( $_POST['index_description_en'] ) ) : '', false );
         update_option( 'yougitai_ss_delete_data_on_uninstall', isset( $_POST['delete_data_on_uninstall'] ) ? 1 : 0, false );
+
+        $color_defaults = [
+            'color_surface' => '#0d1117',
+            'color_panel' => '#161b22',
+            'color_code' => '#0d1117',
+            'color_border' => '#30363d',
+            'color_text' => '#c9d1d9',
+            'color_muted' => '#8b949e',
+            'color_accent' => '#58a6ff',
+            'color_accent_hover' => '#79c0ff',
+            'color_nav_hover' => '#79c0ff',
+            'color_nav_underline' => '#79c0ff',
+            'color_tree_hover_bg' => '#161b22',
+            'color_tree_hover_text' => '#f0f6fc',
+            'color_tree_active_bg' => '#1f2328',
+            'color_tree_active_marker' => '#8b949e',
+            'color_focus' => '#f0f6fc',
+            'color_progress' => '#3fb950',
+            'color_progress_track' => '#21262d',
+            'color_selected' => '#1f2d3d',
+            'color_warning_bg' => '#3b2f0b',
+            'color_warning_border' => '#9e6a03',
+            'color_warning_text' => '#e3b341',
+            'color_blackout' => '#020409',
+            'color_blackout_edge' => '#30363d',
+        ];
+        foreach ( $color_defaults as $field => $default_color ) {
+            $raw_color = isset( $_POST[ $field ] ) ? sanitize_text_field( wp_unslash( $_POST[ $field ] ) ) : $default_color;
+            $color = sanitize_hex_color( $raw_color );
+            update_option( 'yougitai_ss_' . $field, $color ?: $default_color, false );
+        }
         $provider = isset( $_POST['ai_provider'] ) ? sanitize_key( wp_unslash( $_POST['ai_provider'] ) ) : 'openai';
         if ( ! in_array( $provider, [ 'direct', 'openai', 'anthropic', 'gemini' ], true ) ) {
             $provider = 'openai';

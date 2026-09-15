@@ -98,3 +98,307 @@
 .yougitai-protected-file-view p{margin:0 0 10px;line-height:1.6;color:inherit}
 .yougitai-protected-file-note{color:var(--yg-muted)!important}
 @media(max-width:760px){.yougitai-protected-file-view{padding:32px 20px;display:block}.yougitai-protected-file-icon{margin-bottom:16px}}
+
+
+/* v1.0.28 — Elementor site canvas + dark YouGitAI components
+ *
+ * Standalone repository routes intentionally do not paint the page canvas.
+ * Elementor's active Kit class is added to <body> by Renderer.php, so Site
+ * Settings control the real page background and site typography.
+ */
+.yougitai-standalone-wrap,
+.yougitai-repositories-index{
+  background:transparent!important;
+}
+.yougitai-repositories-index{
+  color:var(--e-global-color-text,inherit)!important;
+}
+.yougitai-repositories-index .yougitai-index-header h1{
+  color:var(--e-global-color-text,inherit)!important;
+}
+.yougitai-repositories-index .yougitai-index-header p{
+  color:var(--e-global-color-text,inherit)!important;
+  opacity:.78;
+}
+
+/* Repository cards remain a deliberately dark application surface. */
+.yougitai-repositories-index .yougitai-portfolio-grid{
+  --yg-border:#30363d;
+  --yg-bg:#0d1117;
+  --yg-muted:#8b949e;
+  --yg-code:#161b22;
+  --yg-link:#58a6ff;
+  --yg-link-hover:#79c0ff;
+  color:#c9d1d9!important;
+}
+.yougitai-repositories-index .yougitai-project-card{
+  background:var(--yg-bg)!important;
+  border-color:var(--yg-border)!important;
+  color:#c9d1d9!important;
+}
+.yougitai-repositories-index .yougitai-project-card h3{
+  color:#f0f6fc!important;
+}
+.yougitai-repositories-index .yougitai-project-card p,
+.yougitai-repositories-index .yougitai-project-meta{
+  color:#8b949e!important;
+}
+.yougitai-repositories-index .yougitai-badge,
+.yougitai-repositories-index .yougitai-chips span{
+  color:#c9d1d9!important;
+  border-color:#30363d!important;
+  background:#161b22!important;
+}
+.yougitai-repositories-index .yougitai-project-link,
+.yougitai-repositories-index .yougitai-project-link:visited{
+  color:var(--yg-link,#58a6ff)!important;
+}
+.yougitai-repositories-index .yougitai-project-link:hover,
+.yougitai-repositories-index .yougitai-project-link:focus-visible{
+  color:var(--yg-link-hover,#79c0ff)!important;
+}
+
+
+/* v1.0.30 — isolate YougitAI controls from theme/Elementor global button styles */
+.yougitai-showcase button,
+.yougitai-showcase button:visited{
+  font:inherit!important;
+  text-transform:none!important;
+  letter-spacing:normal!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+}
+.yougitai-showcase .yougitai-folder-toggle{
+  background:transparent!important;
+  color:inherit!important;
+  border:0!important;
+}
+.yougitai-showcase .yougitai-folder-toggle:hover,
+.yougitai-showcase .yougitai-folder-toggle:focus-visible{
+  background:var(--yg-code)!important;
+  color:var(--yg-link)!important;
+  border:0!important;
+}
+.yougitai-showcase .yougitai-tree-actions button{
+  background:transparent!important;
+  color:var(--yg-muted)!important;
+  border:1px solid var(--yg-border)!important;
+}
+.yougitai-showcase .yougitai-tree-actions button:hover,
+.yougitai-showcase .yougitai-tree-actions button:focus-visible{
+  background:var(--yg-code)!important;
+  color:var(--yg-link)!important;
+  border-color:var(--yg-link)!important;
+}
+
+
+/* v1.0.31 — full frontend color centralization
+ * Every dark showcase UI color now resolves through backend-controlled variables.
+ * Elementor/theme may still style the page canvas around the showcase.
+ */
+.yougitai-showcase,
+.yougitai-portfolio-grid{
+  color:var(--yg-text);
+}
+.yougitai-showcase,
+.yougitai-showcase[data-theme="dark"],
+.yougitai-portfolio-grid,
+.yougitai-portfolio-grid[data-theme="dark"]{
+  --yg-index-text:var(--yg-text);
+  --yg-index-heading:var(--yg-text);
+  --yg-index-muted:var(--yg-muted);
+  --yg-index-link:var(--yg-link);
+  --yg-index-link-hover:var(--yg-link-hover);
+}
+.yougitai-showcase[data-theme="dark"],
+.yougitai-portfolio-grid[data-theme="dark"]{
+  background:var(--yg-bg);
+  border-color:var(--yg-border);
+  color:var(--yg-text);
+}
+.yougitai-showcase[data-theme="dark"] .yougitai-overview-side,
+.yougitai-showcase[data-theme="dark"] .yougitai-architecture-node,
+.yougitai-showcase[data-theme="dark"] .yougitai-protected-file-icon,
+.yougitai-showcase[data-theme="dark"] .yougitai-tree a:hover,
+.yougitai-showcase[data-theme="dark"] .yougitai-tree a:focus-visible{
+  background:var(--yg-panel)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-showcase[data-theme="dark"] .yougitai-tree a.is-active{
+  background:var(--yg-link-active-bg)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-showcase .yougitai-tabs,
+.yougitai-showcase .yougitai-code-view,
+.yougitai-showcase .yougitai-code-panel pre,
+.yougitai-showcase .yougitai-protected-file-view{
+  background:var(--yg-code);
+}
+.yougitai-showcase .yougitai-tabs,
+.yougitai-showcase .yougitai-code-head,
+.yougitai-showcase .yougitai-stats,
+.yougitai-showcase .yougitai-grid,
+.yougitai-showcase .yougitai-tree,
+.yougitai-showcase .yougitai-overview-side,
+.yougitai-showcase .yougitai-architecture-node,
+.yougitai-showcase .yougitai-protected-file-icon,
+.yougitai-showcase .yougitai-badge,
+.yougitai-showcase .yougitai-chips span,
+.yougitai-showcase .yougitai-protected-label,
+.yougitai-showcase .yougitai-tree-actions button{
+  border-color:var(--yg-border)!important;
+}
+.yougitai-showcase .yougitai-stats,
+.yougitai-showcase .yougitai-code-head span,
+.yougitai-showcase .yougitai-architecture-node small,
+.yougitai-showcase .yougitai-showcase-footer,
+.yougitai-showcase .yougitai-protected-file-note,
+.yougitai-showcase .yougitai-tree-actions button{
+  color:var(--yg-muted)!important;
+}
+.yougitai-showcase a,
+.yougitai-showcase a:visited,
+.yougitai-repositories-index .yougitai-project-link,
+.yougitai-repositories-index .yougitai-project-link:visited{
+  color:var(--yg-link)!important;
+}
+.yougitai-showcase a:hover,
+.yougitai-showcase a:focus-visible,
+.yougitai-repositories-index .yougitai-project-link:hover,
+.yougitai-repositories-index .yougitai-project-link:focus-visible{
+  color:var(--yg-link-hover)!important;
+}
+.yougitai-showcase .yougitai-security-note,
+.yougitai-showcase .yougitai-redaction-badge,
+.yougitai-showcase .yougitai-blackout-count{
+  background:var(--yg-warning-bg)!important;
+  border-color:var(--yg-warning-border)!important;
+  color:var(--yg-warning-text)!important;
+}
+.yougitai-showcase .yougitai-code-line.has-redaction{
+  background:color-mix(in srgb,var(--yg-warning-border) 12%,transparent)!important;
+}
+.yougitai-showcase .yougitai-code-line.has-redaction .yougitai-line-no{
+  color:var(--yg-warning-border)!important;
+  border-right-color:var(--yg-warning-border)!important;
+}
+.yougitai-showcase .yougitai-blackout{
+  background:linear-gradient(180deg,var(--yg-blackout-edge),var(--yg-blackout) 24%,var(--yg-blackout) 78%,var(--yg-blackout-edge))!important;
+}
+.yougitai-access-gate{
+  border-color:var(--yg-border)!important;
+  background:var(--yg-panel)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-access-gate input[type=password]{
+  border-color:var(--yg-border)!important;
+}
+.yougitai-button{
+  background:var(--yg-link)!important;
+  color:var(--yg-text)!important;
+}
+.yougitai-button:hover,
+.yougitai-button:focus-visible{
+  background:var(--yg-link-hover)!important;
+}
+.yougitai-language-bars progress{
+  appearance:none;
+  -webkit-appearance:none;
+  width:100%;
+  height:8px;
+  border:0;
+  border-radius:999px;
+  overflow:hidden;
+  background:var(--yg-progress-track,var(--yg-code))!important;
+}
+.yougitai-language-bars progress::-webkit-progress-bar{
+  background:var(--yg-progress-track,var(--yg-code))!important;
+}
+.yougitai-language-bars progress::-webkit-progress-value{
+  background:var(--yg-progress,var(--yg-link))!important;
+}
+.yougitai-language-bars progress::-moz-progress-bar{
+  background:var(--yg-progress,var(--yg-link))!important;
+}
+.yougitai-repositories-index .yougitai-portfolio-grid,
+.yougitai-repositories-index .yougitai-project-card{
+  color:var(--yg-text)!important;
+}
+.yougitai-repositories-index .yougitai-project-card{
+  background:var(--yg-panel)!important;
+  border-color:var(--yg-border)!important;
+}
+.yougitai-repositories-index .yougitai-project-card h3{
+  color:var(--yg-text)!important;
+}
+.yougitai-repositories-index .yougitai-project-card p,
+.yougitai-repositories-index .yougitai-project-meta{
+  color:var(--yg-muted)!important;
+}
+.yougitai-repositories-index .yougitai-badge,
+.yougitai-repositories-index .yougitai-chips span{
+  background:var(--yg-code)!important;
+  border-color:var(--yg-border)!important;
+  color:var(--yg-text)!important;
+}
+
+/* v1.0.32 — skill/progress colors are independent from the blue link accent. */
+.yougitai-language-bars progress{background:var(--yg-progress-track,#21262d)!important;accent-color:var(--yg-progress,#3fb950)!important;color:var(--yg-progress,#3fb950)!important}
+.yougitai-language-bars progress::-webkit-progress-bar{background:var(--yg-progress-track,#21262d)!important}
+.yougitai-language-bars progress::-webkit-progress-value{background:var(--yg-progress,#3fb950)!important}
+.yougitai-language-bars progress::-moz-progress-bar{background:var(--yg-progress,#3fb950)!important}
+
+
+/* v1.0.33 — configurable navigation states and discoverable redaction markers. */
+.yougitai-showcase .yougitai-tabs a,.yougitai-showcase .yougitai-tabs a:visited{color:var(--yg-muted)!important}
+.yougitai-showcase .yougitai-tabs a:hover,.yougitai-showcase .yougitai-tabs a:focus-visible,.yougitai-showcase .yougitai-tabs a:active{color:var(--yg-nav-hover,var(--yg-link-hover))!important;border-bottom-color:var(--yg-nav-underline,var(--yg-nav-hover,var(--yg-link-hover)))!important}
+.yougitai-redaction-badge{min-width:0!important;white-space:nowrap;padding:2px 7px!important}
+.yougitai-blackout-layer{pointer-events:none}
+.yougitai-blackout{pointer-events:auto;cursor:help;outline:none}
+.yougitai-blackout:focus-visible{box-shadow:0 0 0 2px var(--yg-focus),0 1px 2px rgba(0,0,0,.35)!important}
+
+
+/* v1.0.34 — every repository-browser interaction is backend configurable. */
+.yougitai-showcase .yougitai-tree a:hover,.yougitai-showcase .yougitai-tree a:focus-visible,.yougitai-showcase .yougitai-folder-toggle:hover,.yougitai-showcase .yougitai-folder-toggle:focus-visible,.yougitai-showcase .yougitai-tree-actions button:hover,.yougitai-showcase .yougitai-tree-actions button:focus-visible{background:var(--yg-tree-hover-bg)!important;color:var(--yg-tree-hover-text)!important;border-color:var(--yg-tree-active-marker)!important}
+.yougitai-showcase .yougitai-tree a.is-active{background:var(--yg-tree-active-bg)!important;color:var(--yg-text)!important;box-shadow:inset 3px 0 0 var(--yg-tree-active-marker)!important}
+.yougitai-showcase a:focus-visible,.yougitai-showcase button:focus-visible{outline:2px solid var(--yg-focus)!important;outline-offset:2px}
+.yougitai-redaction-legend{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0 12px;padding:8px 10px;border:1px solid var(--yg-border);border-radius:7px;color:var(--yg-muted);font-size:.72rem;background:var(--yg-code)}
+.yougitai-redaction-legend strong{color:var(--yg-text)}
+.yougitai-blackout{background:linear-gradient(180deg,var(--yg-blackout-edge),var(--yg-blackout) 24%,var(--yg-blackout) 78%,var(--yg-blackout-edge))!important}
+
+
+/* v1.0.35 — saved blackout colors always win and redactions expose a localized hover/focus hint. */
+.yougitai-showcase .yougitai-blackout-layer{pointer-events:none!important;overflow:visible!important;z-index:6}
+.yougitai-showcase .yougitai-blackout{pointer-events:auto!important;cursor:help!important;z-index:7}
+.yougitai-showcase .yougitai-blackout::before{
+  content:attr(data-yougitai-tooltip);
+  position:absolute;
+  left:50%;
+  top:calc(100% + 8px);
+  transform:translateX(-50%);
+  width:max-content;
+  max-width:min(320px,80vw);
+  padding:7px 9px;
+  border:1px solid var(--yg-border)!important;
+  border-radius:6px;
+  background:var(--yg-panel)!important;
+  color:var(--yg-text)!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:12px;
+  font-weight:500;
+  line-height:1.35;
+  letter-spacing:0;
+  white-space:normal;
+  text-align:left;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .12s ease,visibility .12s ease;
+  pointer-events:none;
+  z-index:100;
+}
+.yougitai-showcase .yougitai-blackout:hover::before,
+.yougitai-showcase .yougitai-blackout:focus-visible::before{
+  opacity:1;
+  visibility:visible;
+}

@@ -100,13 +100,19 @@
                         if ( $file_protected ) {
                             echo '<span class="yougitai-protected-label">' . esc_html__( 'Protected', 'yougitai-secure-showcase' ) . '</span>';
                         } elseif ( (int) ( $file['redaction_count'] ?? 0 ) > 0 ) {
-                            echo '<span class="yougitai-redaction-badge" title="' . esc_attr__( 'Protected passages', 'yougitai-secure-showcase' ) . '">' . esc_html( number_format_i18n( (int) $file['redaction_count'] ) ) . '</span>';
+                            $redaction_count = (int) $file['redaction_count'];
+                            $redaction_label = sprintf(
+                                _n( '%s redaction', '%s redactions', $redaction_count, 'yougitai-secure-showcase' ),
+                                number_format_i18n( $redaction_count )
+                            );
+                            echo '<span class="yougitai-redaction-badge" title="' . esc_attr__( 'This file contains protected redactions.', 'yougitai-secure-showcase' ) . '">' . esc_html( $redaction_label ) . '</span>';
                         }
                         echo '</a></li>';
                     }
                 };
                 ?>
                 <div class="yougitai-tree-actions"><button type="button" data-yougitai-tree-expand><?php esc_html_e( 'Expand all', 'yougitai-secure-showcase' ); ?></button><button type="button" data-yougitai-tree-collapse><?php esc_html_e( 'Collapse all', 'yougitai-secure-showcase' ); ?></button></div>
+                <div class="yougitai-redaction-legend"><span><strong><?php esc_html_e( 'Redactions', 'yougitai-secure-showcase' ); ?>:</strong> <?php esc_html_e( 'A badge such as “3 redactions” marks a partially protected file. Open that file to see the redaction markers in the code.', 'yougitai-secure-showcase' ); ?></span><span>🔒 <?php esc_html_e( 'Fully protected files contain no public code.', 'yougitai-secure-showcase' ); ?></span></div>
                 <ul class="yougitai-file-tree"><?php $render_tree( $file_tree ); ?></ul>
             </aside>
             <article class="yougitai-code-panel">
@@ -146,7 +152,7 @@
                                         <?php foreach ( $redactions_by_line[ $line_no ] as $redaction ) :
                                             $width = max( 6, min( 46, (int) ceil( (int) ( $redaction['original_length'] ?? 8 ) / max( 1, ( (int) ( $redaction['line_end'] ?? $line_no ) - (int) ( $redaction['line_start'] ?? $line_no ) + 1 ) ) ) ) );
                                             $left = max( 0, min( 70, (int) ( $redaction['column_start'] ?? 1 ) - 1 ) );
-                                        ?><?php $protected_lines = max( 1, (int) ( $redaction['line_end'] ?? $line_no ) - (int) ( $redaction['line_start'] ?? $line_no ) + 1 ); ?><span class="yougitai-blackout" style="--yg-blackout-width:<?php echo esc_attr( (string) $width ); ?>ch;--yg-blackout-left:<?php echo esc_attr( (string) $left ); ?>ch" title="<?php esc_attr_e( 'Protected implementation detail', 'yougitai-secure-showcase' ); ?>"></span><?php if ( $protected_lines > 1 ) : ?><span class="yougitai-blackout-count" style="--yg-blackout-left:<?php echo esc_attr( (string) $left ); ?>ch"><?php printf( esc_html__( '%s lines protected', 'yougitai-secure-showcase' ), esc_html( number_format_i18n( $protected_lines ) ) ); ?></span><?php endif; ?><?php endforeach; ?>
+                                        ?><?php $protected_lines = max( 1, (int) ( $redaction['line_end'] ?? $line_no ) - (int) ( $redaction['line_start'] ?? $line_no ) + 1 ); ?><span class="yougitai-blackout" tabindex="0" style="--yg-blackout-width:<?php echo esc_attr( (string) $width ); ?>ch;--yg-blackout-left:<?php echo esc_attr( (string) $left ); ?>ch" data-yougitai-tooltip="<?php esc_attr_e( 'This area was redacted to protect sensitive or proprietary implementation details.', 'yougitai-secure-showcase' ); ?>" title="<?php esc_attr_e( 'This area was redacted to protect sensitive or proprietary implementation details.', 'yougitai-secure-showcase' ); ?>" aria-label="<?php esc_attr_e( 'This area was redacted to protect sensitive or proprietary implementation details.', 'yougitai-secure-showcase' ); ?>"></span><?php if ( $protected_lines > 1 ) : ?><span class="yougitai-blackout-count" style="--yg-blackout-left:<?php echo esc_attr( (string) $left ); ?>ch"><?php printf( esc_html__( '%s lines protected', 'yougitai-secure-showcase' ), esc_html( number_format_i18n( $protected_lines ) ) ); ?></span><?php endif; ?><?php endforeach; ?>
                                     </span>
                                 <?php endif; ?>
                             </div>
