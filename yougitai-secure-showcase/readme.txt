@@ -3,7 +3,7 @@ Contributors: yougitai
 Tags: github, portfolio, code, elementor, security
 Requires at least: 6.4
 Requires PHP: 8.1
-Stable tag: 1.0.26
+Stable tag: 1.0.32
 License: GPLv2 or later
 
 Secure GitHub repository showcases with strict source/public separation, deterministic secret scanning, optional AI-assisted review, standalone WordPress rendering and Elementor compatibility.
@@ -54,3 +54,14 @@ For private repositories, use either an encrypted fine-grained token or configur
 == Data retention ==
 
 Repository data is preserved on uninstall by default. Administrators can explicitly enable secure deletion of plugin tables, stored credentials and settings from the settings screen before uninstalling.
+
+= 1.0.29 =
+* Added configurable showcase colors in the plugin settings.
+* Kept Elementor responsible only for the page canvas while YougitAI retains its own UI palette.
+= 1.0.30 =
+* Isolated repository browser buttons from global Elementor/theme button styles.
+= 1.0.31 =
+* Centralized all dark showcase frontend colors in plugin settings.
+* Added configurable warning/redaction and blackout colors.
+* Styled language/skill progress bars from the YougitAI palette instead of browser defaults.
+* Removed Elementor/theme color bleed from remaining showcase controls.
