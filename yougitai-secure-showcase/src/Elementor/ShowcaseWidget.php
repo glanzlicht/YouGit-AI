@@ -41,7 +41,7 @@ final class ShowcaseWidget extends Widget_Base {
                 'light' => __( 'Light', 'yougitai-secure-showcase' ),
                 'dark' => __( 'Dark', 'yougitai-secure-showcase' ),
             ],
-            'default' => 'auto',
+            'default' => 'dark',
         ] );
         $this->end_controls_section();
     }
