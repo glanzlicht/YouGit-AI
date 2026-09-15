@@ -63,3 +63,10 @@ Repository data is preserved on uninstall by default. Administrators can explici
 
 = 1.0.30 =
 * Isolated repository browser buttons from global Elementor/theme button styles.
+
+
+= 1.0.31 =
+* Centralized all dark showcase frontend colors in plugin settings.
+* Added configurable warning/redaction and blackout colors.
+* Styled language/skill progress bars from the YougitAI palette instead of browser defaults.
+* Removed Elementor/theme color bleed from remaining showcase controls.
