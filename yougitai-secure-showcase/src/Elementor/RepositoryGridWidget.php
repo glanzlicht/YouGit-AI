@@ -18,11 +18,11 @@ final class RepositoryGridWidget extends Widget_Base {
     protected function register_controls(): void {
         $this->start_controls_section( 'content', [ 'label' => __( 'Content', 'yougitai-secure-showcase' ) ] );
         $this->add_control( 'columns', [ 'label' => __( 'Columns', 'yougitai-secure-showcase' ), 'type' => Controls_Manager::SELECT, 'options' => [ '1'=>'1','2'=>'2','3'=>'3','4'=>'4' ], 'default' => '3' ] );
-        $this->add_control( 'theme', [ 'label' => __( 'Theme', 'yougitai-secure-showcase' ), 'type' => Controls_Manager::SELECT, 'options' => [ 'auto'=>__( 'Automatic','yougitai-secure-showcase'),'light'=>__( 'Light','yougitai-secure-showcase'),'dark'=>__( 'Dark','yougitai-secure-showcase') ], 'default'=>'auto' ] );
+        $this->add_control( 'theme', [ 'label' => __( 'Theme', 'yougitai-secure-showcase' ), 'type' => Controls_Manager::SELECT, 'options' => [ 'inherit'=>__( 'Website / Elementor','yougitai-secure-showcase'),'auto'=>__( 'Automatic (device)','yougitai-secure-showcase'),'light'=>__( 'Light','yougitai-secure-showcase'),'dark'=>__( 'Dark','yougitai-secure-showcase') ], 'default'=>'inherit' ] );
         $this->end_controls_section();
     }
     protected function render(): void {
         $settings = $this->get_settings_for_display();
-        echo ( new Renderer( $this->repositories ) )->render_grid( sanitize_key( (string) ( $settings['theme'] ?? 'auto' ) ), absint( $settings['columns'] ?? 3 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo ( new Renderer( $this->repositories ) )->render_grid( sanitize_key( (string) ( $settings['theme'] ?? 'inherit' ) ), absint( $settings['columns'] ?? 3 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 }
