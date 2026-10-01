@@ -1,0 +1,24 @@
+name: Package WordPress plugin
+
+on:
+  push:
+    branches:
+      - feature/readme-images
+    paths:
+      - ".github/workflows/package-wordpress-plugin.yml"
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build installable plugin ZIP
+        run: |
+          rm -f yougitai-secure-showcase-1.0.39.zip
+          zip -r yougitai-secure-showcase-1.0.39.zip yougitai-secure-showcase             -x "*/.DS_Store" "*/.git*" "*/node_modules/*"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yougitai-secure-showcase-1.0.39
+          path: yougitai-secure-showcase-1.0.39.zip
+          if-no-files-found: error
