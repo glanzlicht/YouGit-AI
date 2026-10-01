@@ -40,6 +40,37 @@ final class Readme {
             $markdown
         ) ?? $markdown;
 
+        $markdown = preg_replace_callback(
+            '/<img\b([^>]*?)\bsrc\s*=\s*(["\'])([^"\']+)\2([^>]*)>/iu',
+            function ( array $match ) use ( $repository, $snapshot_id, $readme_path ): string {
+                $target = trim( html_entity_decode( (string) $match[3], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+                if ( preg_match( '#^https://#i', $target ) ) {
+                    $src = esc_url_raw( $target );
+                } elseif ( preg_match( '#^[a-z][a-z0-9+.-]*:#i', $target ) ) {
+                    return esc_html( $match[0] );
+                } else {
+                    $path = $this->resolve_path( $readme_path, $target );
+                    $src = $this->asset_url( $repository, $snapshot_id, $path );
+                }
+                if ( ! $src ) return esc_html( $match[0] );
+
+                $attrs = (string) $match[1] . ' ' . (string) $match[4];
+                $alt = '';
+                $width = '';
+                if ( preg_match( '/\balt\s*=\s*(["\'])(.*?)\1/iu', $attrs, $m ) ) {
+                    $alt = wp_strip_all_tags( html_entity_decode( (string) $m[2], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+                }
+                if ( preg_match( '/\bwidth\s*=\s*(["\'])(\d{1,4})\1/iu', $attrs, $m ) ) {
+                    $width = (string) min( 1600, max( 1, (int) $m[2] ) );
+                }
+
+                return '<img src="' . esc_url( $src ) . '" alt="' . esc_attr( $alt ) . '"'
+                    . ( $width !== '' ? ' width="' . esc_attr( $width ) . '"' : '' )
+                    . ' loading="lazy" decoding="async">';
+            },
+            $markdown
+        ) ?? $markdown;
+
         return $this->markdown_to_html( $markdown );
     }
 
@@ -223,7 +254,7 @@ final class Readme {
             'h1'=>[], 'h2'=>[], 'h3'=>[], 'h4'=>[], 'h5'=>[], 'h6'=>[],
             'p'=>[], 'ul'=>[], 'ol'=>[], 'li'=>[], 'pre'=>[], 'code'=>[], 'strong'=>[], 'em'=>[],
             'a'=>[ 'href'=>true, 'target'=>true, 'rel'=>true ],
-            'img'=>[ 'src'=>true, 'alt'=>true, 'loading'=>true, 'decoding'=>true ],
+            'img'=>[ 'src'=>true, 'alt'=>true, 'width'=>true, 'height'=>true, 'loading'=>true, 'decoding'=>true ],
         ] );
     }
 
@@ -234,6 +265,23 @@ final class Readme {
             $tokens[ $key ] = $html;
             return $key;
         };
+        $text = preg_replace_callback( '/<img\b([^>]*?)\bsrc\s*=\s*(["\'])(https?:\/\/[^"\']+)\2([^>]*)>/iu', static function ( array $m ) use ( $stash ): string {
+            $attrs = (string) $m[1] . ' ' . (string) $m[4];
+            $alt = '';
+            $width = '';
+            if ( preg_match( '/\balt\s*=\s*(["\'])(.*?)\1/iu', $attrs, $a ) ) {
+                $alt = wp_strip_all_tags( html_entity_decode( (string) $a[2], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
+            }
+            if ( preg_match( '/\bwidth\s*=\s*(["\'])(\d{1,4})\1/iu', $attrs, $w ) ) {
+                $width = (string) min( 1600, max( 1, (int) $w[2] ) );
+            }
+            $src = esc_url( $m[3], [ 'http', 'https' ] );
+            return $src ? $stash(
+                '<img src="' . esc_attr( $src ) . '" alt="' . esc_attr( $alt ) . '"'
+                . ( $width !== '' ? ' width="' . esc_attr( $width ) . '"' : '' )
+                . ' loading="lazy" decoding="async">'
+            ) : '';
+        }, $text ) ?? $text;
         $text = preg_replace_callback( '/!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)/i', static function ( array $m ) use ( $stash ): string {
             $src = esc_url( $m[2], [ 'http', 'https' ] );
             return $src ? $stash( '<img src="' . esc_attr( $src ) . '" alt="' . esc_attr( wp_strip_all_tags( $m[1] ) ) . '" loading="lazy" decoding="async">' ) : '';
