@@ -40,6 +40,51 @@ final class RepositoryService {
         return $row ?: null;
     }
 
+    public function update_protection_profile( int $repository_id, string $profile ) {
+        $allowed_profiles = [ 'portfolio', 'balanced', 'investor', 'maximum' ];
+        if ( ! in_array( $profile, $allowed_profiles, true ) ) {
+            return new WP_Error( 'yougitai_invalid_profile', __( 'Invalid protection profile.', 'yougitai-secure-showcase' ) );
+        }
+        $repository = $this->find( $repository_id );
+        if ( ! $repository ) {
+            return new WP_Error( 'yougitai_not_found', __( 'Repository not found.', 'yougitai-secure-showcase' ) );
+        }
+        global $wpdb;
+        $updated = $wpdb->update(
+            Schema::table( 'repositories' ),
+            [ 'protection_profile' => $profile, 'updated_at' => current_time( 'mysql' ) ],
+            [ 'id' => $repository_id ],
+            [ '%s', '%s' ],
+            [ '%d' ]
+        );
+        if ( $updated === false ) {
+            return new WP_Error( 'yougitai_db_error', __( 'Protection profile could not be updated.', 'yougitai-secure-showcase' ) );
+        }
+        $this->audit->log( 'repository_profile_updated', __( 'Repository protection profile updated.', 'yougitai-secure-showcase' ), $repository_id, null, [
+            'from' => (string) $repository['protection_profile'],
+            'to' => $profile,
+        ] );
+        return true;
+    }
+
+    public function delete_repository( int $repository_id ) {
+        $repository = $this->find( $repository_id );
+        if ( ! $repository ) {
+            return new WP_Error( 'yougitai_not_found', __( 'Repository not found.', 'yougitai-secure-showcase' ) );
+        }
+
+        global $wpdb;
+        // Delete only local YougitAI data. This never calls GitHub and cannot delete the source repository.
+        foreach ( [ 'findings', 'files', 'rules', 'snapshots', 'audit_log' ] as $table ) {
+            $wpdb->delete( Schema::table( $table ), [ 'repository_id' => $repository_id ], [ '%d' ] );
+        }
+        $deleted = $wpdb->delete( Schema::table( 'repositories' ), [ 'id' => $repository_id ], [ '%d' ] );
+        if ( $deleted === false ) {
+            return new WP_Error( 'yougitai_db_error', __( 'Repository could not be removed from YougitAI.', 'yougitai-secure-showcase' ) );
+        }
+        return true;
+    }
+
     public function create_from_github_url( string $url, string $profile = 'balanced' ) {
         $parts = $this->parse_github_url( $url );
         if ( is_wp_error( $parts ) ) {
