@@ -45,13 +45,13 @@ final class ReadmeOutputFilter {
             . '.yougitai-readme-content blockquote{padding-left:1rem;border-left:3px solid currentColor;opacity:.85}'
             . '</style>';
         $rendered = preg_replace(
-            '#<p>&lt;p align=&quot;center&quot;&gt;\s*(.*?)\s*&lt;/p&gt;</p>#si',
-            '<div class="yougitai-readme-gallery">$1</div>',
+            '#<p>&lt;p align=&quot;center&quot;&gt;&lt;sub&gt;(.*?)&lt;/sub&gt;&lt;/p&gt;</p>#si',
+            '<span class="yougitai-readme-caption">$1</span>',
             $rendered
         ) ?? $rendered;
         $rendered = preg_replace(
-            '#<p>&lt;p align=&quot;center&quot;&gt;&lt;sub&gt;(.*?)&lt;/sub&gt;&lt;/p&gt;</p>#si',
-            '<span class="yougitai-readme-caption">$1</span>',
+            '#<p>&lt;p align=&quot;center&quot;&gt;\s*(.*?)\s*&lt;/p&gt;</p>#si',
+            '<div class="yougitai-readme-gallery">$1</div>',
             $rendered
         ) ?? $rendered;
 
