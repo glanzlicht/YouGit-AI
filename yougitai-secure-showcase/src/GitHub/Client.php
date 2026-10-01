@@ -112,6 +112,15 @@ final class Client {
         ) );
     }
 
+    public function get_blob( string $owner, string $repo, string $sha ) {
+        return $this->request( sprintf(
+            'https://api.github.com/repos/%s/%s/git/blobs/%s',
+            rawurlencode( $owner ),
+            rawurlencode( $repo ),
+            rawurlencode( $sha )
+        ) );
+    }
+
     private function request( string $url ) {
         $headers = [
                 'Accept' => 'application/vnd.github+json',
