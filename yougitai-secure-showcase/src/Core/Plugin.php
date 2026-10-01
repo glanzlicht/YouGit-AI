@@ -8,7 +8,7 @@ use YougitAI\SecureShowcase\Api\ConnectedAIRoutes;
 use YougitAI\SecureShowcase\Database\Schema;
 use YougitAI\SecureShowcase\Elementor\Integration as ElementorIntegration;
 use YougitAI\SecureShowcase\Frontend\Renderer;
-use YougitAI\SecureShowcase\Frontend\Readme;
+use YougitAI\SecureShowcase\Frontend\ReadmeProxy;
 use YougitAI\SecureShowcase\I18n\Loader;
 use YougitAI\SecureShowcase\Maintenance\Cleanup;
 use YougitAI\SecureShowcase\Repository\RepositoryService;
@@ -31,7 +31,7 @@ final class Plugin {
         ( new Cleanup() )->register();
         ( new Admin( $repositories, $sync ) )->register();
         ( new Renderer( $repositories ) )->register();
-        ( new Readme( $repositories ) )->register();
+        ( new ReadmeProxy( $repositories ) )->register();
         ( new PublicRoutes( $repositories ) )->register();
         ( new GitHubWebhookRoutes( $repositories, $sync ) )->register();
         ( new OAuthServer() )->register();
