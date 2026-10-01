@@ -74,6 +74,28 @@ final class RepositoryService {
         }
 
         global $wpdb;
+        // Remove this repository from active Connected-AI grants so stale IDs cannot survive a re-import.
+        foreach ( [ 'connections', 'oauth_codes', 'oauth_tokens' ] as $grant_table ) {
+            $rows = $wpdb->get_results( 'SELECT id, repository_ids FROM ' . Schema::table( $grant_table ), ARRAY_A ) ?: [];
+            foreach ( $rows as $row ) {
+                $ids = json_decode( (string) ( $row['repository_ids'] ?? '[]' ), true );
+                if ( ! is_array( $ids ) ) {
+                    continue;
+                }
+                $ids = array_values( array_filter(
+                    array_map( 'absint', $ids ),
+                    static fn( int $id ): bool => $id !== $repository_id
+                ) );
+                $wpdb->update(
+                    Schema::table( $grant_table ),
+                    [ 'repository_ids' => wp_json_encode( $ids ) ],
+                    [ 'id' => (int) $row['id'] ],
+                    [ '%s' ],
+                    [ '%d' ]
+                );
+            }
+        }
+
         // Delete only local YougitAI data. This never calls GitHub and cannot delete the source repository.
         foreach ( [ 'findings', 'files', 'rules', 'snapshots', 'audit_log' ] as $table ) {
             $wpdb->delete( Schema::table( $table ), [ 'repository_id' => $repository_id ], [ '%d' ] );
