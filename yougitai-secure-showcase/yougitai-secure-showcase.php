@@ -2,7 +2,7 @@
 /**
  * Plugin Name: YougitAI Secure Showcase
  * Description: Secure GitHub repository showcases for WordPress with strict source/public separation, standalone rendering, Elementor compatibility, and multilingual support.
- * Version: 1.0.39
+ * Version: 1.0.40
  * Author: YougitAI
  * Text Domain: yougitai-secure-showcase
  * Domain Path: /languages
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'YOUGITAI_SS_VERSION', '1.0.39' );
+define( 'YOUGITAI_SS_VERSION', '1.0.40' );
 define( 'YOUGITAI_SS_FILE', __FILE__ );
 define( 'YOUGITAI_SS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'YOUGITAI_SS_URL', plugin_dir_url( __FILE__ ) );
