@@ -119,6 +119,31 @@
                             <a class="button" target="_blank" rel="noopener" href="<?php echo esc_url( home_url( '/' . get_option( 'yougitai_ss_showcase_slug', 'repositories' ) . '/' . $repo['slug'] . '/' ) ); ?>"><?php esc_html_e( 'Open showcase', 'yougitai-secure-showcase' ); ?></a>
                         <?php endif; ?>
                     </div>
+                    <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="yougitai-inline-form">
+                        <input type="hidden" name="action" value="yougitai_ss_update_repository_profile">
+                        <input type="hidden" name="repository_id" value="<?php echo esc_attr( (int) $repo['id'] ); ?>">
+                        <?php wp_nonce_field( 'yougitai_ss_update_repository_profile_' . (int) $repo['id'] ); ?>
+                        <label>
+                            <span><?php esc_html_e( 'Protection profile', 'yougitai-secure-showcase' ); ?></span>
+                            <select name="protection_profile">
+                                <?php foreach ( [
+                                    'portfolio' => __( 'Portfolio', 'yougitai-secure-showcase' ),
+                                    'balanced' => __( 'Balanced', 'yougitai-secure-showcase' ),
+                                    'investor' => __( 'Investor', 'yougitai-secure-showcase' ),
+                                    'maximum' => __( 'Maximum IP protection', 'yougitai-secure-showcase' ),
+                                ] as $profile_key => $profile_label ) : ?>
+                                    <option value="<?php echo esc_attr( $profile_key ); ?>" <?php selected( $repo['protection_profile'], $profile_key ); ?>><?php echo esc_html( $profile_label ); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                        <?php submit_button( __( 'Save profile', 'yougitai-secure-showcase' ), 'secondary', 'submit', false ); ?>
+                    </form>
+                    <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" onsubmit="return confirm('<?php echo esc_js( __( 'Remove this repository from YougitAI? Local snapshots, findings and rules will be deleted. The GitHub repository will NOT be changed.', 'yougitai-secure-showcase' ) ); ?>');">
+                        <input type="hidden" name="action" value="yougitai_ss_delete_repository">
+                        <input type="hidden" name="repository_id" value="<?php echo esc_attr( (int) $repo['id'] ); ?>">
+                        <?php wp_nonce_field( 'yougitai_ss_delete_repository_' . (int) $repo['id'] ); ?>
+                        <?php submit_button( __( 'Remove from YougitAI', 'yougitai-secure-showcase' ), 'delete', 'submit', false ); ?>
+                    </form>
                 </article>
             <?php endforeach; ?>
         </div>
