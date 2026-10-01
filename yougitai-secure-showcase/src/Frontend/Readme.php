@@ -77,7 +77,19 @@ final class Readme {
             $path,
             (string) ( $repository['default_branch'] ?? 'main' )
         );
-        if ( is_wp_error( $file ) || ( $file['encoding'] ?? '' ) !== 'base64' ) {
+        if ( is_wp_error( $file ) ) {
+            status_header( 404 );
+            exit;
+        }
+        if ( ( $file['encoding'] ?? '' ) !== 'base64' || empty( $file['content'] ) ) {
+            $sha = sanitize_text_field( (string) ( $file['sha'] ?? '' ) );
+            $file = $sha !== '' ? $this->github->get_blob(
+                (string) $repository['owner'],
+                (string) $repository['repo'],
+                $sha
+            ) : $file;
+        }
+        if ( is_wp_error( $file ) || ( $file['encoding'] ?? '' ) !== 'base64' || empty( $file['content'] ) ) {
             status_header( 404 );
             exit;
         }
