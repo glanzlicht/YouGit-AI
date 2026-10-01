@@ -40,10 +40,21 @@ final class ReadmeOutputFilter {
             . '.yougitai-readme-content>:last-child{margin-bottom:0}'
             . '.yougitai-readme-content h1,.yougitai-readme-content h2,.yougitai-readme-content h3,.yougitai-readme-content h4{margin:1.35em 0 .55em;line-height:1.25}'
             . '.yougitai-readme-content p,.yougitai-readme-content ul,.yougitai-readme-content ol,.yougitai-readme-content blockquote,.yougitai-readme-content pre{margin:0 0 1em}'
-            . '.yougitai-readme-content img{display:block;max-width:100%;height:auto;margin:1rem auto;border-radius:12px}'
+            . '.yougitai-readme-content img{display:block;max-width:100%;height:auto;margin:1rem auto;border-radius:12px}.yougitai-readme-gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin:1rem 0}.yougitai-readme-gallery img{display:block;margin:0;max-width:180px;width:auto;height:auto}.yougitai-readme-caption{display:block;text-align:center;margin:-.25rem 0 1rem;opacity:.72;font-size:.9em}'
             . '.yougitai-readme-content pre{overflow-x:auto;padding:1rem;border-radius:10px}'
             . '.yougitai-readme-content blockquote{padding-left:1rem;border-left:3px solid currentColor;opacity:.85}'
             . '</style>';
+        $rendered = preg_replace(
+            '#<p>&lt;p align=&quot;center&quot;&gt;\s*(.*?)\s*&lt;/p&gt;</p>#si',
+            '<div class="yougitai-readme-gallery">$1</div>',
+            $rendered
+        ) ?? $rendered;
+        $rendered = preg_replace(
+            '#<p>&lt;p align=&quot;center&quot;&gt;&lt;sub&gt;(.*?)&lt;/sub&gt;&lt;/p&gt;</p>#si',
+            '<span class="yougitai-readme-caption">$1</span>',
+            $rendered
+        ) ?? $rendered;
+
         $replacement = $style . '<div class="yougitai-readme-content">' . $rendered . '</div>';
 
         $pattern = '#(<div class="yougitai-readme">\s*<h3>.*?</h3>\s*)<pre>.*?</pre>#si';
