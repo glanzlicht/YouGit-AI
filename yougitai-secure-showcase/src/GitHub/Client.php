@@ -121,6 +121,45 @@ final class Client {
         ) );
     }
 
+    public function get_file_raw( string $owner, string $repo, string $path, string $ref ) {
+        $url = sprintf(
+            'https://api.github.com/repos/%s/%s/contents/%s?ref=%s',
+            rawurlencode( $owner ),
+            rawurlencode( $repo ),
+            implode( '/', array_map( 'rawurlencode', explode( '/', $path ) ) ),
+            rawurlencode( $ref )
+        );
+
+        $headers = [
+            'Accept' => 'application/vnd.github.raw+json',
+            'User-Agent' => 'YougitAI-Secure-Showcase/' . YOUGITAI_SS_VERSION,
+            'X-GitHub-Api-Version' => '2022-11-28',
+        ];
+        $token = $this->token();
+        if ( $token !== '' ) {
+            $headers['Authorization'] = 'Bearer ' . $token;
+        }
+
+        $response = wp_remote_get( $url, [
+            'timeout' => 30,
+            'headers' => $headers,
+        ] );
+        if ( is_wp_error( $response ) ) {
+            return $response;
+        }
+
+        $code = wp_remote_retrieve_response_code( $response );
+        if ( $code < 200 || $code >= 300 ) {
+            return new WP_Error(
+                'yougitai_github_raw_error',
+                __( 'GitHub raw file request failed.', 'yougitai-secure-showcase' ),
+                [ 'status' => $code ]
+            );
+        }
+
+        return wp_remote_retrieve_body( $response );
+    }
+
     private function request( string $url ) {
         $headers = [
                 'Accept' => 'application/vnd.github+json',
