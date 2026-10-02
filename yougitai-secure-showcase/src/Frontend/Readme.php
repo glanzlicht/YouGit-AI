@@ -220,7 +220,50 @@ final class Readme {
             if ( $list !== '' ) { $html[] = '</' . $list . '>'; $list = ''; }
         };
 
-        foreach ( $lines as $line ) {
+        for ( $i = 0, $line_count = count( $lines ); $i < $line_count; $i++ ) {
+            $line = $lines[ $i ];
+
+            if (
+                ! $in_code &&
+                $i + 1 < $line_count &&
+                str_contains( $line, '|' ) &&
+                preg_match( '/^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?\s*$/', $lines[ $i + 1 ] )
+            ) {
+                $flush();
+                $close_list();
+
+                $split_row = static function ( string $row ): array {
+                    $row = trim( $row );
+                    $row = trim( $row, '|' );
+                    return array_map( 'trim', explode( '|', $row ) );
+                };
+
+                $headers = $split_row( $line );
+                $i += 2;
+                $rows = [];
+                while ( $i < $line_count && trim( $lines[ $i ] ) !== '' && str_contains( $lines[ $i ], '|' ) ) {
+                    $rows[] = $split_row( $lines[ $i ] );
+                    $i++;
+                }
+                $i--;
+
+                $table = '<div class="yougitai-readme-table-wrap"><table><thead><tr>';
+                foreach ( $headers as $cell ) {
+                    $table .= '<th>' . $this->inline( $cell ) . '</th>';
+                }
+                $table .= '</tr></thead><tbody>';
+                foreach ( $rows as $row ) {
+                    $table .= '<tr>';
+                    foreach ( $headers as $index => $_header ) {
+                        $table .= '<td>' . $this->inline( (string) ( $row[ $index ] ?? '' ) ) . '</td>';
+                    }
+                    $table .= '</tr>';
+                }
+                $table .= '</tbody></table></div>';
+                $html[] = $table;
+                continue;
+            }
+
             if ( preg_match( '/^\s*' . chr(96) . chr(96) . chr(96) . '/', $line ) ) {
                 $flush(); $close_list();
                 if ( $in_code ) {
@@ -252,7 +295,8 @@ final class Readme {
 
         return wp_kses( implode( "\n", $html ), [
             'h1'=>[], 'h2'=>[], 'h3'=>[], 'h4'=>[], 'h5'=>[], 'h6'=>[],
-            'p'=>[], 'ul'=>[], 'ol'=>[], 'li'=>[], 'pre'=>[], 'code'=>[], 'strong'=>[], 'em'=>[],
+            'p'=>[], 'div'=>[ 'class'=>true ], 'ul'=>[], 'ol'=>[], 'li'=>[], 'pre'=>[], 'code'=>[], 'strong'=>[], 'em'=>[],
+            'table'=>[], 'thead'=>[], 'tbody'=>[], 'tr'=>[], 'th'=>[], 'td'=>[],
             'a'=>[ 'href'=>true, 'target'=>true, 'rel'=>true ],
             'img'=>[ 'src'=>true, 'alt'=>true, 'width'=>true, 'height'=>true, 'loading'=>true, 'decoding'=>true ],
         ] );
