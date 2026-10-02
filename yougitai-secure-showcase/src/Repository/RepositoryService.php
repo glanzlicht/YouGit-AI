@@ -40,6 +40,73 @@ final class RepositoryService {
         return $row ?: null;
     }
 
+    public function update_protection_profile( int $repository_id, string $profile ) {
+        $allowed_profiles = [ 'portfolio', 'balanced', 'investor', 'maximum' ];
+        if ( ! in_array( $profile, $allowed_profiles, true ) ) {
+            return new WP_Error( 'yougitai_invalid_profile', __( 'Invalid protection profile.', 'yougitai-secure-showcase' ) );
+        }
+        $repository = $this->find( $repository_id );
+        if ( ! $repository ) {
+            return new WP_Error( 'yougitai_not_found', __( 'Repository not found.', 'yougitai-secure-showcase' ) );
+        }
+        global $wpdb;
+        $updated = $wpdb->update(
+            Schema::table( 'repositories' ),
+            [ 'protection_profile' => $profile, 'updated_at' => current_time( 'mysql' ) ],
+            [ 'id' => $repository_id ],
+            [ '%s', '%s' ],
+            [ '%d' ]
+        );
+        if ( $updated === false ) {
+            return new WP_Error( 'yougitai_db_error', __( 'Protection profile could not be updated.', 'yougitai-secure-showcase' ) );
+        }
+        $this->audit->log( 'repository_profile_updated', __( 'Repository protection profile updated.', 'yougitai-secure-showcase' ), $repository_id, null, [
+            'from' => (string) $repository['protection_profile'],
+            'to' => $profile,
+        ] );
+        return true;
+    }
+
+    public function delete_repository( int $repository_id ) {
+        $repository = $this->find( $repository_id );
+        if ( ! $repository ) {
+            return new WP_Error( 'yougitai_not_found', __( 'Repository not found.', 'yougitai-secure-showcase' ) );
+        }
+
+        global $wpdb;
+        // Remove this repository from active Connected-AI grants so stale IDs cannot survive a re-import.
+        foreach ( [ 'connections', 'oauth_codes', 'oauth_tokens' ] as $grant_table ) {
+            $rows = $wpdb->get_results( 'SELECT id, repository_ids FROM ' . Schema::table( $grant_table ), ARRAY_A ) ?: [];
+            foreach ( $rows as $row ) {
+                $ids = json_decode( (string) ( $row['repository_ids'] ?? '[]' ), true );
+                if ( ! is_array( $ids ) ) {
+                    continue;
+                }
+                $ids = array_values( array_filter(
+                    array_map( 'absint', $ids ),
+                    static fn( int $id ): bool => $id !== $repository_id
+                ) );
+                $wpdb->update(
+                    Schema::table( $grant_table ),
+                    [ 'repository_ids' => wp_json_encode( $ids ) ],
+                    [ 'id' => (int) $row['id'] ],
+                    [ '%s' ],
+                    [ '%d' ]
+                );
+            }
+        }
+
+        // Delete only local YougitAI data. This never calls GitHub and cannot delete the source repository.
+        foreach ( [ 'findings', 'files', 'rules', 'snapshots', 'audit_log' ] as $table ) {
+            $wpdb->delete( Schema::table( $table ), [ 'repository_id' => $repository_id ], [ '%d' ] );
+        }
+        $deleted = $wpdb->delete( Schema::table( 'repositories' ), [ 'id' => $repository_id ], [ '%d' ] );
+        if ( $deleted === false ) {
+            return new WP_Error( 'yougitai_db_error', __( 'Repository could not be removed from YougitAI.', 'yougitai-secure-showcase' ) );
+        }
+        return true;
+    }
+
     public function create_from_github_url( string $url, string $profile = 'balanced' ) {
         $parts = $this->parse_github_url( $url );
         if ( is_wp_error( $parts ) ) {

@@ -19,6 +19,8 @@ final class Admin {
         add_action( 'admin_post_yougitai_ss_add_repository', [ $this, 'add_repository' ] );
         add_action( 'admin_post_yougitai_ss_import_selected_repositories', [ $this, 'import_selected_repositories' ] );
         add_action( 'admin_post_yougitai_ss_refresh_github_repositories', [ $this, 'refresh_github_repositories' ] );
+        add_action( 'admin_post_yougitai_ss_update_repository_profile', [ $this, 'update_repository_profile' ] );
+        add_action( 'admin_post_yougitai_ss_delete_repository', [ $this, 'delete_repository' ] );
         add_action( 'admin_post_yougitai_ss_import_snapshot', [ $this, 'import_snapshot' ] );
         add_action( 'admin_post_yougitai_ss_apply_protection_rules', [ $this, 'apply_protection_rules' ] );
         add_action( 'admin_post_yougitai_ss_approve_snapshot', [ $this, 'approve_snapshot' ] );
@@ -266,6 +268,41 @@ final class Admin {
             $message .= ' ' . sprintf( __( '%d repositories could not be imported.', 'yougitai-secure-showcase' ), count( $errors ) );
         }
         wp_safe_redirect( add_query_arg( [ 'page' => 'yougitai-secure-showcase', 'yougitai_message' => rawurlencode( $message ) ], admin_url( 'admin.php' ) ) );
+        exit;
+    }
+
+    public function update_repository_profile(): void {
+        $this->guard();
+        $repository_id = isset( $_POST['repository_id'] ) ? absint( $_POST['repository_id'] ) : 0;
+        check_admin_referer( 'yougitai_ss_update_repository_profile_' . $repository_id );
+        $profile = isset( $_POST['protection_profile'] ) ? sanitize_key( wp_unslash( $_POST['protection_profile'] ) ) : '';
+        $result = $this->repositories->update_protection_profile( $repository_id, $profile );
+        if ( is_wp_error( $result ) ) {
+            $this->redirect_error( $result->get_error_message(), $repository_id );
+        }
+        $this->redirect_repository( $repository_id, __( 'Protection profile updated. Existing snapshots were not changed; the new profile applies to future imports and reviews.', 'yougitai-secure-showcase' ) );
+    }
+
+    public function delete_repository(): void {
+        $this->guard();
+        $repository_id = isset( $_POST['repository_id'] ) ? absint( $_POST['repository_id'] ) : 0;
+        check_admin_referer( 'yougitai_ss_delete_repository_' . $repository_id );
+        $repository = $this->repositories->find( $repository_id );
+        if ( ! $repository ) {
+            $this->redirect_error( __( 'Repository not found.', 'yougitai-secure-showcase' ) );
+        }
+        $label = (string) $repository['owner'] . '/' . (string) $repository['repo'];
+        $result = $this->repositories->delete_repository( $repository_id );
+        if ( is_wp_error( $result ) ) {
+            $this->redirect_error( $result->get_error_message(), $repository_id );
+        }
+        wp_safe_redirect( add_query_arg( [
+            'page' => 'yougitai-secure-showcase',
+            'yougitai_message' => rawurlencode( sprintf(
+                __( '%s was removed from YougitAI. The GitHub repository was not changed.', 'yougitai-secure-showcase' ),
+                $label
+            ) ),
+        ], admin_url( 'admin.php' ) ) );
         exit;
     }
 
